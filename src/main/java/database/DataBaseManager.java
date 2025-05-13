@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBaseManager {
-    private static final String URL = "jdbc:mysql://localhost:3307/TaxiFleetLocalDB";
+    private static final String URL = "jdbc:mysql://localhost:3307/taxi_fleet_db";
     private static final String USER = "root";
     private static final String PASSWORD = "77713";
 

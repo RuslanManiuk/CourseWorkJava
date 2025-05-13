@@ -1,11 +1,9 @@
-package gui;
+package gui.panel;
 
 import models.TaxiFleet;
-import models.cars.Car;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class FleetManagementPanel extends JPanel {
     private TaxiFleet fleet;
@@ -26,7 +24,6 @@ public class FleetManagementPanel extends JPanel {
         tabbedPane.addTab("Автомобілі", new CarListPanel(fleet));
         tabbedPane.addTab("Додати авто", new CarFormPanel(fleet, carListPanel));
         tabbedPane.addTab("Статистика", new StatsPanel(fleet));
-        tabbedPane.addTab("Пошук", new SearchPanel(fleet));
 
         add(tabbedPane, BorderLayout.CENTER);
 

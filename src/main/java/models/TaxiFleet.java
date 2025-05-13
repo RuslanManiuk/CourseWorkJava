@@ -14,6 +14,7 @@ public class TaxiFleet {
     private List<Car> cars;
     private String name;
     private int fleetId;
+    private DataBaseManager databaseManager = new DataBaseManager();
 
     public TaxiFleet(String name) {
         this.name = name;
@@ -24,10 +25,23 @@ public class TaxiFleet {
         return name;
     }
 
+    // Додаємо метод для зміни назви таксопарку
+    public void setName(String name) {
+        this.name = name;
+        try {
+            databaseManager.executeUpdate(
+                    "UPDATE fleets SET name = ? WHERE fleet_id = ?",
+                    name, this.fleetId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void addCar(Car car) {
         cars.add(car);
         saveCarToDatabase(car);
     }
+
     private void saveCarToDatabase(Car car) {
         DataBaseManager dbManager = new DataBaseManager();
         try {
@@ -146,6 +160,14 @@ public class TaxiFleet {
         List<Car> sorted = new ArrayList<>(cars);
         sorted.sort(Comparator.comparingDouble(Car::getFuelConsumption));
         return sorted;
+    }
+
+    public void loadCarsFromDatabase() {
+        try {
+            this.cars = databaseManager.loadCarsForFleet(this.fleetId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
