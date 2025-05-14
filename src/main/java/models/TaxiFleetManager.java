@@ -2,6 +2,8 @@ package models;
 
 import database.DataBaseManager;
 import models.cars.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaxiFleetManager {
+    private static final Logger logger = LogManager.getLogger(TaxiFleetManager.class);
     private List<TaxiFleet> fleets = new ArrayList<>();
     private DataBaseManager dbManager;
 
@@ -24,17 +27,18 @@ public class TaxiFleetManager {
 
     // Додаємо метод для додавання таксопарку
     public void addFleet(TaxiFleet fleet) {
+        logger.info("Adding new fleet: {}", fleet.getName());
         fleets.add(fleet);
         saveFleetToDatabase(fleet);
     }
 
-    // Додаємо метод для видалення таксопарку
     public void removeFleet(TaxiFleet fleet) {
+        logger.info("Removing fleet: {}", fleet.getName());
         fleets.remove(fleet);
         try {
             dbManager.executeUpdate("DELETE FROM fleets WHERE fleet_id = ?", fleet.getFleetId());
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error removing fleet from database", e);
         }
     }
 
@@ -52,6 +56,7 @@ public class TaxiFleetManager {
     }
 
     private void loadFleetsFromDatabase() {
+        logger.info("Loading fleets from database");
         try {
             ResultSet rs = dbManager.executeQuery("SELECT * FROM fleets");
             while (rs.next()) {
@@ -59,13 +64,16 @@ public class TaxiFleetManager {
                 fleet.setFleetId(rs.getInt("fleet_id"));
                 loadCarsForFleet(fleet);
                 fleets.add(fleet);
+                logger.debug("Loaded fleet: {}", fleet.getName());
             }
+            logger.info("Loaded {} fleets from database", fleets.size());
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error loading fleets from database", e);
         }
     }
 
     private void loadCarsForFleet(TaxiFleet fleet) {
+        logger.debug("Loading cars for fleet {}", fleet.getName());
         try {
             ResultSet rs = dbManager.executeQuery(
                     "SELECT * FROM cars WHERE fleet_id = ?",
@@ -76,7 +84,7 @@ public class TaxiFleetManager {
                 fleet.addCar(car);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error loading cars for fleet {}", fleet.getName(), e);
         }
     }
 
@@ -102,6 +110,7 @@ public class TaxiFleetManager {
     private void saveFleetToDatabase(TaxiFleet fleet) {
         try {
             if (fleet.getFleetId() == 0) {
+                logger.debug("Saving new fleet to database: {}", fleet.getName());
                 dbManager.executeUpdate(
                         "INSERT INTO fleets (name) VALUES (?)",
                         fleet.getName());
@@ -109,14 +118,16 @@ public class TaxiFleetManager {
                 ResultSet rs = dbManager.executeQuery("SELECT LAST_INSERT_ID()");
                 if (rs.next()) {
                     fleet.setFleetId(rs.getInt(1));
+                    logger.info("New fleet saved with ID: {}", fleet.getFleetId());
                 }
             } else {
+                logger.debug("Updating existing fleet in database: {}", fleet.getName());
                 dbManager.executeUpdate(
                         "UPDATE fleets SET name = ? WHERE fleet_id = ?",
                         fleet.getName(), fleet.getFleetId());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error saving fleet to database", e);
         }
     }
 }

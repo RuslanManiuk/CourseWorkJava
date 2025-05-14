@@ -2,6 +2,8 @@ package models;
 
 import database.DataBaseManager;
 import models.cars.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class TaxiFleet {
+    private static final Logger logger = LogManager.getLogger(TaxiFleet.class);
     private List<Car> cars;
     private String name;
     private int fleetId;
@@ -27,17 +30,19 @@ public class TaxiFleet {
 
     // Додаємо метод для зміни назви таксопарку
     public void setName(String name) {
+        logger.info("Renaming fleet from {} to {}", this.name, name);
         this.name = name;
         try {
             databaseManager.executeUpdate(
                     "UPDATE fleets SET name = ? WHERE fleet_id = ?",
                     name, this.fleetId);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error renaming fleet in database", e);
         }
     }
 
     public void addCar(Car car) {
+        logger.debug("Adding car to fleet {}: {}", this.name, car);
         cars.add(car);
         saveCarToDatabase(car);
     }
@@ -45,10 +50,10 @@ public class TaxiFleet {
     private void saveCarToDatabase(Car car) {
         DataBaseManager dbManager = new DataBaseManager();
         try {
-            if (car.getCarId() == 0) { // Новий автомобіль
+            if (car.getCarId() == 0) {
+                logger.debug("Saving new car to database: {}", car);
                 dbManager.saveCar(car, this.fleetId);
 
-                // Оновлюємо ID авто після збереження
                 ResultSet rs = dbManager.executeQuery(
                         "SELECT car_id FROM cars WHERE make = ? AND model = ? AND fleet_id = ?",
                         car.getMake(), car.getModel(), this.fleetId);
@@ -56,7 +61,8 @@ public class TaxiFleet {
                 if (rs.next()) {
                     car.setCarId(rs.getInt("car_id"));
                 }
-            } else { // Оновлення існуючого авто
+            } else {
+                logger.debug("Updating existing car in database: {}", car);
                 dbManager.executeUpdate(
                         "UPDATE cars SET make = ?, model = ?, price = ?, max_speed = ?, " +
                                 "fuel_type = ?, fuel_consumption = ? WHERE car_id = ?",
@@ -64,13 +70,14 @@ public class TaxiFleet {
                         car.getFuelType(), car.getFuelConsumption(), car.getCarId());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error saving car to database", e);
         } finally {
             dbManager.close();
         }
     }
 
     public boolean removeCar(Car car) {
+        logger.debug("Removing car from fleet {}: {}", this.name, car);
         boolean removed = cars.remove(car);
         if (removed) {
             DataBaseManager dbManager = new DataBaseManager();
@@ -79,7 +86,7 @@ public class TaxiFleet {
                         "DELETE FROM cars WHERE car_id = ?",
                         car.getCarId());
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error("Error removing car from database", e);
             } finally {
                 dbManager.close();
             }
@@ -163,10 +170,12 @@ public class TaxiFleet {
     }
 
     public void loadCarsFromDatabase() {
+        logger.info("Loading cars for fleet {} from database", this.name);
         try {
             this.cars = databaseManager.loadCarsForFleet(this.fleetId);
+            logger.debug("Loaded {} cars for fleet {}", this.cars.size(), this.name);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error loading cars from database", e);
         }
     }
 

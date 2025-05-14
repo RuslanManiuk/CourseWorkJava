@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Консольний апендер -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Файловий апендер -->
+        <RollingFile name="File" fileName="logs/taxi_fleet.log"
+                     filePattern="logs/taxi_fleet-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+        <!-- SMTP апендер для критичних помилок -->
+        <SMTP name="Mail" subject="Taxi Fleet Critical Error"
+              to="ruslanmanjuk@gmail.com" from="o.1234567890.n.1234567890.e@gmail.com"
+              smtpHost="smtp.gmail.com" smtpPort="587"
+              smtpUsername="o.1234567890.n.1234567890.e@example.com" smtpPassword="one1one1"
+              smtpProtocol="smtp" bufferSize="1">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </SMTP>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Mail" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>

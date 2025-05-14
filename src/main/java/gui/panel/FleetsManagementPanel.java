@@ -3,6 +3,8 @@ package gui.panel;
 import models.TaxiFleet;
 import models.TaxiFleetManager;
 import gui.panel.StatsPanel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -12,6 +14,7 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 
 public class FleetsManagementPanel extends JPanel {
+    private static final Logger logger = LogManager.getLogger(FleetsManagementPanel.class);
     private TaxiFleetManager fleetManager;
     private JTabbedPane mainTabbedPane;
     private JList<TaxiFleet> fleetsList;
@@ -31,10 +34,12 @@ public class FleetsManagementPanel extends JPanel {
     private static final Font LIST_FONT = new Font("Arial", Font.PLAIN, 14);
 
     public FleetsManagementPanel(TaxiFleetManager fleetManager, JTabbedPane mainTabbedPane) {
+        logger.info("Initializing FleetsManagementPanel");
         this.fleetManager = fleetManager;
         this.mainTabbedPane = mainTabbedPane;
         initUI();
     }
+
 
     private void initUI() {
         setLayout(new BorderLayout(15, 15));
@@ -287,7 +292,6 @@ public class FleetsManagementPanel extends JPanel {
                 JOptionPane.PLAIN_MESSAGE);
 
         if (fleetName != null && !fleetName.trim().isEmpty()) {
-            // Перевіряємо, чи існує вже таксопарк з такою назвою
             boolean fleetExists = false;
             for (TaxiFleet fleet : fleetManager.getFleets()) {
                 if (fleet.getName().equalsIgnoreCase(fleetName.trim())) {
@@ -297,15 +301,15 @@ public class FleetsManagementPanel extends JPanel {
             }
 
             if (fleetExists) {
-                // Показуємо повідомлення про помилку, якщо таксопарк з такою назвою вже існує
+                logger.warn("Attempt to create duplicate fleet: {}", fleetName);
                 JOptionPane.showMessageDialog(this,
                         "Таксопарк з назвою '" + fleetName + "' вже існує!\nВведіть унікальну назву.",
                         "Помилка",
                         JOptionPane.ERROR_MESSAGE);
             } else {
-                // Створюємо новий таксопарк з унікальною назвою
                 TaxiFleet newFleet = new TaxiFleet(fleetName.trim());
                 fleetManager.addFleet(newFleet);
+                logger.info("Created new fleet: {}", fleetName);
                 updateFleetsList();
                 fleetsList.setSelectedValue(newFleet, true);
             }
@@ -323,9 +327,11 @@ public class FleetsManagementPanel extends JPanel {
 
             if (option == JOptionPane.YES_OPTION) {
                 fleetManager.removeFleet(selectedFleet);
+                logger.info("Removed fleet: {}", selectedFleet.getName());
                 updateFleetsList();
             }
         } else {
+            logger.warn("Attempt to remove fleet with no selection");
             JOptionPane.showMessageDialog(this,
                     "Будь ласка, виберіть таксопарк для видалення",
                     "Попередження",
@@ -340,7 +346,6 @@ public class FleetsManagementPanel extends JPanel {
                 JOptionPane.PLAIN_MESSAGE);
 
         if (newName != null && !newName.trim().isEmpty()) {
-            // Перевіряємо, чи існує вже таксопарк з такою назвою, але не поточний
             boolean nameExists = false;
             for (TaxiFleet existingFleet : fleetManager.getFleets()) {
                 if (existingFleet != fleet &&
@@ -351,14 +356,15 @@ public class FleetsManagementPanel extends JPanel {
             }
 
             if (nameExists) {
-                // Показуємо повідомлення про помилку, якщо назва вже використовується
+                logger.warn("Attempt to rename fleet to existing name: {}", newName);
                 JOptionPane.showMessageDialog(this,
                         "Таксопарк з назвою '" + newName + "' вже існує!\nВведіть унікальну назву.",
                         "Помилка",
                         JOptionPane.ERROR_MESSAGE);
             } else {
-                // Оновлюємо назву таксопарку
+                String oldName = fleet.getName();
                 fleet.setName(newName.trim());
+                logger.info("Renamed fleet from {} to {}", oldName, newName);
                 updateFleetsList();
                 fleetsList.setSelectedValue(fleet, true);
             }
@@ -366,16 +372,10 @@ public class FleetsManagementPanel extends JPanel {
     }
 
     private void viewCars(TaxiFleet fleet) {
-        // Створюємо нову вкладку з керуванням автомобілями обраного таксопарку
+        logger.info("Opening car management for fleet: {}", fleet.getName());
         FleetManagementPanel fleetManagementPanel = new FleetManagementPanel(fleet);
-
-        // Створюємо вкладку з ім'ям таксопарку
         String tabName = fleet.getName();
-
-        // Додаємо панель управління автомобілями на головну панель з вкладками
         mainTabbedPane.addTab(tabName, fleetManagementPanel);
-
-        // Перемикаємося на нову вкладку
         mainTabbedPane.setSelectedComponent(fleetManagementPanel);
     }
 

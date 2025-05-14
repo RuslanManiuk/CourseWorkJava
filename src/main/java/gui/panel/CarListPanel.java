@@ -3,6 +3,9 @@ package gui.panel;
 import gui.dialog.CarFormDialog;
 import models.TaxiFleet;
 import models.cars.Car;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
@@ -19,6 +22,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class CarListPanel extends JPanel {
+    private static final Logger logger = LogManager.getLogger(CarListPanel.class);
     private TaxiFleet taxiFleet;
     private JTable carTable;
     private DefaultTableModel model;
@@ -373,12 +377,54 @@ public class CarListPanel extends JPanel {
     }
 
     private void openAddCarDialog() {
-        // Знаходимо головне вікно програми для відображення модального діалогу
+        logger.info("Opening add car dialog");
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-
-        // Створюємо і відображаємо діалог додавання автомобіля
         CarFormDialog dialog = new CarFormDialog(mainFrame, taxiFleet, this);
         dialog.setVisible(true);
+    }
+
+    private void removeSelectedCar() {
+        int selectedRow = carTable.getSelectedRow();
+        if (selectedRow >= 0) {
+            int viewRow = carTable.getSelectedRow();
+            int modelRow = carTable.convertRowIndexToModel(viewRow);
+
+            if (modelRow < filteredCars.size()) {
+                Car carToRemove = filteredCars.get(modelRow);
+                logger.info("Attempting to remove car: {} {}", carToRemove.getMake(), carToRemove.getModel());
+
+                int confirm = JOptionPane.showConfirmDialog(
+                        this,
+                        String.format("Ви дійсно бажаєте видалити %s %s?",
+                                carToRemove.getMake(), carToRemove.getModel()),
+                        "Підтвердження видалення",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE);
+
+                if (confirm == JOptionPane.YES_OPTION) {
+                    try {
+                        taxiFleet.removeCar(carToRemove);
+                        loadAndSortCars();
+                        logger.info("Car removed successfully: {} {}", carToRemove.getMake(), carToRemove.getModel());
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Автомобіль успішно видалено",
+                                "Інформація",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } catch (Exception e) {
+                        logger.error("Failed to remove car: {} {}", carToRemove.getMake(), carToRemove.getModel(), e);
+                        showErrorMessage("Помилка видалення", "Не вдалося видалити автомобіль: " + e.getMessage());
+                    }
+                }
+            }
+        } else {
+            logger.warn("No car selected for removal");
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Будь ласка, виберіть автомобіль для видалення",
+                    "Попередження",
+                    JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     private void showCarDetails() {
@@ -590,53 +636,16 @@ public class CarListPanel extends JPanel {
 
     public void loadAndSortCars() {
         try {
+            logger.info("Loading and sorting cars");
             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             taxiFleet.loadCarsFromDatabase();
             applyFiltersAndSorting();
+            logger.info("Cars loaded and sorted successfully");
         } catch (Exception e) {
+            logger.error("Failed to load and sort cars", e);
             showErrorMessage("Помилка завантаження даних", "Не вдалося завантажити дані: " + e.getMessage());
         } finally {
             setCursor(Cursor.getDefaultCursor());
-        }
-    }
-
-    private void removeSelectedCar() {
-        int selectedRow = carTable.getSelectedRow();
-        if (selectedRow >= 0) {
-            int viewRow = carTable.getSelectedRow();
-            int modelRow = carTable.convertRowIndexToModel(viewRow);
-
-            if (modelRow < filteredCars.size()) {
-                Car carToRemove = filteredCars.get(modelRow);
-
-                int confirm = JOptionPane.showConfirmDialog(
-                        this,
-                        String.format("Ви дійсно бажаєте видалити %s %s?",
-                                carToRemove.getMake(), carToRemove.getModel()),
-                        "Підтвердження видалення",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE);
-
-                if (confirm == JOptionPane.YES_OPTION) {
-                    try {
-                        taxiFleet.removeCar(carToRemove);
-                        loadAndSortCars();
-                        JOptionPane.showMessageDialog(
-                                this,
-                                "Автомобіль успішно видалено",
-                                "Інформація",
-                                JOptionPane.INFORMATION_MESSAGE);
-                    } catch (Exception e) {
-                        showErrorMessage("Помилка видалення", "Не вдалося видалити автомобіль: " + e.getMessage());
-                    }
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(
-                    this,
-                    "Будь ласка, виберіть автомобіль для видалення",
-                    "Попередження",
-                    JOptionPane.WARNING_MESSAGE);
         }
     }
 }

@@ -4,6 +4,8 @@ import models.TaxiFleet;
 import models.cars.ElectricCar;
 import models.cars.GasCar;
 import gui.panel.CarListPanel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -11,6 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class CarFormDialog extends JDialog {
+    private static final Logger logger = LogManager.getLogger(CarFormDialog.class);
     private TaxiFleet taxiFleet;
     private CarListPanel carListPanel;
 
@@ -31,6 +34,7 @@ public class CarFormDialog extends JDialog {
 
     public CarFormDialog(JFrame parent, TaxiFleet taxiFleet, CarListPanel carListPanel) {
         super(parent, "Додати новий автомобіль", true);
+        logger.info("Creating CarFormDialog for fleet: {}", taxiFleet.getName());
         this.taxiFleet = taxiFleet;
         this.carListPanel = carListPanel;
 
@@ -245,6 +249,8 @@ public class CarFormDialog extends JDialog {
         try {
             String make = makeField.getText();
             String model = modelField.getText();
+            logger.debug("Attempting to add new car: {} {}", make, model);
+
             double price = Double.parseDouble(priceField.getText());
             double speed = Double.parseDouble(speedField.getText());
             double consumption = Double.parseDouble(consumptionField.getText());
@@ -260,16 +266,17 @@ public class CarFormDialog extends JDialog {
 
             if (typeComboBox.getSelectedIndex() == 1) { // Електричний
                 taxiFleet.addCar(new ElectricCar(make, model, price, speed, consumption));
+                logger.info("Added new electric car: {} {}", make, model);
             } else { // Бензин/Дизель
                 String fuelType = (String) fuelTypeComboBox.getSelectedItem();
                 taxiFleet.addCar(new GasCar(make, model, price, speed, consumption, fuelType));
+                logger.info("Added new gas car: {} {}, fuel type: {}", make, model, fuelType);
             }
 
-            // Оновлюємо дані з БД та застосовуємо поточні фільтри/сортування
             carListPanel.loadAndSortCars();
-
-            // Закриваємо діалогове вікно
             dispose();
+
+            logger.info("Successfully added new car to fleet: {}", taxiFleet.getName());
 
             // Покращене повідомлення про успіх
             JOptionPane.showMessageDialog(this.getParent(),
@@ -277,6 +284,8 @@ public class CarFormDialog extends JDialog {
                     "Успішне додавання",
                     JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException ex) {
+            logger.error("Failed to add car - invalid number format", ex);
+
             JOptionPane.showMessageDialog(this,
                     "Будь ласка, введіть коректні числові значення для ціни, швидкості та витрати",
                     "Помилка введення",
@@ -285,6 +294,7 @@ public class CarFormDialog extends JDialog {
     }
 
     private void clearForm() {
+        logger.debug("Clearing car form");
         makeField.setText("");
         modelField.setText("");
         priceField.setText("");

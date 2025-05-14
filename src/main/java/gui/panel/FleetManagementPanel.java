@@ -2,16 +2,20 @@ package gui.panel;
 
 import models.TaxiFleet;
 import gui.dialog.CarFormDialog;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class FleetManagementPanel extends JPanel {
+    private static final Logger logger = LogManager.getLogger(FleetManagementPanel.class);
     private TaxiFleet fleet;
     private JTabbedPane tabbedPane;
     private CarListPanel carListPanel;
 
     public FleetManagementPanel(TaxiFleet fleet) {
+        logger.info("Creating FleetManagementPanel for fleet: {}", fleet.getName());
         this.fleet = fleet;
         initComponents();
     }
@@ -20,26 +24,19 @@ public class FleetManagementPanel extends JPanel {
         setLayout(new BorderLayout());
 
         tabbedPane = new JTabbedPane();
-
-        // Створюємо єдиний екземпляр CarListPanel
         carListPanel = new CarListPanel(fleet);
-
-        // Додаємо панель зі списком автомобілів
         tabbedPane.addTab("Автомобілі", carListPanel);
-
-        // Додаємо панель статистики
         tabbedPane.addTab("Статистика", new StatsPanel(fleet));
-
-        // Видаляємо кнопку додавання авто, оскільки вона тепер є в заголовку CarListPanel
 
         add(tabbedPane, BorderLayout.CENTER);
 
-        // Кнопка закриття
         JButton closeBtn = new JButton("Закрити таксопарк");
         closeBtn.addActionListener(e -> {
+            logger.debug("Closing fleet management for: {}", fleet.getName());
             JTabbedPane parent = (JTabbedPane) SwingUtilities.getAncestorOfClass(JTabbedPane.class, this);
             if (parent != null) {
                 parent.remove(this);
+                logger.info("Fleet management closed for: {}", fleet.getName());
             }
         });
         add(closeBtn, BorderLayout.SOUTH);

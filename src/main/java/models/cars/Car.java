@@ -1,6 +1,11 @@
 package models.cars;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public abstract class Car {
+    private static final Logger logger = LogManager.getLogger(Car.class);
+
     private int carId;
     private String make;
     private String model;
@@ -8,6 +13,7 @@ public abstract class Car {
     private double maxSpeed;
 
     public Car(String make, String model, double price, double maxSpeed) {
+        logger.debug("Creating new Car: {} {}, price: {}, maxSpeed: {}", make, model, price, maxSpeed);
         this.make = make;
         this.model = model;
         this.price = price;
@@ -22,7 +28,10 @@ public abstract class Car {
     public double getPrice() { return price; }
     public double getMaxSpeed() { return maxSpeed; }
     public int getCarId() { return carId; }
-    public void setCarId(int id) { this.carId = id; }
+    public void setCarId(int id) {
+        logger.trace("Setting car ID from {} to {}", this.carId, id);
+        this.carId = id;
+    }
 
 
     @Override

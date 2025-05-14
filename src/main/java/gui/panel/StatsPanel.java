@@ -2,6 +2,8 @@ package gui.panel;
 
 import models.TaxiFleet;
 import models.cars.Car;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StatsPanel extends JPanel {
+    private static final Logger logger = LogManager.getLogger(StatsPanel.class);
     private TaxiFleet taxiFleet;
     private static final Color HEADER_COLOR = new Color(52, 73, 94);
     private static final Color ELECTRIC_COLOR = new Color(46, 204, 113);
@@ -22,6 +25,7 @@ public class StatsPanel extends JPanel {
     private static final Font REGULAR_FONT = new Font("Arial", Font.PLAIN, 12);
 
     public StatsPanel(TaxiFleet taxiFleet) {
+        logger.info("Creating StatsPanel for fleet: {}", taxiFleet.getName());
         this.taxiFleet = taxiFleet;
         setLayout(new BorderLayout(10, 10));
         setBackground(BACKGROUND_COLOR);
@@ -227,6 +231,7 @@ public class StatsPanel extends JPanel {
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
+            logger.debug("Painting pie chart for fleet: {}", taxiFleet.getName());
             Graphics2D g2 = (Graphics2D) g;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -289,6 +294,8 @@ public class StatsPanel extends JPanel {
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
+            logger.debug("Painting {} consumption chart for fleet: {}",
+                    isElectric ? "electric" : "gas", taxiFleet.getName());
             Graphics2D g2 = (Graphics2D) g;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -384,6 +391,7 @@ public class StatsPanel extends JPanel {
 
     // Розрахунок середньої витрати електроенергії для електромобілів
     private double calculateAverageElectricConsumption() {
+        logger.debug("Calculating average electric consumption for fleet: {}", taxiFleet.getName());
         List<Car> electricCars = taxiFleet.getCars().stream()
                 .filter(c -> "Електричний".equals(c.getFuelType()))
                 .collect(Collectors.toList());
@@ -398,6 +406,7 @@ public class StatsPanel extends JPanel {
 
     // Розрахунок середньої витрати палива для бензинових/дизельних авто
     private double calculateAverageGasConsumption() {
+        logger.debug("Calculating average gas consumption for fleet: {}", taxiFleet.getName());
         List<Car> gasCars = taxiFleet.getCars().stream()
                 .filter(c -> !"Електричний".equals(c.getFuelType()))
                 .collect(Collectors.toList());
