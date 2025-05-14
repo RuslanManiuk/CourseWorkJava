@@ -1,5 +1,6 @@
 package gui.panel;
 
+import gui.dialog.CarFormDialog;
 import models.TaxiFleet;
 import models.cars.Car;
 import javax.swing.*;
@@ -34,6 +35,8 @@ public class CarListPanel extends JPanel {
     private static final Color SECONDARY_COLOR = new Color(245, 245, 245);
     private static final Color ACCENT_COLOR = new Color(0, 166, 90);
     private static final Color WARNING_COLOR = new Color(243, 156, 18);
+    private static final Color DANGER_COLOR = new Color(221, 75, 57);
+    private static final Font HEADER_FONT = new Font("SansSerif", Font.BOLD, 18);
     private static final Font LABEL_FONT = new Font("SansSerif", Font.BOLD, 12);
     private static final Font TABLE_FONT = new Font("SansSerif", Font.PLAIN, 12);
 
@@ -48,6 +51,10 @@ public class CarListPanel extends JPanel {
 
     private void initComponents() {
         setLayout(new BorderLayout(0, 10));
+
+        // Нова секція заголовка з назвою таксопарку та кнопками
+        JPanel headerPanel = createHeaderPanel();
+        add(headerPanel, BorderLayout.NORTH);
 
         // Модель таблиці
         model = new DefaultTableModel() {
@@ -124,10 +131,6 @@ public class CarListPanel extends JPanel {
             }
         });
 
-        // Форматування чисел у таблиці
-        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
-        NumberFormat numberFormat = NumberFormat.getNumberInstance();
-
         // Заголовок таблиці
         JTableHeader header = carTable.getTableHeader();
         header.setFont(LABEL_FONT);
@@ -147,7 +150,7 @@ public class CarListPanel extends JPanel {
                 LABEL_FONT,
                 PRIMARY_COLOR));
 
-        // Панель пошуку (новий код)
+        // Панель пошуку
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 5));
         searchPanel.setBackground(SECONDARY_COLOR);
 
@@ -284,26 +287,25 @@ public class CarListPanel extends JPanel {
         tableScrollPane.setBorder(BorderFactory.createLineBorder(PRIMARY_COLOR));
         tableScrollPane.getViewport().setBackground(Color.WHITE);
 
-        // Кнопки керування
+        // Кнопки керування в нижній частині (оновлення даних)
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
         buttonPanel.setBackground(SECONDARY_COLOR);
 
         JButton refreshBtn = new JButton("Оновити дані");
         styleButton(refreshBtn, PRIMARY_COLOR);
         refreshBtn.setIcon(UIManager.getIcon("FileView.refreshIcon"));
-
-        JButton removeBtn = new JButton("Видалити вибране");
-        styleButton(removeBtn, new Color(221, 75, 57));
-
         refreshBtn.addActionListener(e -> loadAndSortCars());
-        removeBtn.addActionListener(e -> removeSelectedCar());
 
         buttonPanel.add(refreshBtn);
-        buttonPanel.add(removeBtn);
+
+        // Створюємо контейнер для фільтрів і таблиці
+        JPanel centerPanel = new JPanel(new BorderLayout(0, 10));
+        centerPanel.setBackground(SECONDARY_COLOR);
+        centerPanel.add(filterPanel, BorderLayout.NORTH);
+        centerPanel.add(tableScrollPane, BorderLayout.CENTER);
 
         // Додаємо всі компоненти
-        add(filterPanel, BorderLayout.NORTH);
-        add(tableScrollPane, BorderLayout.CENTER);
+        add(centerPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
 
         // Додаємо подвійний клік на рядку таблиці
@@ -315,6 +317,68 @@ public class CarListPanel extends JPanel {
                 }
             }
         });
+    }
+
+    // Створення нової секції заголовка з назвою та кнопками
+    private JPanel createHeaderPanel() {
+        JPanel headerPanel = new JPanel(new BorderLayout());
+        headerPanel.setBackground(new Color(52, 73, 94)); // Темно-синій колір для заголовка
+        headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+
+        // Заголовок таксопарку - використовуємо назву з об'єкта таксопарку
+        JLabel titleLabel = new JLabel(taxiFleet.getName());
+        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 24));
+        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setIcon(UIManager.getIcon("OptionPane.informationIcon")); // Можна замінити на власну іконку
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 10));
+
+        // Панель з кнопками
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.setOpaque(false);
+
+        // Кнопка додавання авто
+        JButton addCarButton = new JButton("Додати авто");
+        styleHeaderButton(addCarButton, ACCENT_COLOR);
+        addCarButton.setIcon(UIManager.getIcon("FileView.fileIcon"));
+        addCarButton.addActionListener(e -> openAddCarDialog());
+
+        // Кнопка видалення авто
+        JButton removeCarButton = new JButton("Видалити авто");
+        styleHeaderButton(removeCarButton, DANGER_COLOR);
+        removeCarButton.setIcon(UIManager.getIcon("FileChooser.detailsViewIcon"));
+        removeCarButton.addActionListener(e -> removeSelectedCar());
+
+        buttonPanel.add(addCarButton);
+        buttonPanel.add(removeCarButton);
+
+        headerPanel.add(titleLabel, BorderLayout.WEST);
+        headerPanel.add(buttonPanel, BorderLayout.EAST);
+
+        return headerPanel;
+    }
+
+    // Стилізація кнопок заголовка
+    private void styleHeaderButton(JButton button, Color color) {
+        button.setFont(new Font("SansSerif", Font.BOLD, 12));
+        button.setBackground(color);
+        button.setForeground(Color.WHITE);
+        button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        button.setPreferredSize(new Dimension(150, 35));
+
+        // Додаємо відступи для іконки
+        button.setIconTextGap(8);
+        button.setMargin(new Insets(0, 10, 0, 10));
+    }
+
+    private void openAddCarDialog() {
+        // Знаходимо головне вікно програми для відображення модального діалогу
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+
+        // Створюємо і відображаємо діалог додавання автомобіля
+        CarFormDialog dialog = new CarFormDialog(mainFrame, taxiFleet, this);
+        dialog.setVisible(true);
     }
 
     private void showCarDetails() {

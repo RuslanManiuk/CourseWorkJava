@@ -18,7 +18,7 @@ public class FleetsManagementPanel extends JPanel {
     private DefaultListModel<TaxiFleet> fleetsListModel;
 
     // Кольорова схема UI
-    private static final Color PRIMARY_COLOR = new Color(41, 128, 185);
+    private static final Color PRIMARY_COLOR = new Color(52, 73, 94);
     private static final Color SECONDARY_COLOR = new Color(52, 152, 219);
     private static final Color ACCENT_COLOR = new Color(26, 188, 156);
     private static final Color BACKGROUND_COLOR = new Color(245, 245, 245);

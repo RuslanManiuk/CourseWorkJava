@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 public class StatsPanel extends JPanel {
     private TaxiFleet taxiFleet;
+    private static final Color HEADER_COLOR = new Color(52, 73, 94);
     private static final Color ELECTRIC_COLOR = new Color(46, 204, 113);
     private static final Color GAS_COLOR = new Color(231, 76, 60);
     private static final Color BACKGROUND_COLOR = new Color(245, 245, 245);
@@ -48,11 +49,13 @@ public class StatsPanel extends JPanel {
 
     private JPanel createHeaderPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        panel.setBackground(BACKGROUND_COLOR);
+        panel.setBackground(HEADER_COLOR);
+        panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        panel.setPreferredSize(new Dimension(getWidth(), 70));
 
         JLabel titleLabel = new JLabel("Статистика таксопарку '" + taxiFleet.getName() + "'");
         titleLabel.setFont(TITLE_FONT);
-        titleLabel.setForeground(TEXT_COLOR);
+        titleLabel.setForeground(Color.WHITE);
 
         panel.add(titleLabel);
         return panel;

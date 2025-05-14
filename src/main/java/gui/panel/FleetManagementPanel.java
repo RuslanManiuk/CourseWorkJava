@@ -1,6 +1,7 @@
 package gui.panel;
 
 import models.TaxiFleet;
+import gui.dialog.CarFormDialog;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +9,7 @@ import java.awt.*;
 public class FleetManagementPanel extends JPanel {
     private TaxiFleet fleet;
     private JTabbedPane tabbedPane;
+    private CarListPanel carListPanel;
 
     public FleetManagementPanel(TaxiFleet fleet) {
         this.fleet = fleet;
@@ -18,12 +20,17 @@ public class FleetManagementPanel extends JPanel {
         setLayout(new BorderLayout());
 
         tabbedPane = new JTabbedPane();
-        CarListPanel carListPanel = new CarListPanel(fleet);
 
-        // Додаємо всі необхідні панелі
-        tabbedPane.addTab("Автомобілі", new CarListPanel(fleet));
-        tabbedPane.addTab("Додати авто", new CarFormPanel(fleet, carListPanel));
+        // Створюємо єдиний екземпляр CarListPanel
+        carListPanel = new CarListPanel(fleet);
+
+        // Додаємо панель зі списком автомобілів
+        tabbedPane.addTab("Автомобілі", carListPanel);
+
+        // Додаємо панель статистики
         tabbedPane.addTab("Статистика", new StatsPanel(fleet));
+
+        // Видаляємо кнопку додавання авто, оскільки вона тепер є в заголовку CarListPanel
 
         add(tabbedPane, BorderLayout.CENTER);
 

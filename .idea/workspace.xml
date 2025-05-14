@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="second commit">
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="готовий візуал і функціонал який підходить під мінімальні вимоги курсової">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CarFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/CarFormPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CarListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/FleetManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetManagementPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/SearchPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/StatsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1747061092945</updated>
       <workItem from="1747061094554" duration="12719000" />
-      <workItem from="1747143280870" duration="18696000" />
+      <workItem from="1747143280870" duration="19301000" />
+      <workItem from="1747206829235" duration="3630000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -124,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747145596165</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="готовий візуал і функціонал який підходить під мінімальні вимоги курсової">
+      <option name="closed" value="true" />
+      <created>1747165682220</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747165682220</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+    <MESSAGE value="готовий візуал і функціонал який підходить під мінімальні вимоги курсової" />
+    <option name="LAST_COMMIT_MESSAGE" value="готовий візуал і функціонал який підходить під мінімальні вимоги курсової" />
   </component>
 </project>
