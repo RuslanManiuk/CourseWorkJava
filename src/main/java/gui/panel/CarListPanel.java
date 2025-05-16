@@ -22,7 +22,10 @@ import java.util.Comparator;
 import java.util.List;
 
 public class CarListPanel extends JPanel {
+    // Логер для відстеження подій у класі
     private static final Logger logger = LogManager.getLogger(CarListPanel.class);
+
+    // Поля даних
     private TaxiFleet taxiFleet;
     private JTable carTable;
     private DefaultTableModel model;
@@ -34,6 +37,13 @@ public class CarListPanel extends JPanel {
     private String searchQuery = "";
     private List<Car> filteredCars;
 
+    // Компоненти інтерфейсу
+    private JComboBox<String> fuelTypeFilter;
+    private JComboBox<String> sortComboBox;
+    private JTextField minSpeedField;
+    private JTextField maxSpeedField;
+    private JTextField searchField;
+
     // Константи для кольорів та шрифтів
     private static final Color PRIMARY_COLOR = new Color(60, 141, 188);
     private static final Color SECONDARY_COLOR = new Color(245, 245, 245);
@@ -44,15 +54,25 @@ public class CarListPanel extends JPanel {
     private static final Font LABEL_FONT = new Font("SansSerif", Font.BOLD, 12);
     private static final Font TABLE_FONT = new Font("SansSerif", Font.PLAIN, 12);
 
+    /**
+     * Конструктор класу CarListPanel
+     *
+     * @param taxiFleet об'єкт таксопарку
+     */
     public CarListPanel(TaxiFleet taxiFleet) {
         this.taxiFleet = taxiFleet;
         this.filteredCars = new ArrayList<>();
+
         setBackground(SECONDARY_COLOR);
         setBorder(new EmptyBorder(10, 10, 10, 10));
+
         initComponents();
         loadAndSortCars();
     }
 
+    /**
+     * Ініціалізація компонентів інтерфейсу
+     */
     private void initComponents() {
         setLayout(new BorderLayout(0, 10));
 
@@ -82,6 +102,37 @@ public class CarListPanel extends JPanel {
         carTable.setRowSorter(sorter);
 
         // Стилізація таблиці
+        styleTable();
+
+        // Панель фільтрів та сортування
+        JPanel filterPanel = createFilterPanel();
+
+        // Таблиця з прокруткою
+        JScrollPane tableScrollPane = new JScrollPane(carTable);
+        tableScrollPane.setBorder(BorderFactory.createLineBorder(PRIMARY_COLOR));
+        tableScrollPane.getViewport().setBackground(Color.WHITE);
+
+        // Кнопки керування в нижній частині (оновлення даних)
+        JPanel buttonPanel = createButtonPanel();
+
+        // Створюємо контейнер для фільтрів і таблиці
+        JPanel centerPanel = new JPanel(new BorderLayout(0, 10));
+        centerPanel.setBackground(SECONDARY_COLOR);
+        centerPanel.add(filterPanel, BorderLayout.NORTH);
+        centerPanel.add(tableScrollPane, BorderLayout.CENTER);
+
+        // Додаємо всі компоненти
+        add(centerPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        // Додаємо подвійний клік на рядку таблиці
+        addTableMouseListener();
+    }
+
+    /**
+     * Стилізація таблиці автомобілів
+     */
+    private void styleTable() {
         carTable.setFont(TABLE_FONT);
         carTable.setRowHeight(25);
         carTable.setSelectionBackground(PRIMARY_COLOR);
@@ -90,7 +141,7 @@ public class CarListPanel extends JPanel {
         carTable.setIntercellSpacing(new Dimension(0, 0));
         carTable.setFillsViewportHeight(true);
 
-        // Замініть поточний рендерер на такий, що обробляє всі типи колонок
+        // Налаштування рендерера для звичайних колонок
         carTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -99,7 +150,7 @@ public class CarListPanel extends JPanel {
                     c.setBackground(row % 2 == 0 ? Color.WHITE : new Color(240, 240, 240));
                 }
 
-                // Для числових колонок: встановлюємо вирівнювання по центру або лівому краю
+                // Для числових колонок: встановлюємо вирівнювання
                 if (table.getColumnClass(column).equals(Double.class)) {
                     setHorizontalAlignment(JLabel.LEFT); // або CENTER
                 } else {
@@ -110,7 +161,7 @@ public class CarListPanel extends JPanel {
             }
         });
 
-        // Додано спеціальний рендерер для Double
+        // Спеціальний рендерер для Double значень
         carTable.setDefaultRenderer(Double.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -120,9 +171,9 @@ public class CarListPanel extends JPanel {
                 }
 
                 // Встановлюємо вирівнювання для числових значень
-                setHorizontalAlignment(JLabel.LEFT); // або CENTER
+                setHorizontalAlignment(JLabel.LEFT);
 
-                // Форматування числових значень (опціонально)
+                // Форматування числових значень
                 if (value instanceof Double) {
                     if (column == 3) { // Ціна
                         setText(String.format("%.2f $", (Double)value));
@@ -135,14 +186,95 @@ public class CarListPanel extends JPanel {
             }
         });
 
-        // Заголовок таблиці
+        // Стилізація заголовка таблиці
         JTableHeader header = carTable.getTableHeader();
         header.setFont(LABEL_FONT);
         header.setBackground(PRIMARY_COLOR);
         header.setForeground(Color.WHITE);
         header.setPreferredSize(new Dimension(header.getWidth(), 30));
+    }
 
-        // Панель фільтрів та сортування
+    /**
+     * Додає слухача подій миші до таблиці
+     */
+    private void addTableMouseListener() {
+        carTable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    showCarDetails();
+                }
+            }
+        });
+    }
+
+    /**
+     * Створення панелі з кнопками
+     *
+     * @return панель з кнопками
+     */
+    private JPanel createButtonPanel() {
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
+        buttonPanel.setBackground(SECONDARY_COLOR);
+
+        JButton refreshBtn = new JButton("Оновити дані");
+        styleButton(refreshBtn, PRIMARY_COLOR);
+        refreshBtn.setIcon(UIManager.getIcon("FileView.refreshIcon"));
+        refreshBtn.addActionListener(e -> loadAndSortCars());
+
+        buttonPanel.add(refreshBtn);
+
+        return buttonPanel;
+    }
+
+    /**
+     * Створення панелі заголовка з назвою та кнопками
+     *
+     * @return панель заголовка
+     */
+    private JPanel createHeaderPanel() {
+        JPanel headerPanel = new JPanel(new BorderLayout());
+        headerPanel.setBackground(new Color(52, 73, 94)); // Темно-синій колір для заголовка
+        headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+
+        // Заголовок таксопарку - використовуємо назву з об'єкта таксопарку
+        JLabel titleLabel = new JLabel(taxiFleet.getName());
+        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 24));
+        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setIcon(UIManager.getIcon("OptionPane.informationIcon"));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 10));
+
+        // Панель з кнопками
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.setOpaque(false);
+
+        // Кнопка додавання авто
+        JButton addCarButton = new JButton("Додати авто");
+        styleHeaderButton(addCarButton, ACCENT_COLOR);
+        addCarButton.setIcon(UIManager.getIcon("FileView.fileIcon"));
+        addCarButton.addActionListener(e -> openAddCarDialog());
+
+        // Кнопка видалення авто
+        JButton removeCarButton = new JButton("Видалити авто");
+        styleHeaderButton(removeCarButton, DANGER_COLOR);
+        removeCarButton.setIcon(UIManager.getIcon("FileChooser.detailsViewIcon"));
+        removeCarButton.addActionListener(e -> removeSelectedCar());
+
+        buttonPanel.add(addCarButton);
+        buttonPanel.add(removeCarButton);
+
+        headerPanel.add(titleLabel, BorderLayout.WEST);
+        headerPanel.add(buttonPanel, BorderLayout.EAST);
+
+        return headerPanel;
+    }
+
+    /**
+     * Створення панелі фільтрів та сортування
+     *
+     * @return панель фільтрів
+     */
+    private JPanel createFilterPanel() {
         JPanel filterPanel = new JPanel();
         filterPanel.setLayout(new BoxLayout(filterPanel, BoxLayout.Y_AXIS));
         filterPanel.setBackground(SECONDARY_COLOR);
@@ -155,11 +287,33 @@ public class CarListPanel extends JPanel {
                 PRIMARY_COLOR));
 
         // Панель пошуку
+        JPanel searchPanel = createSearchPanel();
+
+        // Верхній ряд фільтрів
+        JPanel topFilterRow = createTopFilterRow();
+
+        // Нижній ряд фільтрів (діапазон швидкості)
+        JPanel speedFilterRow = createSpeedFilterRow();
+
+        // Додаємо панелі в основну панель фільтрів
+        filterPanel.add(searchPanel);
+        filterPanel.add(topFilterRow);
+        filterPanel.add(speedFilterRow);
+
+        return filterPanel;
+    }
+
+    /**
+     * Створення панелі пошуку
+     *
+     * @return панель пошуку
+     */
+    private JPanel createSearchPanel() {
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 5));
         searchPanel.setBackground(SECONDARY_COLOR);
 
         JPanel searchFieldPanel = createLabeledComponentPanel("Пошук за маркою/моделлю:", new Color(240, 240, 240));
-        JTextField searchField = new JTextField(20);
+        searchField = new JTextField(20);
         styleTextField(searchField);
         searchField.setPreferredSize(new Dimension(200, 25));
 
@@ -199,17 +353,23 @@ public class CarListPanel extends JPanel {
         });
 
         searchFieldPanel.add(searchField);
-
-        // Додаємо searchFieldPanel до searchPanel
         searchPanel.add(searchFieldPanel);
 
-        // Верхній ряд фільтрів
+        return searchPanel;
+    }
+
+    /**
+     * Створення верхнього ряду фільтрів
+     *
+     * @return панель верхнього ряду фільтрів
+     */
+    private JPanel createTopFilterRow() {
         JPanel topFilterRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 5));
         topFilterRow.setBackground(SECONDARY_COLOR);
 
         // Фільтр за типом палива
         JPanel fuelFilterPanel = createLabeledComponentPanel("Тип палива:", new Color(240, 240, 240));
-        JComboBox<String> fuelTypeFilter = new JComboBox<>(new String[]{"Усі", "Бензин", "Дизель", "Електричний"});
+        fuelTypeFilter = new JComboBox<>(new String[]{"Усі", "Бензин", "Дизель", "Електричний"});
         styleComboBox(fuelTypeFilter);
         fuelTypeFilter.addActionListener(e -> {
             currentFuelFilter = (String) fuelTypeFilter.getSelectedItem();
@@ -219,7 +379,7 @@ public class CarListPanel extends JPanel {
 
         // Сортування
         JPanel sortPanel = createLabeledComponentPanel("Сортування:", new Color(240, 240, 240));
-        JComboBox<String> sortComboBox = new JComboBox<>(new String[]{
+        sortComboBox = new JComboBox<>(new String[]{
                 "За замовчуванням",
                 "За ціною (зростання)",
                 "За ціною (спадання)",
@@ -238,7 +398,15 @@ public class CarListPanel extends JPanel {
         topFilterRow.add(fuelFilterPanel);
         topFilterRow.add(sortPanel);
 
-        // Нижній ряд фільтрів (діапазон швидкості)
+        return topFilterRow;
+    }
+
+    /**
+     * Створення нижнього ряду фільтрів (діапазон швидкості)
+     *
+     * @return панель фільтрів швидкості
+     */
+    private JPanel createSpeedFilterRow() {
         JPanel speedFilterRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 5));
         speedFilterRow.setBackground(SECONDARY_COLOR);
 
@@ -246,8 +414,8 @@ public class CarListPanel extends JPanel {
         JPanel speedInputs = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
         speedInputs.setBackground(new Color(240, 240, 240));
 
-        JTextField minSpeedField = new JTextField(5);
-        JTextField maxSpeedField = new JTextField(5);
+        minSpeedField = new JTextField(5);
+        maxSpeedField = new JTextField(5);
         styleTextField(minSpeedField);
         styleTextField(maxSpeedField);
 
@@ -281,87 +449,15 @@ public class CarListPanel extends JPanel {
         speedFilterRow.add(speedRangePanel);
         speedFilterRow.add(resetFiltersBtn);
 
-        // Додаємо панелі в основну панель фільтрів
-        filterPanel.add(searchPanel);
-        filterPanel.add(topFilterRow);
-        filterPanel.add(speedFilterRow);
-
-        // Таблиця з прокруткою
-        JScrollPane tableScrollPane = new JScrollPane(carTable);
-        tableScrollPane.setBorder(BorderFactory.createLineBorder(PRIMARY_COLOR));
-        tableScrollPane.getViewport().setBackground(Color.WHITE);
-
-        // Кнопки керування в нижній частині (оновлення даних)
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
-        buttonPanel.setBackground(SECONDARY_COLOR);
-
-        JButton refreshBtn = new JButton("Оновити дані");
-        styleButton(refreshBtn, PRIMARY_COLOR);
-        refreshBtn.setIcon(UIManager.getIcon("FileView.refreshIcon"));
-        refreshBtn.addActionListener(e -> loadAndSortCars());
-
-        buttonPanel.add(refreshBtn);
-
-        // Створюємо контейнер для фільтрів і таблиці
-        JPanel centerPanel = new JPanel(new BorderLayout(0, 10));
-        centerPanel.setBackground(SECONDARY_COLOR);
-        centerPanel.add(filterPanel, BorderLayout.NORTH);
-        centerPanel.add(tableScrollPane, BorderLayout.CENTER);
-
-        // Додаємо всі компоненти
-        add(centerPanel, BorderLayout.CENTER);
-        add(buttonPanel, BorderLayout.SOUTH);
-
-        // Додаємо подвійний клік на рядку таблиці
-        carTable.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if (e.getClickCount() == 2) {
-                    showCarDetails();
-                }
-            }
-        });
+        return speedFilterRow;
     }
 
-    // Створення нової секції заголовка з назвою та кнопками
-    private JPanel createHeaderPanel() {
-        JPanel headerPanel = new JPanel(new BorderLayout());
-        headerPanel.setBackground(new Color(52, 73, 94)); // Темно-синій колір для заголовка
-        headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
-
-        // Заголовок таксопарку - використовуємо назву з об'єкта таксопарку
-        JLabel titleLabel = new JLabel(taxiFleet.getName());
-        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 24));
-        titleLabel.setForeground(Color.WHITE);
-        titleLabel.setIcon(UIManager.getIcon("OptionPane.informationIcon")); // Можна замінити на власну іконку
-        titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 10));
-
-        // Панель з кнопками
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        buttonPanel.setOpaque(false);
-
-        // Кнопка додавання авто
-        JButton addCarButton = new JButton("Додати авто");
-        styleHeaderButton(addCarButton, ACCENT_COLOR);
-        addCarButton.setIcon(UIManager.getIcon("FileView.fileIcon"));
-        addCarButton.addActionListener(e -> openAddCarDialog());
-
-        // Кнопка видалення авто
-        JButton removeCarButton = new JButton("Видалити авто");
-        styleHeaderButton(removeCarButton, DANGER_COLOR);
-        removeCarButton.setIcon(UIManager.getIcon("FileChooser.detailsViewIcon"));
-        removeCarButton.addActionListener(e -> removeSelectedCar());
-
-        buttonPanel.add(addCarButton);
-        buttonPanel.add(removeCarButton);
-
-        headerPanel.add(titleLabel, BorderLayout.WEST);
-        headerPanel.add(buttonPanel, BorderLayout.EAST);
-
-        return headerPanel;
-    }
-
-    // Стилізація кнопок заголовка
+    /**
+     * Стилізація кнопок заголовка
+     *
+     * @param button кнопка для стилізації
+     * @param color колір фону кнопки
+     */
     private void styleHeaderButton(JButton button, Color color) {
         button.setFont(new Font("SansSerif", Font.BOLD, 12));
         button.setBackground(color);
@@ -376,6 +472,9 @@ public class CarListPanel extends JPanel {
         button.setMargin(new Insets(0, 10, 0, 10));
     }
 
+    /**
+     * Відкриття діалогового вікна для додавання нового автомобіля
+     */
     private void openAddCarDialog() {
         logger.info("Opening add car dialog");
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
@@ -383,6 +482,9 @@ public class CarListPanel extends JPanel {
         dialog.setVisible(true);
     }
 
+    /**
+     * Видалення вибраного автомобіля
+     */
     private void removeSelectedCar() {
         int selectedRow = carTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -427,6 +529,9 @@ public class CarListPanel extends JPanel {
         }
     }
 
+    /**
+     * Відображення деталей вибраного автомобіля
+     */
     private void showCarDetails() {
         int selectedRow = carTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -455,6 +560,13 @@ public class CarListPanel extends JPanel {
         }
     }
 
+    /**
+     * Створення панелі з міткою та компонентом
+     *
+     * @param labelText текст мітки
+     * @param backgroundColor колір фону
+     * @return панель з міткою
+     */
     private JPanel createLabeledComponentPanel(String labelText, Color backgroundColor) {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
         panel.setBackground(backgroundColor);
@@ -467,6 +579,11 @@ public class CarListPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Стилізація випадаючого списку
+     *
+     * @param comboBox випадаючий список для стилізації
+     */
     private void styleComboBox(JComboBox<?> comboBox) {
         comboBox.setFont(TABLE_FONT);
         comboBox.setBackground(Color.WHITE);
@@ -474,12 +591,23 @@ public class CarListPanel extends JPanel {
         comboBox.setPreferredSize(new Dimension(200, 25));
     }
 
+    /**
+     * Стилізація текстового поля
+     *
+     * @param textField текстове поле для стилізації
+     */
     private void styleTextField(JTextField textField) {
         textField.setFont(TABLE_FONT);
         textField.setBorder(BorderFactory.createLineBorder(PRIMARY_COLOR));
         textField.setPreferredSize(new Dimension(60, 25));
     }
 
+    /**
+     * Стилізація кнопки
+     *
+     * @param button кнопка для стилізації
+     * @param backgroundColor колір фону кнопки
+     */
     private void styleButton(JButton button, Color backgroundColor) {
         button.setFont(new Font("SansSerif", Font.BOLD, 12));
         button.setBackground(backgroundColor);
@@ -490,6 +618,15 @@ public class CarListPanel extends JPanel {
         button.setPreferredSize(new Dimension(button.getPreferredSize().width, 30));
     }
 
+    /**
+     * Скидання всіх фільтрів
+     *
+     * @param fuelTypeFilter фільтр типу палива
+     * @param sortComboBox випадаючий список сортування
+     * @param minSpeedField поле мінімальної швидкості
+     * @param maxSpeedField поле максимальної швидкості
+     * @param searchField поле пошуку
+     */
     private void resetFilters(JComboBox<String> fuelTypeFilter, JComboBox<String> sortComboBox,
                               JTextField minSpeedField, JTextField maxSpeedField, JTextField searchField) {
         fuelTypeFilter.setSelectedItem("Усі");
@@ -507,6 +644,12 @@ public class CarListPanel extends JPanel {
         applyFiltersAndSorting();
     }
 
+    /**
+     * Відображення повідомлення про помилку
+     *
+     * @param title заголовок повідомлення
+     * @param message текст повідомлення
+     */
     private void showErrorMessage(String title, String message) {
         JOptionPane.showMessageDialog(this,
                 message,
@@ -514,6 +657,9 @@ public class CarListPanel extends JPanel {
                 JOptionPane.ERROR_MESSAGE);
     }
 
+    /**
+     * Застосування фільтрів і сортування до списку автомобілів
+     */
     private void applyFiltersAndSorting() {
         List<Car> cars = new ArrayList<>(taxiFleet.getCars());
 
@@ -577,6 +723,20 @@ public class CarListPanel extends JPanel {
         updateTable(cars);
     }
 
+    /**
+     * Сортує список автомобілів за різними критеріями.
+     *
+     * Метод підтримує сортування списку автомобілів за ціною, максимальною швидкістю
+     * та витратою пального у порядку зростання або спадання. Критерій сортування
+     * визначається значенням поля {@code currentSort}.
+     *
+     * @param cars Список автомобілів, який потрібно відсортувати
+     * @return Новий відсортований список автомобілів, що не змінює оригінальний список
+     *
+     * @see Car#getPrice() Метод отримання ціни автомобіля
+     * @see Car#getMaxSpeed() Метод отримання максимальної швидкості
+     * @see Car#getFuelConsumption() Метод отримання витрати пального
+     */
     private List<Car> sortCars(List<Car> cars) {
         List<Car> sortedCars = new ArrayList<>(cars);
 
@@ -607,6 +767,24 @@ public class CarListPanel extends JPanel {
         return sortedCars;
     }
 
+    /**
+     * Оновлює таблицю відображення автомобілів відповідно до поточного списку.
+     *
+     * Метод очищає таблицю та заповнює її даними з переданого списку автомобілів.
+     * Для числових показників витрати пального використовується форматування
+     * з урахуванням типу пального (л/100км для звичайних автомобілів або кВт·год для
+     * електромобілів). Після оновлення таблиці відображається статус про кількість
+     * показаних автомобілів у порівнянні з загальною кількістю у таксопарку.
+     *
+     * @param cars Список автомобілів для відображення в таблиці
+     *
+     * @see Car#getMake() Метод отримання виробника автомобіля
+     * @see Car#getModel() Метод отримання моделі автомобіля
+     * @see Car#getFuelType() Метод отримання типу пального
+     * @see Car#getPrice() Метод отримання ціни автомобіля
+     * @see Car#getMaxSpeed() Метод отримання максимальної швидкості
+     * @see Car#getFuelConsumption() Метод отримання витрати пального
+     */
     private void updateTable(List<Car> cars) {
         model.setRowCount(0);
 
@@ -634,6 +812,9 @@ public class CarListPanel extends JPanel {
         });
     }
 
+    /**
+     * Завантаження та сортування автомобілів
+     */
     public void loadAndSortCars() {
         try {
             logger.info("Loading and sorting cars");

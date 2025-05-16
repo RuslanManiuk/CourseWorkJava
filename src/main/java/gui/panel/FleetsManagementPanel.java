@@ -14,7 +14,10 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 
 public class FleetsManagementPanel extends JPanel {
+    // Logger
     private static final Logger logger = LogManager.getLogger(FleetsManagementPanel.class);
+
+    // Основні компоненти
     private TaxiFleetManager fleetManager;
     private JTabbedPane mainTabbedPane;
     private JList<TaxiFleet> fleetsList;
@@ -33,6 +36,9 @@ public class FleetsManagementPanel extends JPanel {
     private static final Font BUTTON_FONT = new Font("Arial", Font.BOLD, 12);
     private static final Font LIST_FONT = new Font("Arial", Font.PLAIN, 14);
 
+    /**
+     * Конструктор панелі управління таксопарками
+     */
     public FleetsManagementPanel(TaxiFleetManager fleetManager, JTabbedPane mainTabbedPane) {
         logger.info("Initializing FleetsManagementPanel");
         this.fleetManager = fleetManager;
@@ -40,7 +46,9 @@ public class FleetsManagementPanel extends JPanel {
         initUI();
     }
 
-
+    /**
+     * Ініціалізація користувацького інтерфейсу
+     */
     private void initUI() {
         setLayout(new BorderLayout(15, 15));
         setBackground(BACKGROUND_COLOR);
@@ -66,6 +74,9 @@ public class FleetsManagementPanel extends JPanel {
         add(contentPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Створення верхньої панелі з заголовком
+     */
     private JPanel createHeaderPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(PRIMARY_COLOR);
@@ -93,6 +104,9 @@ public class FleetsManagementPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Створення лівої панелі зі списком таксопарків
+     */
     private JPanel createLeftPanel() {
         JPanel panel = new JPanel(new BorderLayout(0, 15));
         panel.setBackground(BACKGROUND_COLOR);
@@ -135,6 +149,9 @@ public class FleetsManagementPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Створення правої інформаційної панелі
+     */
     private JPanel createRightPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(PANEL_COLOR);
@@ -148,7 +165,7 @@ public class FleetsManagementPanel extends JPanel {
         placeholderPanel.setLayout(new BoxLayout(placeholderPanel, BoxLayout.Y_AXIS));
         placeholderPanel.setBackground(PANEL_COLOR);
 
-        // Додаємо зображення-заглушку (можна замінити на реальне зображення)
+        // Додаємо зображення-заглушку
         JLabel imageLabel = new JLabel(createPlaceholderIcon(100, 100));
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -190,6 +207,9 @@ public class FleetsManagementPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Створення панелі з кнопками
+     */
     private JPanel createButtonsPanel() {
         JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
         panel.setBackground(BACKGROUND_COLOR);
@@ -209,6 +229,9 @@ public class FleetsManagementPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Створення стилізованої кнопки
+     */
     private JButton createStyledButton(String text, Color bgColor) {
         JButton button = new JButton(text);
         button.setFont(BUTTON_FONT);
@@ -234,6 +257,9 @@ public class FleetsManagementPanel extends JPanel {
         return button;
     }
 
+    /**
+     * Створення інформаційної панелі для вибраного таксопарку
+     */
     private JPanel createFleetInfoPanel(TaxiFleet fleet) {
         JPanel panel = new JPanel(new BorderLayout(0, 15));
         panel.setBackground(PANEL_COLOR);
@@ -278,6 +304,9 @@ public class FleetsManagementPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Оновлення списку таксопарків
+     */
     private void updateFleetsList() {
         fleetsListModel.clear();
         for (TaxiFleet fleet : fleetManager.getFleets()) {
@@ -285,6 +314,9 @@ public class FleetsManagementPanel extends JPanel {
         }
     }
 
+    /**
+     * Додавання нового таксопарку
+     */
     private void addNewFleet() {
         String fleetName = JOptionPane.showInputDialog(this,
                 "Введіть назву нового таксопарку:",
@@ -316,6 +348,9 @@ public class FleetsManagementPanel extends JPanel {
         }
     }
 
+    /**
+     * Видалення вибраного таксопарку
+     */
     private void removeSelectedFleet() {
         TaxiFleet selectedFleet = fleetsList.getSelectedValue();
         if (selectedFleet != null) {
@@ -339,6 +374,9 @@ public class FleetsManagementPanel extends JPanel {
         }
     }
 
+    /**
+     * Редагування таксопарку
+     */
     private void editFleet(TaxiFleet fleet) {
         String newName = JOptionPane.showInputDialog(this,
                 "Введіть нову назву для таксопарку:",
@@ -371,6 +409,9 @@ public class FleetsManagementPanel extends JPanel {
         }
     }
 
+    /**
+     * Перегляд автомобілів таксопарку
+     */
     private void viewCars(TaxiFleet fleet) {
         logger.info("Opening car management for fleet: {}", fleet.getName());
         FleetManagementPanel fleetManagementPanel = new FleetManagementPanel(fleet);
@@ -379,8 +420,9 @@ public class FleetsManagementPanel extends JPanel {
         mainTabbedPane.setSelectedComponent(fleetManagementPanel);
     }
 
-    // Допоміжні методи
-
+    /**
+     * Затемнення кольору для ефектів UI
+     */
     private Color darkenColor(Color color, float fraction) {
         int red = Math.max(0, Math.round(color.getRed() * (1 - fraction)));
         int green = Math.max(0, Math.round(color.getGreen() * (1 - fraction)));
@@ -388,6 +430,9 @@ public class FleetsManagementPanel extends JPanel {
         return new Color(red, green, blue);
     }
 
+    /**
+     * Створення заглушки-іконки
+     */
     private ImageIcon createPlaceholderIcon(int width, int height) {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = image.createGraphics();
@@ -405,7 +450,9 @@ public class FleetsManagementPanel extends JPanel {
         return new ImageIcon(image);
     }
 
-    // Кастомний рендерер для списку таксопарків
+    /**
+     * Кастомний рендерер для списку таксопарків
+     */
     private class FleetListCellRenderer extends DefaultListCellRenderer {
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value,

@@ -13,10 +13,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class CarFormDialog extends JDialog {
+    // Logger для класу
     private static final Logger logger = LogManager.getLogger(CarFormDialog.class);
+
+    // Основні поля класу
     private TaxiFleet taxiFleet;
     private CarListPanel carListPanel;
 
+    // Компоненти форми
     private JTextField makeField, modelField, priceField, speedField, consumptionField;
     private JComboBox<String> typeComboBox;
     private JComboBox<String> fuelTypeComboBox;
@@ -32,9 +36,17 @@ public class CarFormDialog extends JDialog {
     private final Font LABEL_FONT = new Font("Arial", Font.PLAIN, 13);
     private final Font FIELD_FONT = new Font("Arial", Font.PLAIN, 13);
 
+    /**
+     * Конструктор для діалогу додавання нового автомобіля
+     *
+     * @param parent батьківський фрейм
+     * @param taxiFleet об'єкт автопарку
+     * @param carListPanel панель списку автомобілів для оновлення
+     */
     public CarFormDialog(JFrame parent, TaxiFleet taxiFleet, CarListPanel carListPanel) {
         super(parent, "Додати новий автомобіль", true);
         logger.info("Creating CarFormDialog for fleet: {}", taxiFleet.getName());
+
         this.taxiFleet = taxiFleet;
         this.carListPanel = carListPanel;
 
@@ -46,6 +58,9 @@ public class CarFormDialog extends JDialog {
         setResizable(false);
     }
 
+    /**
+     * Ініціалізація всіх компонентів діалогу
+     */
     private void initComponents() {
         // Встановлення загальних властивостей панелі
         JPanel mainPanel = new JPanel();
@@ -68,6 +83,11 @@ public class CarFormDialog extends JDialog {
         setContentPane(mainPanel);
     }
 
+    /**
+     * Створює панель заголовка
+     *
+     * @return панель заголовка
+     */
     private JPanel createHeaderPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -82,6 +102,11 @@ public class CarFormDialog extends JDialog {
         return panel;
     }
 
+    /**
+     * Створює панель з полями форми
+     *
+     * @return панель форми
+     */
     private JPanel createFormPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
@@ -94,11 +119,13 @@ public class CarFormDialog extends JDialog {
                 )
         ));
 
+        // Налаштування для міток
         GridBagConstraints labelConstraints = new GridBagConstraints();
         labelConstraints.gridx = 0;
         labelConstraints.anchor = GridBagConstraints.WEST;
         labelConstraints.insets = new Insets(8, 5, 8, 15);
 
+        // Налаштування для полів
         GridBagConstraints fieldConstraints = new GridBagConstraints();
         fieldConstraints.gridx = 1;
         fieldConstraints.fill = GridBagConstraints.HORIZONTAL;
@@ -175,6 +202,12 @@ public class CarFormDialog extends JDialog {
         return panel;
     }
 
+    /**
+     * Створює стандартну мітку форми
+     *
+     * @param text текст мітки
+     * @return налаштована мітка
+     */
     private JLabel createFormLabel(String text) {
         JLabel label = new JLabel(text);
         label.setFont(LABEL_FONT);
@@ -182,6 +215,11 @@ public class CarFormDialog extends JDialog {
         return label;
     }
 
+    /**
+     * Створює стандартне текстове поле
+     *
+     * @return налаштоване текстове поле
+     */
     private JTextField createFormTextField() {
         JTextField field = new JTextField();
         field.setFont(FIELD_FONT);
@@ -189,20 +227,28 @@ public class CarFormDialog extends JDialog {
         return field;
     }
 
+    /**
+     * Створює панель з кнопками
+     *
+     * @return панель кнопок
+     */
     private JPanel createButtonPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         panel.setBackground(BACKGROUND_COLOR);
         panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
 
+        // Кнопка очищення
         JButton clearButton = new JButton("Очистити");
         clearButton.setFont(LABEL_FONT);
         clearButton.addActionListener(e -> clearForm());
 
+        // Кнопка скасування
         JButton cancelButton = new JButton("Скасувати");
         cancelButton.setFont(LABEL_FONT);
         cancelButton.addActionListener(e -> dispose());
 
+        // Кнопка додавання
         JButton addButton = new JButton("Додати авто");
         addButton.setFont(LABEL_FONT);
         addButton.setBackground(BUTTON_COLOR);
@@ -216,6 +262,11 @@ public class CarFormDialog extends JDialog {
         return panel;
     }
 
+    /**
+     * Оновлює видимість поля вибору типу палива в залежності від типу автомобіля
+     *
+     * @param e подія дії (може бути null)
+     */
     private void updateFuelTypeVisibility(ActionEvent e) {
         if (typeComboBox == null || fuelTypeComboBox == null) return;
 
@@ -231,6 +282,12 @@ public class CarFormDialog extends JDialog {
         }
     }
 
+    /**
+     * Рекурсивно оновлює текст мітки споживання в залежності від типу автомобіля
+     *
+     * @param panel панель для пошуку
+     * @param isElectric чи є автомобіль електричним
+     */
     private void updateConsumptionLabel(JPanel panel, boolean isElectric) {
         Component[] components = panel.getComponents();
         for (Component component : components) {
@@ -245,6 +302,11 @@ public class CarFormDialog extends JDialog {
         }
     }
 
+    /**
+     * Додає новий автомобіль до автопарку на основі введених даних
+     *
+     * @param e подія дії
+     */
     private void addCar(ActionEvent e) {
         try {
             String make = makeField.getText();
@@ -293,6 +355,9 @@ public class CarFormDialog extends JDialog {
         }
     }
 
+    /**
+     * Очищає всі поля форми
+     */
     private void clearForm() {
         logger.debug("Clearing car form");
         makeField.setText("");

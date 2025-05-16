@@ -12,18 +12,34 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Панель для відображення статистики таксопарку у вигляді графіків та текстової інформації.
+ * Відображає розподіл автомобілів, загальну статистику та дані про витрати палива.
+ */
 public class StatsPanel extends JPanel {
+    /** Логер для реєстрації подій */
     private static final Logger logger = LogManager.getLogger(StatsPanel.class);
+
+    /** Посилання на об'єкт таксопарку */
     private TaxiFleet taxiFleet;
+
+    /** Константи кольорів для UI елементів */
     private static final Color HEADER_COLOR = new Color(52, 73, 94);
     private static final Color ELECTRIC_COLOR = new Color(46, 204, 113);
     private static final Color GAS_COLOR = new Color(231, 76, 60);
     private static final Color BACKGROUND_COLOR = new Color(245, 245, 245);
     private static final Color TEXT_COLOR = new Color(44, 62, 80);
+
+    /** Константи шрифтів для різних елементів UI */
     private static final Font TITLE_FONT = new Font("Arial", Font.BOLD, 16);
     private static final Font HEADER_FONT = new Font("Arial", Font.BOLD, 14);
     private static final Font REGULAR_FONT = new Font("Arial", Font.PLAIN, 12);
 
+    /**
+     * Конструктор, створює панель статистики для вказаного таксопарку.
+     *
+     * @param taxiFleet Об'єкт таксопарку, для якого відображається статистика
+     */
     public StatsPanel(TaxiFleet taxiFleet) {
         logger.info("Creating StatsPanel for fleet: {}", taxiFleet.getName());
         this.taxiFleet = taxiFleet;
@@ -51,6 +67,11 @@ public class StatsPanel extends JPanel {
         add(mainPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Створює панель заголовка з назвою таксопарку.
+     *
+     * @return JPanel з заголовком
+     */
     private JPanel createHeaderPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         panel.setBackground(HEADER_COLOR);
@@ -65,6 +86,11 @@ public class StatsPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Створює текстову інформаційну панель з даними про парк.
+     *
+     * @return JPanel з текстовою інформацією
+     */
     private JPanel createTextInfoPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -115,6 +141,11 @@ public class StatsPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Створює панель з діаграмами для візуального відображення статистики.
+     *
+     * @return JPanel з діаграмами
+     */
     private JPanel createChartsPanel() {
         JPanel panel = new JPanel(new GridLayout(2, 1, 0, 15));
         panel.setBackground(BACKGROUND_COLOR);
@@ -183,6 +214,12 @@ public class StatsPanel extends JPanel {
         return panel;
     }
 
+    /**
+     * Додає заголовок секції до панелі.
+     *
+     * @param panel Панель, до якої додається заголовок
+     * @param text Текст заголовка
+     */
     private void addSectionHeader(JPanel panel, String text) {
         JLabel header = new JLabel(text);
         header.setFont(HEADER_FONT);
@@ -192,6 +229,13 @@ public class StatsPanel extends JPanel {
         panel.add(Box.createVerticalStrut(5));
     }
 
+    /**
+     * Додає рядок з парою ключ-значення до панелі.
+     *
+     * @param panel Панель, до якої додається рядок
+     * @param key Ключ (назва параметра)
+     * @param value Значення параметра
+     */
     private void addKeyValueRow(JPanel panel, String key, String value) {
         JPanel rowPanel = new JPanel();
         rowPanel.setLayout(new BoxLayout(rowPanel, BoxLayout.X_AXIS));
@@ -214,6 +258,11 @@ public class StatsPanel extends JPanel {
         panel.add(Box.createVerticalStrut(3));
     }
 
+    /**
+     * Додає горизонтальний розділювач до панелі.
+     *
+     * @param panel Панель, до якої додається розділювач
+     */
     private void addSeparator(JPanel panel) {
         panel.add(Box.createVerticalStrut(5));
         JSeparator separator = new JSeparator();
@@ -222,8 +271,13 @@ public class StatsPanel extends JPanel {
         panel.add(Box.createVerticalStrut(10));
     }
 
-    // Внутрішній клас для кругової діаграми
+    /**
+     * Внутрішній клас для кругової діаграми, яка показує розподіл типів автомобілів.
+     */
     private class PieChartPanel extends JPanel {
+        /**
+         * Конструктор панелі кругової діаграми.
+         */
         public PieChartPanel() {
             setBackground(Color.WHITE);
         }
@@ -282,10 +336,18 @@ public class StatsPanel extends JPanel {
         }
     }
 
-    // Внутрішній клас для стовпчикової діаграми витрат палива
+    /**
+     * Внутрішній клас для стовпчикової діаграми витрат палива.
+     */
     private class FuelConsumptionBarChart extends JPanel {
-        private boolean isElectric; // true - для електромобілів, false - для паливних авто
+        /** Прапорець, що вказує тип діаграми: true - електромобілі, false - паливні авто */
+        private boolean isElectric;
 
+        /**
+         * Конструктор діаграми витрат палива.
+         *
+         * @param isElectric true - для електромобілів, false - для паливних авто
+         */
         public FuelConsumptionBarChart(boolean isElectric) {
             setBackground(Color.WHITE);
             this.isElectric = isElectric;
@@ -389,7 +451,11 @@ public class StatsPanel extends JPanel {
         }
     }
 
-    // Розрахунок середньої витрати електроенергії для електромобілів
+    /**
+     * Розраховує середню витрату електроенергії для електромобілів.
+     *
+     * @return Середня витрата електроенергії в кВт·год/100км
+     */
     private double calculateAverageElectricConsumption() {
         logger.debug("Calculating average electric consumption for fleet: {}", taxiFleet.getName());
         List<Car> electricCars = taxiFleet.getCars().stream()
@@ -404,7 +470,11 @@ public class StatsPanel extends JPanel {
                 .orElse(0);
     }
 
-    // Розрахунок середньої витрати палива для бензинових/дизельних авто
+    /**
+     * Розраховує середню витрату палива для бензинових/дизельних авто.
+     *
+     * @return Середня витрата палива в л/100км
+     */
     private double calculateAverageGasConsumption() {
         logger.debug("Calculating average gas consumption for fleet: {}", taxiFleet.getName());
         List<Car> gasCars = taxiFleet.getCars().stream()
