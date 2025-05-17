@@ -1,3 +1,4 @@
+import Interface.EmailService;
 import gui.MainFrame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,8 +23,11 @@ public class TaxiFleetApp {
      * @param args аргументи командного рядка (не використовуються)
      */
     public static void main(String[] args) {
+        // Створюємо інстанс email-сервісу
+        EmailService emailService = new EmailSender();
+
         // Встановлення глобального обробника некоректно оброблених винятків
-        Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler());
+        Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler(emailService));
         logger.info("Starting Taxi Fleet Application");
 
         // Запуск графічного інтерфейсу в окремому потоці обробки подій Swing
@@ -42,7 +46,7 @@ public class TaxiFleetApp {
                 logger.error("Failed to start application", e);
 
                 // Відправлення сповіщення про помилку електронною поштою
-                boolean sent = EmailSender.sendErrorEmail(
+                boolean sent = emailService.sendErrorEmail(
                         "Critical Error in TaxiFleetApp",
                         "An unexpected error occurred:\n" + e.toString()
                 );

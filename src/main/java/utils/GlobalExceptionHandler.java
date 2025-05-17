@@ -1,5 +1,6 @@
 package utils;
 
+import Interface.EmailService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +16,11 @@ public class GlobalExceptionHandler implements UncaughtExceptionHandler {
     // Logger для запису помилок
     private static final Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
 
+    private final EmailService emailService;
+
+    public GlobalExceptionHandler(EmailService emailService) {
+        this.emailService = emailService;
+    }
     /**
      * Обробляє некоректно оброблені винятки в потоках.
      * Записує інформацію про виняток у лог, відправляє сповіщення електронною поштою
@@ -25,16 +31,23 @@ public class GlobalExceptionHandler implements UncaughtExceptionHandler {
      */
     @Override
     public void uncaughtException(Thread t, Throwable e) {
-        logger.fatal("Unhandled exception in thread: " + t.getName(), e);
+        try {
+            logger.fatal("Unhandled exception in thread: " + t.getName(), e);
 
-        EmailSender.sendErrorEmail(
-                "Taxi Fleet Critical Error",
-                "Unhandled exception in thread: " + t.getName() + "\n" +
-                        "Error: " + e.getMessage() + "\n" +
-                        "Stack trace: " + getStackTraceAsString(e)
-        );
+            try {
+                emailService.sendErrorEmail(
+                        "Taxi Fleet Critical Error",
+                        "Unhandled exception in thread: " + t.getName() + "\n" +
+                                "Error: " + e.toString() + "\n" +
+                                "Stack trace: " + getStackTraceAsString(e)
+                );
+            } catch (Exception emailEx) {
+                logger.error("Failed to send error email", emailEx); // Цей рядок має викликатися
+            }
+        } catch (Exception loggingEx) {
+            System.err.println("Critical logging failure: " + loggingEx.getMessage());
+        }
 
-        // Показати повідомлення користувачу
         SwingUtilities.invokeLater(() -> {
             JOptionPane.showMessageDialog(
                     null,
@@ -51,11 +64,25 @@ public class GlobalExceptionHandler implements UncaughtExceptionHandler {
      * @param e виняток, стек виклику якого потрібно отримати
      * @return рядок, що містить інформацію про стек виклику
      */
-    private String getStackTraceAsString(Throwable e) {
+    String getStackTraceAsString(Throwable e) {
         StringBuilder sb = new StringBuilder();
-        for (StackTraceElement element : e.getStackTrace()) {
-            sb.append(element.toString()).append("\n");
+        // Додаємо інформацію про основний виняток
+        appendExceptionInfo(sb, e);
+
+        // Додаємо причину винятку (cause), якщо вона є
+        Throwable cause = e.getCause();
+        if (cause != null) {
+            sb.append("\nCaused by: ");
+            appendExceptionInfo(sb, cause);
         }
+
         return sb.toString();
+    }
+
+    private void appendExceptionInfo(StringBuilder sb, Throwable e) {
+        sb.append(e.getClass().getName()).append(": ").append(e.getMessage()).append("\n");
+        for (StackTraceElement element : e.getStackTrace()) {
+            sb.append("\tat ").append(element.toString()).append("\n");
+        }
     }
 }

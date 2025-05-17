@@ -1,5 +1,6 @@
 package utils;
 
+import Interface.EmailService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +13,7 @@ import java.util.Properties;
  * Утиліта для відправки повідомлень електронної пошти.
  * Використовується для сповіщення про критичні помилки в системі.
  */
-public class EmailSender {
+public class EmailSender implements EmailService {
 
     // Константи для логгера та налаштувань SMTP
     private static final Logger logger = LogManager.getLogger(EmailSender.class);
@@ -35,7 +36,8 @@ public class EmailSender {
      * @param subject заголовок листа
      * @param message текст повідомлення з описом помилки
      */
-    public static boolean sendErrorEmail(String subject, String message) {
+
+    public boolean sendErrorEmail(String subject, String message) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
