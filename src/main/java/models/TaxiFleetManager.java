@@ -40,19 +40,19 @@ public class TaxiFleetManager {
         return fleets;
     }
 
-    /**
-     * Отримує таксопарк за індексом у списку.
-     *
-     * @param index індекс таксопарку
-     * @return об'єкт TaxiFleet
-     * @throws IndexOutOfBoundsException якщо індекс недійсний
-     */
-    public TaxiFleet getFleet(int index) {
-        if (index >= 0 && index < fleets.size()) {
-            return fleets.get(index);
-        }
-        throw new IndexOutOfBoundsException("Invalid fleet index: " + index);
-    }
+//    /**
+//     * Отримує таксопарк за індексом у списку.
+//     *
+//     * @param index індекс таксопарку
+//     * @return об'єкт TaxiFleet
+//     * @throws IndexOutOfBoundsException якщо індекс недійсний
+//     */
+//    public TaxiFleet getFleet(int index) {
+//        if (index >= 0 && index < fleets.size()) {
+//            return fleets.get(index);
+//        }
+//        throw new IndexOutOfBoundsException("Invalid fleet index: " + index);
+//    }
 
     // ------------------ Управління таксопарками ------------------
 
@@ -67,17 +67,17 @@ public class TaxiFleetManager {
         saveFleetToDatabase(fleet);
     }
 
-    /**
-     * Створює новий таксопарк з вказаною назвою, додає його до менеджера
-     * та зберігає в базі даних.
-     *
-     * @param name назва нового таксопарку
-     */
-    public void createFleet(String name) {
-        TaxiFleet fleet = new TaxiFleet(name);
-        fleets.add(fleet);
-        saveFleetToDatabase(fleet);
-    }
+//    /**
+//     * Створює новий таксопарк з вказаною назвою, додає його до менеджера
+//     * та зберігає в базі даних.
+//     *
+//     * @param name назва нового таксопарку
+//     */
+//    public void createFleet(String name) {
+//        TaxiFleet fleet = new TaxiFleet(name);
+//        fleets.add(fleet);
+//        saveFleetToDatabase(fleet);
+//    }
 
     /**
      * Видаляє таксопарк з менеджера та з бази даних.

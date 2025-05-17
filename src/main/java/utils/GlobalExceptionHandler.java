@@ -7,29 +7,26 @@ import javax.swing.*;
 import java.lang.Thread.UncaughtExceptionHandler;
 
 /**
- * Глобальний обробник необроблених винятків у програмі.
- * Відповідає за логування винятків, відправку сповіщень електронною поштою
- * та відображення повідомлення користувачу.
+ * Глобальний обробник некоректно оброблених винятків в додатку.
+ * Відповідає за логування, відправлення повідомлень про помилки та
+ * відображення інформації користувачу при виникненні некоректно оброблених помилок.
  */
 public class GlobalExceptionHandler implements UncaughtExceptionHandler {
-
-    // Логгер для запису інформації про виняткові ситуації
+    // Logger для запису помилок
     private static final Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
 
     /**
-     * Обробляє необроблені виключення, що виникають у будь-якому потоці програми.
-     * Записує інформацію про виняток у лог, надсилає сповіщення електронною поштою
-     * та показує діалогове вікно користувачу.
+     * Обробляє некоректно оброблені винятки в потоках.
+     * Записує інформацію про виняток у лог, відправляє сповіщення електронною поштою
+     * та відображає повідомлення користувачу.
      *
-     * @param t потік, у якому виникло виключення
-     * @param e виняток, який виник
+     * @param t потік, в якому виник виняток
+     * @param e виняток, що виник
      */
     @Override
     public void uncaughtException(Thread t, Throwable e) {
-        // Записуємо критичну помилку в лог
         logger.fatal("Unhandled exception in thread: " + t.getName(), e);
 
-        // Надсилаємо сповіщення про помилку електронною поштою
         EmailSender.sendErrorEmail(
                 "Taxi Fleet Critical Error",
                 "Unhandled exception in thread: " + t.getName() + "\n" +
@@ -37,7 +34,7 @@ public class GlobalExceptionHandler implements UncaughtExceptionHandler {
                         "Stack trace: " + getStackTraceAsString(e)
         );
 
-        // Показуємо повідомлення користувачу в UI потоці
+        // Показати повідомлення користувачу
         SwingUtilities.invokeLater(() -> {
             JOptionPane.showMessageDialog(
                     null,
@@ -49,18 +46,16 @@ public class GlobalExceptionHandler implements UncaughtExceptionHandler {
     }
 
     /**
-     * Перетворює стек-трейс виключення у рядок.
+     * Перетворює стек виклику винятку в рядок для зручного відображення.
      *
-     * @param e виняток, стек-трейс якого потрібно отримати
-     * @return рядок, що містить форматований стек-трейс
+     * @param e виняток, стек виклику якого потрібно отримати
+     * @return рядок, що містить інформацію про стек виклику
      */
     private String getStackTraceAsString(Throwable e) {
         StringBuilder sb = new StringBuilder();
-
         for (StackTraceElement element : e.getStackTrace()) {
             sb.append(element.toString()).append("\n");
         }
-
         return sb.toString();
     }
 }

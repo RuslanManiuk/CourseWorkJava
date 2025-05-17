@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="додано документації">
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="документації додані до всіх файлів">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/taxi_fleet.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/taxi_fleet.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TaxiFleetApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TaxiFleetApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/cars/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cars/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/cars/ElectricCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cars/ElectricCar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/cars/GasCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cars/GasCar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/EmailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +106,7 @@
       <workItem from="1747143280870" duration="19301000" />
       <workItem from="1747206829235" duration="9455000" />
       <workItem from="1747415069509" duration="7270000" />
-      <workItem from="1747479417321" duration="1790000" />
+      <workItem from="1747479417321" duration="18165000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -157,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747430439799</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="документації додані до всіх файлів">
+      <option name="closed" value="true" />
+      <created>1747481589527</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747481589528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +208,7 @@
     <MESSAGE value="last minimum version" />
     <MESSAGE value="add log" />
     <MESSAGE value="додано документації" />
-    <option name="LAST_COMMIT_MESSAGE" value="додано документації" />
+    <MESSAGE value="документації додані до всіх файлів" />
+    <option name="LAST_COMMIT_MESSAGE" value="документації додані до всіх файлів" />
   </component>
 </project>

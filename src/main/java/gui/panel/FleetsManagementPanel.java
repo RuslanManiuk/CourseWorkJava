@@ -453,7 +453,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Кастомний рендерер для списку таксопарків
      */
-    private class FleetListCellRenderer extends DefaultListCellRenderer {
+    private static class FleetListCellRenderer extends DefaultListCellRenderer {
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value,
                                                       int index, boolean isSelected, boolean cellHasFocus) {

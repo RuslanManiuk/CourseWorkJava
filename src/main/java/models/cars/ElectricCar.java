@@ -9,10 +9,10 @@ import org.apache.logging.log4j.Logger;
  * електричними транспортними засобами.
  */
 public class ElectricCar extends Car {
-    /** Логер для класу ElectricCar */
+    // Логер для класу ElectricCar
     private static final Logger logger = LogManager.getLogger(ElectricCar.class);
 
-    /** Споживання енергії в кВт·год/100км */
+    // Споживання енергії в кВт·год/100км
     private double energyConsumption;
 
     /**

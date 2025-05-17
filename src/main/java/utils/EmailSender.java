@@ -22,11 +22,11 @@ public class EmailSender {
     private static final int SMTP_PORT = 587;
 
     // Облікові дані для автентифікації
-    private static final String USERNAME = "o.1234567890.n.1234567890.e.1234567890@gmail.com";
-    private static final String PASSWORD = "one1one1";
+    private static final String USERNAME = "o.123456789.n.123456789.e.123456789@gmail.com";
+    private static final String PASSWORD = "mvixejyozarkrgdy";
 
     // Налаштування електронної пошти
-    private static final String FROM_EMAIL = "o.1234567890.n.1234567890.e.1234567890@gmail.com";
+    private static final String FROM_EMAIL = "o.123456789.n.123456789.e.123456789@gmail.com";
     private static final String TO_EMAIL = "ruslanmanjuk@gmail.com";
 
     /**
@@ -35,15 +35,17 @@ public class EmailSender {
      * @param subject заголовок листа
      * @param message текст повідомлення з описом помилки
      */
-    public static void sendErrorEmail(String subject, String message) {
-        // Налаштування властивостей підключення
+    public static boolean sendErrorEmail(String subject, String message) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", SMTP_HOST);
         props.put("mail.smtp.port", SMTP_PORT);
 
-        // Створення сесії з автентифікацією
+//        props.put("mail.smtp.socketFactory.port", String.valueOf(SMTP_PORT));
+//        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+//        props.put("mail.smtp.socketFactory.fallback", "false");
+
         Session session = Session.getInstance(props,
                 new Authenticator() {
                     @Override
@@ -53,18 +55,18 @@ public class EmailSender {
                 });
 
         try {
-            // Створення та налаштування повідомлення
             Message emailMessage = new MimeMessage(session);
             emailMessage.setFrom(new InternetAddress(FROM_EMAIL));
             emailMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(TO_EMAIL));
             emailMessage.setSubject(subject);
             emailMessage.setText(message);
 
-            // Відправка повідомлення
             Transport.send(emailMessage);
             logger.info("Critical error email sent successfully");
+            return true;
         } catch (MessagingException e) {
             logger.error("Failed to send error email", e);
+            return false;
         }
     }
 }

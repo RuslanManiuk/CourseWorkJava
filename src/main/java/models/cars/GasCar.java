@@ -9,13 +9,13 @@ import org.apache.logging.log4j.Logger;
  * автомобілями, що використовують рідке паливо.
  */
 public class GasCar extends Car {
-    /** Логер для класу GasCar */
+    // Логер для класу GasCar
     private static final Logger logger = LogManager.getLogger(GasCar.class);
 
-    /** Споживання палива в л/100км */
+    // Споживання палива в л/100км
     private double fuelConsumption;
 
-    /** Тип палива (бензин, дизель тощо) */
+    // Тип палива (бензин, дизель тощо)
     private String fuelType;
 
     /**

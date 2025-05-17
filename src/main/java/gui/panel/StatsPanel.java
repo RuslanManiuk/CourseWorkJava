@@ -4,6 +4,7 @@ import models.TaxiFleet;
 import models.cars.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import services.CarStatsService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,20 +18,22 @@ import java.util.stream.Collectors;
  * Відображає розподіл автомобілів, загальну статистику та дані про витрати палива.
  */
 public class StatsPanel extends JPanel {
-    /** Логер для реєстрації подій */
+    // Логер для реєстрації подій
     private static final Logger logger = LogManager.getLogger(StatsPanel.class);
 
-    /** Посилання на об'єкт таксопарку */
+    // Посилання на об'єкт таксопарку
     private TaxiFleet taxiFleet;
 
-    /** Константи кольорів для UI елементів */
+    private final CarStatsService carStatsService;
+
+    // Константи кольорів для UI елементів
     private static final Color HEADER_COLOR = new Color(52, 73, 94);
     private static final Color ELECTRIC_COLOR = new Color(46, 204, 113);
     private static final Color GAS_COLOR = new Color(231, 76, 60);
     private static final Color BACKGROUND_COLOR = new Color(245, 245, 245);
     private static final Color TEXT_COLOR = new Color(44, 62, 80);
 
-    /** Константи шрифтів для різних елементів UI */
+    // Константи шрифтів для різних елементів UI
     private static final Font TITLE_FONT = new Font("Arial", Font.BOLD, 16);
     private static final Font HEADER_FONT = new Font("Arial", Font.BOLD, 14);
     private static final Font REGULAR_FONT = new Font("Arial", Font.PLAIN, 12);
@@ -43,6 +46,7 @@ public class StatsPanel extends JPanel {
     public StatsPanel(TaxiFleet taxiFleet) {
         logger.info("Creating StatsPanel for fleet: {}", taxiFleet.getName());
         this.taxiFleet = taxiFleet;
+        this.carStatsService = new CarStatsService(taxiFleet);
         setLayout(new BorderLayout(10, 10));
         setBackground(BACKGROUND_COLOR);
         setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -107,8 +111,8 @@ public class StatsPanel extends JPanel {
         double totalCost = taxiFleet.calculateTotalCost();
 
         // Розрахунок середньої витрати окремо для електро та паливних авто
-        double avgElectricConsumption = calculateAverageElectricConsumption();
-        double avgGasConsumption = calculateAverageGasConsumption();
+        double avgElectricConsumption = carStatsService.calculateAverageElectricConsumption();
+        double avgGasConsumption = carStatsService.calculateAverageGasConsumption();
 
         // Додаємо інформацію про кількість авто
         addSectionHeader(panel, "Загальна інформація");
@@ -340,7 +344,7 @@ public class StatsPanel extends JPanel {
      * Внутрішній клас для стовпчикової діаграми витрат палива.
      */
     private class FuelConsumptionBarChart extends JPanel {
-        /** Прапорець, що вказує тип діаграми: true - електромобілі, false - паливні авто */
+        // Прапорець, що вказує тип діаграми: true - електромобілі, false - паливні авто
         private boolean isElectric;
 
         /**
@@ -451,41 +455,41 @@ public class StatsPanel extends JPanel {
         }
     }
 
-    /**
-     * Розраховує середню витрату електроенергії для електромобілів.
-     *
-     * @return Середня витрата електроенергії в кВт·год/100км
-     */
-    private double calculateAverageElectricConsumption() {
-        logger.debug("Calculating average electric consumption for fleet: {}", taxiFleet.getName());
-        List<Car> electricCars = taxiFleet.getCars().stream()
-                .filter(c -> "Електричний".equals(c.getFuelType()))
-                .collect(Collectors.toList());
-
-        if (electricCars.isEmpty()) return 0;
-
-        return electricCars.stream()
-                .mapToDouble(Car::getFuelConsumption)
-                .average()
-                .orElse(0);
-    }
-
-    /**
-     * Розраховує середню витрату палива для бензинових/дизельних авто.
-     *
-     * @return Середня витрата палива в л/100км
-     */
-    private double calculateAverageGasConsumption() {
-        logger.debug("Calculating average gas consumption for fleet: {}", taxiFleet.getName());
-        List<Car> gasCars = taxiFleet.getCars().stream()
-                .filter(c -> !"Електричний".equals(c.getFuelType()))
-                .collect(Collectors.toList());
-
-        if (gasCars.isEmpty()) return 0;
-
-        return gasCars.stream()
-                .mapToDouble(Car::getFuelConsumption)
-                .average()
-                .orElse(0);
-    }
+//    /**
+//     * Розраховує середню витрату електроенергії для електромобілів.
+//     *
+//     * @return Середня витрата електроенергії в кВт·год/100км
+//     */
+//    private double calculateAverageElectricConsumption() {
+//        logger.debug("Calculating average electric consumption for fleet: {}", taxiFleet.getName());
+//        List<Car> electricCars = taxiFleet.getCars().stream()
+//                .filter(c -> "Електричний".equals(c.getFuelType()))
+//                .collect(Collectors.toList());
+//
+//        if (electricCars.isEmpty()) return 0;
+//
+//        return electricCars.stream()
+//                .mapToDouble(Car::getFuelConsumption)
+//                .average()
+//                .orElse(0);
+//    }
+//
+//    /**
+//     * Розраховує середню витрату палива для бензинових/дизельних авто.
+//     *
+//     * @return Середня витрата палива в л/100км
+//     */
+//    private double calculateAverageGasConsumption() {
+//        logger.debug("Calculating average gas consumption for fleet: {}", taxiFleet.getName());
+//        List<Car> gasCars = taxiFleet.getCars().stream()
+//                .filter(c -> !"Електричний".equals(c.getFuelType()))
+//                .collect(Collectors.toList());
+//
+//        if (gasCars.isEmpty()) return 0;
+//
+//        return gasCars.stream()
+//                .mapToDouble(Car::getFuelConsumption)
+//                .average()
+//                .orElse(0);
+//    }
 }

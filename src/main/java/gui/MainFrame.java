@@ -12,13 +12,13 @@ import javax.swing.*;
  * Використовує систему вкладок для організації різних функціональних модулів.
  */
 public class MainFrame extends JFrame {
-    /** Логер для запису інформації про роботу класу */
+    // Логер для запису інформації про роботу класу
     private static final Logger logger = LogManager.getLogger(MainFrame.class);
 
-    /** Менеджер для управління таксопарками */
+    // Менеджер для управління таксопарками
     private TaxiFleetManager fleetManager;
 
-    /** Система вкладок для розміщення різних функціональних панелей */
+    // Система вкладок для розміщення різних функціональних панелей
     private JTabbedPane mainTabbedPane;
 
     /**

@@ -1,68 +1,1060 @@
-2025-05-14 21:28:20.614 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
-2025-05-14 21:28:20.806 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
-2025-05-14 21:28:20.886 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:21.681 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:21.751 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:21.789 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:21.796 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:21.831 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:21.841 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:21.842 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:21.872 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:21.878 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:21.879 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:21.927 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:21.931 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:21.932 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:21.968 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:21.972 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:21.973 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.001 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.005 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:22.006 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.034 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.040 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:22.040 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.067 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.071 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:22.071 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.102 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.105 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:22.106 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.138 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.142 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
-2025-05-14 21:28:22.142 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.166 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.168 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.200 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.203 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.228 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.230 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.265 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.269 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.299 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.302 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.329 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.330 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.359 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.361 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.388 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.390 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.418 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.419 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.439 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.442 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
-2025-05-14 21:28:22.465 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
-2025-05-14 21:28:22.636 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
-2025-05-14 21:28:22.781 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
-2025-05-14 21:28:39.827 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
-2025-05-14 21:28:51.310 [AWT-EventQueue-0] INFO  gui.panel.FleetManagementPanel - Creating FleetManagementPanel for fleet: Київський таксопарк
-2025-05-14 21:28:51.463 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
-2025-05-14 21:28:51.463 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loading cars for fleetId: 1
-2025-05-14 21:28:51.465 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loaded 9 cars for fleetId: 1
-2025-05-14 21:28:51.467 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully
-2025-05-14 21:28:51.467 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
-2025-05-14 21:29:26.950 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
-2025-05-14 21:29:26.952 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loading cars for fleetId: 1
-2025-05-14 21:29:26.956 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loaded 9 cars for fleetId: 1
-2025-05-14 21:29:26.957 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully
+2025-05-17 16:26:17.137 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 16:26:17.438 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 16:26:17.491 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.197 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.198 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 16:26:18.253 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.288 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.304 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.326 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.335 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.335 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.352 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.354 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.355 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.373 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.376 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.376 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.397 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.399 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.401 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.431 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.435 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.436 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.458 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.463 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.464 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.485 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.489 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.489 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.510 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.514 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.514 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.530 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.534 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 16:26:18.534 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.550 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.553 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.570 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.572 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.587 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.589 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.605 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.607 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.627 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.629 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.649 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.650 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.670 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.673 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.692 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.695 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.715 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.717 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.738 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.740 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 16:26:18.759 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 16:26:18.780 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 16:26:18.806 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 16:26:19.000 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 16:26:19.106 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 16:26:25.487 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
+2025-05-17 16:26:44.360 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Opening car management for fleet: Київський таксопарк
+2025-05-17 16:26:44.392 [AWT-EventQueue-0] INFO  gui.panel.FleetManagementPanel - Creating FleetManagementPanel for fleet: Київський таксопарк
+2025-05-17 16:26:44.559 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
+2025-05-17 16:26:44.560 [AWT-EventQueue-0] INFO  models.TaxiFleet - Loading cars for fleet Київський таксопарк from database
+2025-05-17 16:26:44.560 [AWT-EventQueue-0] INFO  database.DataBaseManager - Завантаження автомобілів для fleetId: 1
+2025-05-17 16:26:44.563 [AWT-EventQueue-0] INFO  database.DataBaseManager - Завантажено 9 автомобілів для fleetId: 1
+2025-05-17 16:26:44.565 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully
+2025-05-17 16:26:44.565 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
+2025-05-17 16:29:26.442 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Opening car management for fleet: Київський таксопарк
+2025-05-17 16:29:26.443 [AWT-EventQueue-0] INFO  gui.panel.FleetManagementPanel - Creating FleetManagementPanel for fleet: Київський таксопарк
+2025-05-17 16:29:26.454 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
+2025-05-17 16:29:26.454 [AWT-EventQueue-0] INFO  models.TaxiFleet - Loading cars for fleet Київський таксопарк from database
+2025-05-17 16:29:26.454 [AWT-EventQueue-0] INFO  database.DataBaseManager - Завантаження автомобілів для fleetId: 1
+2025-05-17 16:29:26.456 [AWT-EventQueue-0] INFO  database.DataBaseManager - Завантажено 9 автомобілів для fleetId: 1
+2025-05-17 16:29:26.457 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully
+2025-05-17 16:29:26.458 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
+2025-05-17 16:29:32.854 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
+2025-05-17 16:29:32.855 [AWT-EventQueue-0] INFO  models.TaxiFleet - Loading cars for fleet Київський таксопарк from database
+2025-05-17 16:29:32.855 [AWT-EventQueue-0] INFO  database.DataBaseManager - Завантаження автомобілів для fleetId: 1
+2025-05-17 16:29:32.859 [AWT-EventQueue-0] INFO  database.DataBaseManager - Завантажено 9 автомобілів для fleetId: 1
+2025-05-17 16:29:32.860 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully
+2025-05-17 16:31:33.798 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 16:31:33.888 [AWT-EventQueue-0] FATAL TaxiFleetApp - Failed to start application
+java.lang.ArithmeticException: / by zero
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:36) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-17 18:30:07.780 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 18:30:09.024 [main] ERROR utils.EmailSender - Failed to send error email
+javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ad52d490789sm311327866b.130 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at utils.EmailSender.sendErrorEmail(EmailSender.java:64) [classes/:?]
+	at TaxiFleetApp.main(TaxiFleetApp.java:33) [classes/:?]
+2025-05-17 18:30:09.548 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 18:30:09.553 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:09.999 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:09.999 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 18:30:10.032 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.060 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.067 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.090 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.098 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.098 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.125 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.129 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.131 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.158 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.161 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.163 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.189 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.193 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.194 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.222 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.225 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.226 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.249 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.252 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.252 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.272 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.274 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.274 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.294 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.298 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.298 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.318 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.321 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 18:30:10.322 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.343 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.346 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.365 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.368 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.394 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.398 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.422 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.424 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.445 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.448 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.475 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.477 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.503 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.505 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.532 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.534 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.559 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.561 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.584 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.586 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 18:30:10.608 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 18:30:10.613 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 18:30:10.655 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 18:30:10.786 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 18:30:10.868 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:06:42.605 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:06:43.570 [main] ERROR utils.EmailSender - Failed to send error email
+javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ad52d4c516dsm311956866b.154 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at utils.EmailSender.sendErrorEmail(EmailSender.java:64) [classes/:?]
+	at TaxiFleetApp.main(TaxiFleetApp.java:33) [classes/:?]
+2025-05-17 19:06:43.988 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 19:06:43.990 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.281 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.281 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 19:06:44.299 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.317 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.320 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.340 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.343 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.344 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.366 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.369 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.369 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.388 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.390 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.390 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.409 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.411 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.411 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.426 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.428 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.429 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.447 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.450 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.450 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.465 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.467 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.467 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.485 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.487 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.487 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.505 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.507 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:06:44.508 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.530 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.532 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.557 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.559 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.576 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.578 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.594 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.595 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.611 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.612 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.629 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.631 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.647 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.648 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.663 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.664 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.680 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.683 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.698 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.700 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:06:44.724 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:06:44.741 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 19:06:44.754 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 19:06:44.837 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 19:06:44.942 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:07:44.954 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:07:45.862 [main] ERROR utils.EmailSender - Failed to send error email
+javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 4fb4d7f45d1cf-6004d4f27a4sm2973112a12.3 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at utils.EmailSender.sendErrorEmail(EmailSender.java:64) [classes/:?]
+	at TaxiFleetApp.main(TaxiFleetApp.java:33) [classes/:?]
+2025-05-17 19:07:46.246 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 19:07:46.249 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.533 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.534 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 19:07:46.563 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.583 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.589 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.608 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.614 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.614 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.634 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.637 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.637 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.656 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.658 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.658 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.675 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.678 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.679 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.695 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.697 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.697 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.713 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.716 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.716 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.732 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.734 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.734 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.757 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.761 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.762 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.782 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.785 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:07:46.785 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.803 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.805 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.823 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.825 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.843 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.846 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.866 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.868 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.883 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.885 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.901 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.903 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.920 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.921 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.941 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.942 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.956 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.958 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.973 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:46.975 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:07:46.996 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:07:47.001 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 19:07:47.016 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 19:07:47.122 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 19:07:47.256 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:17:29.195 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:17:30.545 [main] ERROR utils.EmailSender - Failed to send error email
+javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ad52d4382d7sm312963266b.117 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at utils.EmailSender.sendErrorEmail(EmailSender.java:64) [classes/:?]
+	at TaxiFleetApp.main(TaxiFleetApp.java:33) [classes/:?]
+2025-05-17 19:17:31.054 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 19:17:31.068 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.400 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.400 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 19:17:31.433 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.459 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.465 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.489 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.497 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.497 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.522 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.526 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.527 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.552 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.555 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.556 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.582 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.584 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.585 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.607 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.611 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.611 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.639 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.644 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.644 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.667 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.671 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.671 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.699 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.702 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.703 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.725 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.728 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:17:31.728 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.746 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.748 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.767 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.768 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.786 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.789 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.810 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.812 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.829 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.831 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.849 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.851 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.876 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.877 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.903 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.905 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.926 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.928 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.947 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.949 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:17:31.968 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:17:31.973 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 19:17:32.015 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 19:17:32.127 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 19:17:32.217 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:30:34.702 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:30:35.722 [main] ERROR utils.EmailSender - Failed to send error email
+javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ad52d490910sm315534566b.135 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at utils.EmailSender.sendErrorEmail(EmailSender.java:64) [classes/:?]
+	at TaxiFleetApp.main(TaxiFleetApp.java:33) [classes/:?]
+2025-05-17 19:30:35.926 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 19:30:35.936 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.166 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.167 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 19:30:36.192 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.216 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.220 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.241 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.246 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.247 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.265 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.268 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.268 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.285 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.287 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.287 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.305 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.308 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.308 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.323 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.325 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.325 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.341 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.343 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.344 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.358 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.360 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.361 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.378 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.380 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.381 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.400 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.403 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:30:36.403 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.422 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.424 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.443 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.445 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.469 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.471 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.488 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.491 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.508 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.510 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.524 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.526 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.542 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.543 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.558 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.559 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.576 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.578 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.602 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.604 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:30:36.630 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:30:36.635 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 19:30:36.682 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 19:30:36.765 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 19:30:36.868 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:49:35.110 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:49:35.216 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 19:49:35.222 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.562 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.562 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 19:49:35.594 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.609 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.612 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.630 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.635 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.635 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.646 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.649 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.649 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.662 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.664 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.665 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.679 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.681 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.682 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.693 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.694 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.695 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.708 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.710 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.710 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.721 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.723 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.723 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.733 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.734 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.734 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.743 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.744 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:49:35.744 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.754 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.755 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.767 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.768 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.783 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.785 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.800 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.801 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.818 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.821 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.836 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.837 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.852 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.854 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.866 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.869 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.880 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.883 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.894 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.895 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:49:35.905 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:49:35.907 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 19:49:35.928 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 19:49:36.008 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 19:49:36.100 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:50:31.634 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:50:31.723 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-17 19:50:31.725 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.090 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.090 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loading fleets from database
+2025-05-17 19:50:32.123 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.144 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.149 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.170 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.175 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.175 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.187 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.189 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.190 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.204 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.205 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.205 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.220 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.221 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.222 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.234 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.236 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.236 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.249 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.252 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.252 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.265 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.267 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.267 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.279 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.282 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.282 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.294 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.297 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно закрито
+2025-05-17 19:50:32.297 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.307 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.308 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.320 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.321 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.332 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.334 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.345 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.346 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.357 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.358 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.369 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.370 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.381 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.382 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.393 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.395 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.407 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.408 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.418 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.419 [AWT-EventQueue-0] INFO  database.DataBaseManager - Ініціалізація підключення до бази даних
+2025-05-17 19:50:32.431 [AWT-EventQueue-0] INFO  database.DataBaseManager - Підключення до бази даних успішно встановлено
+2025-05-17 19:50:32.435 [AWT-EventQueue-0] INFO  models.TaxiFleetManager - Loaded 12 fleets from database
+2025-05-17 19:50:32.444 [AWT-EventQueue-0] INFO  gui.panel.FleetsManagementPanel - Initializing FleetsManagementPanel
+2025-05-17 19:50:32.502 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-17 19:50:32.578 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-17 19:50:32.578 [AWT-EventQueue-0] FATAL TaxiFleetApp - Failed to start application
+java.lang.ArithmeticException: / by zero
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:22) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-17 19:50:32.884 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:24) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+Caused by: com.sun.mail.smtp.SMTPSendFailedException: 530-5.7.0 Must issue a STARTTLS command first. For more information, go to
+530-5.7.0  https://support.google.com/a/answer/3221692 and review RFC 3207
+530 5.7.0 specifications. a640c23a62f3a-ad534ad59dasm286089266b.31 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2358) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1823) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1300) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:255) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+2025-05-17 19:50:33.121 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at utils.GlobalExceptionHandler.uncaughtException(GlobalExceptionHandler.java:30) ~[classes/:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:663) ~[?:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:658) ~[?:?]
+	at java.awt.EventDispatchThread.processException(EventDispatchThread.java:218) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+Caused by: com.sun.mail.smtp.SMTPSendFailedException: 530-5.7.0 Must issue a STARTTLS command first. For more information, go to
+530-5.7.0  https://support.google.com/a/answer/3221692 and review RFC 3207
+530 5.7.0 specifications. 4fb4d7f45d1cf-6005a6e6884sm3152792a12.46 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2358) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1823) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1300) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:255) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+2025-05-17 19:57:12.279 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:57:12.322 [AWT-EventQueue-0] FATAL TaxiFleetApp - Failed to start application
+java.lang.ArithmeticException: / by zero
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:18) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-17 19:57:12.808 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:25) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+Caused by: com.sun.mail.smtp.SMTPSendFailedException: 530-5.7.0 Must issue a STARTTLS command first. For more information, go to
+530-5.7.0  https://support.google.com/a/answer/3221692 and review RFC 3207
+530 5.7.0 specifications. 4fb4d7f45d1cf-6005ae3940fsm2980593a12.74 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2358) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1823) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1300) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:255) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+2025-05-17 19:57:13.220 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at utils.GlobalExceptionHandler.uncaughtException(GlobalExceptionHandler.java:30) ~[classes/:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:663) ~[?:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:658) ~[?:?]
+	at java.awt.EventDispatchThread.processException(EventDispatchThread.java:218) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+Caused by: com.sun.mail.smtp.SMTPSendFailedException: 530-5.7.0 Must issue a STARTTLS command first. For more information, go to
+530-5.7.0  https://support.google.com/a/answer/3221692 and review RFC 3207
+530 5.7.0 specifications. a640c23a62f3a-ad52d04b073sm316105866b.27 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2358) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1823) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1300) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:255) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+2025-05-17 19:58:47.769 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 19:58:47.810 [AWT-EventQueue-0] FATAL TaxiFleetApp - Failed to start application
+java.lang.ArithmeticException: / by zero
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:18) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-17 19:58:58.012 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:25) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+Caused by: javax.mail.MessagingException: Could not connect to SMTP host: smtp.gmail.com, port: 465, response: -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2197) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+2025-05-17 19:59:08.103 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at utils.GlobalExceptionHandler.uncaughtException(GlobalExceptionHandler.java:30) ~[classes/:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:663) ~[?:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:658) ~[?:?]
+	at java.awt.EventDispatchThread.processException(EventDispatchThread.java:218) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+Caused by: javax.mail.MessagingException: Could not connect to SMTP host: smtp.gmail.com, port: 465, response: -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2197) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+2025-05-17 20:02:31.330 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-17 20:02:31.379 [AWT-EventQueue-0] FATAL TaxiFleetApp - Failed to start application
+java.lang.ArithmeticException: / by zero
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:18) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-17 20:02:41.559 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at TaxiFleetApp.lambda$main$0(TaxiFleetApp.java:25) ~[classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+Caused by: javax.mail.MessagingException: Could not connect to SMTP host: smtp.gmail.com, port: 465, response: -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2197) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 29 more
+2025-05-17 20:02:51.687 [AWT-EventQueue-0] FATAL utils.GlobalExceptionHandler - Unhandled exception in thread: AWT-EventQueue-0
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:96) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:170) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:683) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:641) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:624) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:560) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:163) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2168) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2122) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2105) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1980) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1946) ~[log4j-api-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.spi.AbstractLogger.fatal(AbstractLogger.java:1021) ~[log4j-api-2.20.0.jar:2.20.0]
+	at utils.GlobalExceptionHandler.uncaughtException(GlobalExceptionHandler.java:30) ~[classes/:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:663) ~[?:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:658) ~[?:?]
+	at java.awt.EventDispatchThread.processException(EventDispatchThread.java:218) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:133) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more
+Caused by: javax.mail.MessagingException: Could not connect to SMTP host: smtp.gmail.com, port: 465, response: -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2197) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:232) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:130) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:369) ~[log4j-core-2.20.0.jar:2.20.0]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161) ~[log4j-core-2.20.0.jar:2.20.0]
+	... 25 more

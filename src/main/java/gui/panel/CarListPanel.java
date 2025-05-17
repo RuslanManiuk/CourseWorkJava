@@ -5,6 +5,7 @@ import models.TaxiFleet;
 import models.cars.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import services.CarFilterService;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -27,6 +28,7 @@ public class CarListPanel extends JPanel {
 
     // Поля даних
     private TaxiFleet taxiFleet;
+    private final CarFilterService carFilterService;
     private JTable carTable;
     private DefaultTableModel model;
     private TableRowSorter<DefaultTableModel> sorter;
@@ -61,6 +63,7 @@ public class CarListPanel extends JPanel {
      */
     public CarListPanel(TaxiFleet taxiFleet) {
         this.taxiFleet = taxiFleet;
+        this.carFilterService = new CarFilterService(taxiFleet);
         this.filteredCars = new ArrayList<>();
 
         setBackground(SECONDARY_COLOR);
@@ -661,110 +664,14 @@ public class CarListPanel extends JPanel {
      * Застосування фільтрів і сортування до списку автомобілів
      */
     private void applyFiltersAndSorting() {
-        List<Car> cars = new ArrayList<>(taxiFleet.getCars());
-
-        if (!searchQuery.isEmpty()) {
-            List<Car> filtered = new ArrayList<>();
-            for (Car car : cars) {
-                String make = car.getMake().toLowerCase();
-                String model = car.getModel().toLowerCase();
-
-                // Перевіряємо, чи починається марка або модель з пошукового запиту
-                // або чи є це окремим словом у марці чи моделі
-                if (make.startsWith(searchQuery) ||
-                        model.startsWith(searchQuery) ||
-                        make.contains(" " + searchQuery) ||
-                        model.contains(" " + searchQuery)) {
-                    filtered.add(car);
-                }
-            }
-            cars = filtered;
-        }
-
-        // Фільтрація за типом палива
-        if (!"Усі".equals(currentFuelFilter)) {
-            List<Car> filtered = new ArrayList<>();
-            for (Car car : cars) {
-                if (car.getFuelType().equals(currentFuelFilter)) {
-                    filtered.add(car);
-                }
-            }
-            cars = filtered;
-        }
-
-        // Фільтрація за швидкістю
-        if (minSpeedFilter != null) {
-            List<Car> filtered = new ArrayList<>();
-            for (Car car : cars) {
-                if (car.getMaxSpeed() >= minSpeedFilter) {
-                    filtered.add(car);
-                }
-            }
-            cars = filtered;
-        }
-
-        if (maxSpeedFilter != null) {
-            List<Car> filtered = new ArrayList<>();
-            for (Car car : cars) {
-                if (car.getMaxSpeed() <= maxSpeedFilter) {
-                    filtered.add(car);
-                }
-            }
-            cars = filtered;
-        }
-
-        // Сортування
-        cars = sortCars(cars);
-
-        // Зберігаємо відфільтрований список
-        this.filteredCars = cars;
-
-        // Оновлення таблиці
-        updateTable(cars);
-    }
-
-    /**
-     * Сортує список автомобілів за різними критеріями.
-     *
-     * Метод підтримує сортування списку автомобілів за ціною, максимальною швидкістю
-     * та витратою пального у порядку зростання або спадання. Критерій сортування
-     * визначається значенням поля {@code currentSort}.
-     *
-     * @param cars Список автомобілів, який потрібно відсортувати
-     * @return Новий відсортований список автомобілів, що не змінює оригінальний список
-     *
-     * @see Car#getPrice() Метод отримання ціни автомобіля
-     * @see Car#getMaxSpeed() Метод отримання максимальної швидкості
-     * @see Car#getFuelConsumption() Метод отримання витрати пального
-     */
-    private List<Car> sortCars(List<Car> cars) {
-        List<Car> sortedCars = new ArrayList<>(cars);
-
-        switch (currentSort) {
-            case "За ціною (зростання)":
-                sortedCars.sort(Comparator.comparingDouble(Car::getPrice));
-                break;
-            case "За ціною (спадання)":
-                sortedCars.sort((c1, c2) -> Double.compare(c2.getPrice(), c1.getPrice()));
-                break;
-            case "За швидкістю (зростання)":
-                sortedCars.sort(Comparator.comparingDouble(Car::getMaxSpeed));
-                break;
-            case "За швидкістю (спадання)":
-                sortedCars.sort((c1, c2) -> Double.compare(c2.getMaxSpeed(), c1.getMaxSpeed()));
-                break;
-            case "За витратою (зростання)":
-                sortedCars.sort(Comparator.comparingDouble(Car::getFuelConsumption));
-                break;
-            case "За витратою (спадання)":
-                sortedCars.sort((c1, c2) -> Double.compare(c2.getFuelConsumption(), c1.getFuelConsumption()));
-                break;
-            default:
-                // За замовчуванням не сортуємо
-                break;
-        }
-
-        return sortedCars;
+        filteredCars = carFilterService.applyFiltersAndSorting(
+                searchQuery,
+                currentFuelFilter,
+                minSpeedFilter,
+                maxSpeedFilter,
+                currentSort
+        );
+        updateTable(filteredCars);
     }
 
     /**
@@ -819,7 +726,7 @@ public class CarListPanel extends JPanel {
         try {
             logger.info("Loading and sorting cars");
             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            taxiFleet.loadCarsFromDatabase();
+            carFilterService.loadAndSortCars();
             applyFiltersAndSorting();
             logger.info("Cars loaded and sorted successfully");
         } catch (Exception e) {

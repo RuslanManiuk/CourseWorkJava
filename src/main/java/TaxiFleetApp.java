@@ -1,47 +1,57 @@
 import gui.MainFrame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utils.EmailSender;
 import utils.GlobalExceptionHandler;
 
 import javax.swing.*;
 
 /**
- * Головний клас програми Taxi Fleet.
- * Відповідає за ініціалізацію програми, налаштування логування та
- * обробки помилок, а також запуск головного вікна інтерфейсу.
+ * Головний клас додатку Taxi Fleet.
+ * Відповідає за запуск додатку, початкову ініціалізацію та обробку помилок.
  */
 public class TaxiFleetApp {
-
-    // Логгер для запису інформації про роботу програми
+    // Logger для запису подій додатку
     private static final Logger logger = LogManager.getLogger(TaxiFleetApp.class);
 
     /**
-     * Головний метод програми, точка входу.
-     * Налаштовує глобальний обробник винятків та запускає головне вікно програми.
+     * Головний метод програми.
+     * Встановлює глобальний обробник винятків, запускає головне вікно додатку
+     * та налаштовує основні компоненти.
      *
      * @param args аргументи командного рядка (не використовуються)
      */
     public static void main(String[] args) {
-        // Встановлюємо глобальний обробник винятків
+        // Встановлення глобального обробника некоректно оброблених винятків
         Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler());
-
-        // Записуємо в лог інформацію про запуск програми
         logger.info("Starting Taxi Fleet Application");
 
-        // Створюємо та відображаємо головне вікно в UI потоці
+        // Запуск графічного інтерфейсу в окремому потоці обробки подій Swing
         SwingUtilities.invokeLater(() -> {
             try {
-                // Ініціалізація та відображення головного вікна
+                // Тестова помилка для перевірки обробки винятків
+                // int test = 1 / 0;
+
+                // Створення та відображення головного вікна додатку
                 MainFrame mainFrame = new MainFrame();
                 mainFrame.setVisible(true);
-
-                // Записуємо в лог успішний запуск
                 logger.info("Application started successfully");
-            } catch (Exception e) {
-                // Обробляємо помилки ініціалізації
-                logger.fatal("Failed to start application", e);
 
-                // Показуємо користувачу повідомлення про помилку
+            } catch (Exception e) {
+                // Обробка помилок, які трапились під час запуску додатку
+                logger.error("Failed to start application", e);
+
+                // Відправлення сповіщення про помилку електронною поштою
+                boolean sent = EmailSender.sendErrorEmail(
+                        "Critical Error in TaxiFleetApp",
+                        "An unexpected error occurred:\n" + e.toString()
+                );
+
+                if (!sent) {
+                    logger.warn("Failed to notify admin via email");
+                }
+
+                // Відображення повідомлення про помилку користувачу
                 JOptionPane.showMessageDialog(
                         null,
                         "Помилка запуску програми: " + e.getMessage(),
@@ -49,7 +59,7 @@ public class TaxiFleetApp {
                         JOptionPane.ERROR_MESSAGE
                 );
 
-                // Завершуємо роботу програми з кодом помилки
+                // Завершення роботи додатку з кодом помилки
                 System.exit(1);
             }
         });
