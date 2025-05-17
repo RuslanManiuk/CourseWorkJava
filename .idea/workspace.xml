@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="add log">
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="додано документації">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/dialog/CarFormDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/dialog/CarFormDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/CarListPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetManagementPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/cars/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cars/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/cars/ElectricCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cars/ElectricCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/cars/GasCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cars/GasCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/EmailSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,8 @@
       <workItem from="1747061094554" duration="12719000" />
       <workItem from="1747143280870" duration="19301000" />
       <workItem from="1747206829235" duration="9455000" />
-      <workItem from="1747415069509" duration="6865000" />
+      <workItem from="1747415069509" duration="7270000" />
+      <workItem from="1747479417321" duration="1790000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -147,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747249031074</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="додано документації">
+      <option name="closed" value="true" />
+      <created>1747430439799</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747430439799</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +192,7 @@
     <MESSAGE value="готовий візуал і функціонал який підходить під мінімальні вимоги курсової" />
     <MESSAGE value="last minimum version" />
     <MESSAGE value="add log" />
-    <option name="LAST_COMMIT_MESSAGE" value="add log" />
+    <MESSAGE value="додано документації" />
+    <option name="LAST_COMMIT_MESSAGE" value="додано документації" />
   </component>
 </project>
