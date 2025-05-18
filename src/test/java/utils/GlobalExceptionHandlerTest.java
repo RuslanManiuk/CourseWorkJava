@@ -29,7 +29,6 @@ class GlobalExceptionHandlerTest {
         EmailService mockEmail = mock(EmailService.class);
         GlobalExceptionHandler handler = new GlobalExceptionHandler(mockEmail);
 
-        // Тест звичайного винятку
         Exception testEx = new RuntimeException("Test message");
         String result = handler.getStackTraceAsString(testEx);
         assertNotNull(result);
@@ -37,7 +36,6 @@ class GlobalExceptionHandlerTest {
         assertTrue(result.contains("Test message"));
         assertTrue(result.contains("\tat "));
 
-        // Тест винятку з причиною (cause)
         Exception cause = new IllegalArgumentException("Root cause");
         Exception nestedEx = new RuntimeException("Wrapper", cause);
         String nestedResult = handler.getStackTraceAsString(nestedEx);
@@ -73,10 +71,8 @@ class GlobalExceptionHandlerTest {
 
             handler.uncaughtException(testThread, testEx);
 
-            // Перевіряємо логування
             verify(mockLogger).fatal(eq("Unhandled exception in thread: TestThread"), eq(testEx));
 
-            // Перевіряємо email
             ArgumentCaptor<String> emailContentCaptor = ArgumentCaptor.forClass(String.class);
             verify(mockEmail).sendErrorEmail(
                     eq("Taxi Fleet Critical Error"),
@@ -89,7 +85,6 @@ class GlobalExceptionHandlerTest {
             assertTrue(emailContent.contains("Test exception"));
             assertTrue(emailContent.contains("Stack trace:"));
 
-            // Перевіряємо діалогове вікно
             mockedPane.verify(() ->
                     JOptionPane.showMessageDialog(
                             null,
@@ -103,25 +98,47 @@ class GlobalExceptionHandlerTest {
 
     @Test
     void testUncaughtException_EmailFailure() {
-        // Підготовка тестових даних
-        Thread testThread = new Thread();
-        RuntimeException testException = new RuntimeException("Test exception");
+        EmailService mockEmail = mock(EmailService.class);
+        Logger mockLogger = mock(Logger.class);
 
-        // Налаштування поведінки моків
-        doThrow(new RuntimeException("Email send failed"))
-                .when(emailService)
-                .sendErrorEmail(anyString(), String.valueOf(any(Throwable.class)));
+        try (MockedStatic<LogManager> mockedLogManager = mockStatic(LogManager.class)) {
+            mockedLogManager.when(() -> LogManager.getLogger(GlobalExceptionHandler.class))
+                    .thenReturn(mockLogger);
 
-        // Виконання тесту
-        exceptionHandler.uncaughtException(testThread, testException);
+            GlobalExceptionHandler handler = new GlobalExceptionHandler(mockEmail);
+            Thread testThread = new Thread("TestThread");
+            Exception testEx = new RuntimeException("Test exception");
+            Exception emailEx = new RuntimeException("Email send failed");
 
-        // Перевірка, що логер був викликаний з правильними параметрами
-        verify(logger).fatal(
-                eq("Unhandled exception in thread: " + testThread.getName()),
-                eq(testException)
-        );
+            doThrow(emailEx).when(mockEmail).sendErrorEmail(anyString(), anyString());
 
-        // Перевірка, що emailService був викликаний
-        verify(emailService).sendErrorEmail(anyString(), String.valueOf(eq(testException)));
+            handler.uncaughtException(testThread, testEx);
+
+            verify(mockLogger).fatal(eq("Unhandled exception in thread: TestThread"), eq(testEx));
+            verify(mockEmail).sendErrorEmail(anyString(), anyString());
+            verify(mockLogger).error(eq("Failed to send error email"), eq(emailEx));
+        }
+    }
+
+    @Test
+    void testUncaughtException_LoggingFailure() {
+        EmailService mockEmail = mock(EmailService.class);
+        Logger mockLogger = mock(Logger.class);
+
+        try (MockedStatic<LogManager> mockedLogManager = mockStatic(LogManager.class)) {
+            mockedLogManager.when(() -> LogManager.getLogger(GlobalExceptionHandler.class))
+                    .thenReturn(mockLogger);
+
+            GlobalExceptionHandler handler = new GlobalExceptionHandler(mockEmail);
+            Thread testThread = new Thread("TestThread");
+            Exception testEx = new RuntimeException("Test exception");
+
+            doThrow(new RuntimeException("Logging failed")).when(mockLogger).fatal(anyString(), any(Throwable.class));
+
+            handler.uncaughtException(testThread, testEx);
+
+            verify(mockLogger).fatal(eq("Unhandled exception in thread: TestThread"), eq(testEx));
+            verify(mockEmail, never()).sendErrorEmail(anyString(), anyString());
+        }
     }
 }

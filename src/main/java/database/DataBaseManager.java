@@ -89,15 +89,15 @@ public class DataBaseManager {
             if (isTestMode) {
                 initializeTestDatabase();
             }
-        } catch (ClassNotFoundException e) {
-            logger.error("Driver class not found: {}", e.getMessage(), e);
-            throw new RuntimeException("Driver class not found: " + e.getMessage());
-        } catch (SQLException e) {
-            logger.error("SQL Exception during connection: {}", e.getMessage(), e);
-            throw new RuntimeException("SQL Exception during connection: " + e.getMessage());
-        } catch (IOException e) {
-            logger.error("IO Exception loading properties: {}", e.getMessage(), e);
-            throw new RuntimeException("IO Exception loading properties: " + e.getMessage());
+//        } catch (ClassNotFoundException e) {
+//            logger.error("Driver class not found: {}", e.getMessage(), e);
+//            throw new RuntimeException("Driver class not found: " + e.getMessage());
+//        } catch (SQLException e) {
+//            logger.error("SQL Exception during connection: {}", e.getMessage(), e);
+//            throw new RuntimeException("SQL Exception during connection: " + e.getMessage());
+//        } catch (IOException e) {
+//            logger.error("IO Exception loading properties: {}", e.getMessage(), e);
+//            throw new RuntimeException("IO Exception loading properties: " + e.getMessage());
         } catch (Exception e) {
             logger.error("Unexpected exception: {}", e.getMessage(), e);
             throw new RuntimeException("Не вдалося ініціалізувати підключення до бази даних: " + e.getMessage());

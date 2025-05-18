@@ -21,9 +21,13 @@ public class CarFormDialog extends JDialog {
     private CarListPanel carListPanel;
 
     // Компоненти форми
-    private JTextField makeField, modelField, priceField, speedField, consumptionField;
-    private JComboBox<String> typeComboBox;
-    private JComboBox<String> fuelTypeComboBox;
+    JTextField makeField;
+    JTextField modelField;
+    JTextField priceField;
+    JTextField speedField;
+    JTextField consumptionField;
+    JComboBox<String> typeComboBox;
+    JComboBox<String> fuelTypeComboBox;
 
     // Константи для кольорів
     private final Color BACKGROUND_COLOR = new Color(240, 240, 245);
@@ -88,7 +92,7 @@ public class CarFormDialog extends JDialog {
      *
      * @return панель заголовка
      */
-    private JPanel createHeaderPanel() {
+    JPanel createHeaderPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.setBackground(HEADER_COLOR);
@@ -107,7 +111,7 @@ public class CarFormDialog extends JDialog {
      *
      * @return панель форми
      */
-    private JPanel createFormPanel() {
+    JPanel createFormPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
         panel.setBackground(BACKGROUND_COLOR);
@@ -208,7 +212,7 @@ public class CarFormDialog extends JDialog {
      * @param text текст мітки
      * @return налаштована мітка
      */
-    private JLabel createFormLabel(String text) {
+    JLabel createFormLabel(String text) {
         JLabel label = new JLabel(text);
         label.setFont(LABEL_FONT);
         label.setForeground(TEXT_COLOR);
@@ -220,7 +224,7 @@ public class CarFormDialog extends JDialog {
      *
      * @return налаштоване текстове поле
      */
-    private JTextField createFormTextField() {
+    JTextField createFormTextField() {
         JTextField field = new JTextField();
         field.setFont(FIELD_FONT);
         field.setPreferredSize(new Dimension(200, 30));
@@ -232,7 +236,7 @@ public class CarFormDialog extends JDialog {
      *
      * @return панель кнопок
      */
-    private JPanel createButtonPanel() {
+    JPanel createButtonPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         panel.setBackground(BACKGROUND_COLOR);
@@ -267,7 +271,7 @@ public class CarFormDialog extends JDialog {
      *
      * @param e подія дії (може бути null)
      */
-    private void updateFuelTypeVisibility(ActionEvent e) {
+    void updateFuelTypeVisibility(ActionEvent e) {
         if (typeComboBox == null || fuelTypeComboBox == null) return;
 
         boolean isElectric = typeComboBox.getSelectedIndex() == 1;
@@ -288,7 +292,7 @@ public class CarFormDialog extends JDialog {
      * @param panel панель для пошуку
      * @param isElectric чи є автомобіль електричним
      */
-    private void updateConsumptionLabel(JPanel panel, boolean isElectric) {
+    void updateConsumptionLabel(JPanel panel, boolean isElectric) {
         Component[] components = panel.getComponents();
         for (Component component : components) {
             if (component instanceof JLabel &&
@@ -307,7 +311,7 @@ public class CarFormDialog extends JDialog {
      *
      * @param e подія дії
      */
-    private void addCar(ActionEvent e) {
+    void addCar(ActionEvent e) {
         try {
             String make = makeField.getText();
             String model = modelField.getText();
@@ -358,7 +362,7 @@ public class CarFormDialog extends JDialog {
     /**
      * Очищає всі поля форми
      */
-    private void clearForm() {
+    void clearForm() {
         logger.debug("Clearing car form");
         makeField.setText("");
         modelField.setText("");

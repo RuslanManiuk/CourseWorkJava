@@ -1,137 +1,116 @@
-//import Interface.EmailService;
-//import gui.MainFrame;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-//import org.junit.jupiter.api.Test;
-//import org.mockito.MockedStatic;
-//import org.mockito.MockedConstruction;
-//import utils.EmailSender;
-//import utils.GlobalExceptionHandler;
-//
-//import javax.swing.*;
-//
-//import static org.junit.jupiter.api.Assertions.*;
-//import static org.mockito.ArgumentMatchers.*;
-//import static org.mockito.Mockito.*;
-//
-//class TaxiFleetAppTest {
-//
-//    @Test
-//    void testMain_SuccessfulStartup() {
-//        try (MockedStatic<LogManager> mockedLogManager = mockStatic(LogManager.class);
-//             MockedStatic<SwingUtilities> mockedSwing = mockStatic(SwingUtilities.class);
-//             MockedConstruction<EmailSender> mockedEmail = mockConstruction(EmailSender.class);
-//             MockedConstruction<GlobalExceptionHandler> mockedHandler = mockConstruction(GlobalExceptionHandler.class);
-//             MockedConstruction<MainFrame> mockedFrame = mockConstruction(MainFrame.class)) {
-//
-//            // Arrange
-//            Logger mockLogger = mock(Logger.class);
-//            mockedLogManager.when(() -> LogManager.getLogger(any(Class.class)))
-//                    .thenReturn(mockLogger);
-//
-//            mockedSwing.when(SwingUtilities::isEventDispatchThread).thenReturn(false);
-//            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class)))
-//                    .thenAnswer(invocation -> {
-//                        invocation.getArgument(0, Runnable.class).run();
-//                        return null;
-//                    });
-//
-//            // Act
-//            assertDoesNotThrow(() -> TaxiFleetApp.main(new String[]{}));
-//
-//            // Assert
-//            verify(mockLogger).info("Starting Taxi Fleet Application");
-//            verify(mockLogger).info("Application started successfully");
-//            assertEquals(1, mockedHandler.constructed().size());
-//            assertEquals(1, mockedFrame.constructed().size());
-//            verify(mockedFrame.constructed().get(0)).setVisible(true);
-//        }
-//    }
-//
-//    @Test
-//    void testMain_StartupFailure() {
-//        try (MockedStatic<LogManager> mockedLogManager = mockStatic(LogManager.class);
-//             MockedStatic<SwingUtilities> mockedSwing = mockStatic(SwingUtilities.class);
-//             MockedStatic<JOptionPane> mockedPane = mockStatic(JOptionPane.class);
-//             MockedConstruction<EmailSender> mockedEmail = mockConstruction(EmailSender.class, (mock, context) -> {
-//                 when(mock.sendErrorEmail(anyString(), anyString())).thenReturn(true);
-//             });
-//             MockedConstruction<GlobalExceptionHandler> mockedHandler = mockConstruction(GlobalExceptionHandler.class);
-//             MockedConstruction<MainFrame> mockedFrame = mockConstruction(MainFrame.class, (mock, context) -> {
-//                 throw new RuntimeException("Test startup error");
-//             })) {
-//
-//            // Arrange
-//            Logger mockLogger = mock(Logger.class);
-//            mockedLogManager.when(() -> LogManager.getLogger(any(Class.class)))
-//                    .thenReturn(mockLogger);
-//
-//            mockedSwing.when(SwingUtilities::isEventDispatchThread).thenReturn(false);
-//            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class)))
-//                    .thenAnswer(invocation -> {
-//                        invocation.getArgument(0, Runnable.class).run();
-//                        return null;
-//                    });
-//
-//            // Act & Assert
-//            assertDoesNotThrow(() -> TaxiFleetApp.main(new String[]{}));
-//
-//            // Verify
-//            verify(mockLogger).error(eq("Failed to start application"), any(RuntimeException.class));
-//            verify(mockedEmail.constructed().get(0)).sendErrorEmail(
-//                    eq("Critical Error in TaxiFleetApp"),
-//                    contains("Test startup error"));
-//            mockedPane.verify(() -> JOptionPane.showMessageDialog(
-//                    isNull(),
-//                    contains("Помилка запуску програми"),
-//                    eq("Критична помилка"),
-//                    eq(JOptionPane.ERROR_MESSAGE)));
-//        }
-//    }
-//
-//    @Test
-//    void testMain_EmailSendFailure() {
-//        try (MockedStatic<LogManager> mockedLogManager = mockStatic(LogManager.class);
-//             MockedStatic<SwingUtilities> mockedSwing = mockStatic(SwingUtilities.class);
-//             MockedStatic<JOptionPane> mockedPane = mockStatic(JOptionPane.class);
-//             MockedConstruction<EmailSender> mockedEmail = mockConstruction(EmailSender.class, (mock, context) -> {
-//                 when(mock.sendErrorEmail(anyString(), anyString())).thenReturn(false);
-//             });
-//             MockedConstruction<GlobalExceptionHandler> mockedHandler = mockConstruction(GlobalExceptionHandler.class);
-//             MockedConstruction<MainFrame> mockedFrame = mockConstruction(MainFrame.class, (mock, context) -> {
-//                 throw new RuntimeException("Test startup error");
-//             })) {
-//
-//            // Arrange
-//            Logger mockLogger = mock(Logger.class);
-//            mockedLogManager.when(() -> LogManager.getLogger(any(Class.class)))
-//                    .thenReturn(mockLogger);
-//
-//            mockedSwing.when(SwingUtilities::isEventDispatchThread).thenReturn(false);
-//            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class)))
-//                    .thenAnswer(invocation -> {
-//                        invocation.getArgument(0, Runnable.class).run();
-//                        return null;
-//                    });
-//
-//            // Act & Assert
-//            assertDoesNotThrow(() -> TaxiFleetApp.main(new String[]{}));
-//
-//            // Verify
-//            verify(mockLogger).warn("Failed to notify admin via email");
-//            verify(mockLogger).error(eq("Failed to start application"), any(RuntimeException.class));
-//            mockedPane.verify(() -> JOptionPane.showMessageDialog(
-//                    isNull(),
-//                    contains("Помилка запуску програми"),
-//                    eq("Критична помилка"),
-//                    eq(JOptionPane.ERROR_MESSAGE)));
-//        }
-//    }
-//}
-
-
-import models.cars.ElectricCar;
-import models.cars.GasCar;
+import Interface.EmailService;
+import gui.MainFrame;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedConstruction;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import utils.GlobalExceptionHandler;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import javax.swing.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+public class TaxiFleetAppTest {
+
+    @Test
+    public void testMainMethodRunsWithoutErrors() {
+        try (MockedStatic<SwingUtilities> mockedSwing = Mockito.mockStatic(SwingUtilities.class);
+             MockedConstruction<MainFrame> mockedMainFrame = Mockito.mockConstruction(MainFrame.class)) {
+
+            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class))).thenAnswer(invocation -> {
+                Runnable runnable = invocation.getArgument(0);
+                runnable.run();
+                return null;
+            });
+
+            TaxiFleetApp.main(new String[]{});
+
+            // Verify MainFrame was constructed
+            assertEquals(1, mockedMainFrame.constructed().size());
+        }
+    }
+
+    @Test
+    public void testGlobalExceptionHandlerSetup() {
+        try (MockedStatic<SwingUtilities> mockedSwing = Mockito.mockStatic(SwingUtilities.class)) {
+            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class))).thenAnswer(invocation -> null);
+
+            Thread.UncaughtExceptionHandler initialHandler = Thread.getDefaultUncaughtExceptionHandler();
+            try {
+                TaxiFleetApp.main(new String[]{});
+                Thread.UncaughtExceptionHandler newHandler = Thread.getDefaultUncaughtExceptionHandler();
+                assertNotNull(newHandler, "UncaughtExceptionHandler should be set");
+            } finally {
+                Thread.setDefaultUncaughtExceptionHandler(initialHandler);
+            }
+        }
+    }
+
+    @Test
+    public void testMainFrameInitialization() {
+        try (MockedStatic<SwingUtilities> mockedSwing = Mockito.mockStatic(SwingUtilities.class);
+             MockedConstruction<MainFrame> mockedMainFrame = Mockito.mockConstruction(MainFrame.class,
+                     (mock, context) -> {
+                         when(mock.isVisible()).thenReturn(true);
+                     })) {
+
+            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class))).thenAnswer(invocation -> {
+                Runnable runnable = invocation.getArgument(0);
+                runnable.run();
+                return null;
+            });
+
+            TaxiFleetApp.main(new String[]{});
+
+            // Verify MainFrame was made visible
+            verify(mockedMainFrame.constructed().get(0)).setVisible(true);
+        }
+    }
+
+    @Test
+    public void testErrorHandlingLogic() {
+        // Мок для EmailService
+        EmailService mockEmailService = mock(EmailService.class);
+        when(mockEmailService.sendErrorEmail(anyString(), anyString())).thenReturn(true);
+
+        // Тестовий виняток
+        Exception testException = new RuntimeException("Test error");
+
+        try (MockedStatic<JOptionPane> mockedOptionPane = Mockito.mockStatic(JOptionPane.class);
+             MockedStatic<SwingUtilities> mockedSwing = Mockito.mockStatic(SwingUtilities.class)) {
+
+            // Налаштовуємо мок для SwingUtilities.invokeLater
+            mockedSwing.when(() -> SwingUtilities.invokeLater(any(Runnable.class)))
+                    .thenAnswer(invocation -> {
+                        Runnable runnable = invocation.getArgument(0);
+                        runnable.run(); // Виконуємо Runnable одразу
+                        return null;
+                    });
+
+            // Налаштовуємо мок для JOptionPane
+            mockedOptionPane.when(() -> JOptionPane.showMessageDialog(
+                    any(), anyString(), anyString(), anyInt()
+            )).thenAnswer(invocation -> null);
+
+            // Викликаємо обробник
+            Thread.UncaughtExceptionHandler handler = new GlobalExceptionHandler(mockEmailService);
+            handler.uncaughtException(Thread.currentThread(), testException);
+
+            // Перевіряємо виклик JOptionPane з правильними аргументами
+            mockedOptionPane.verify(() -> JOptionPane.showMessageDialog(
+                    eq(null),
+                    eq("Сталася критична помилка. Деталі були записані в лог та відправлені адміністратору."),
+                    eq("Критична помилка"),
+                    eq(JOptionPane.ERROR_MESSAGE)
+            ));
+
+            // Перевіряємо відправку email з більш гнучкими умовами
+            verify(mockEmailService).sendErrorEmail(
+                    anyString(), // Дозволяємо будь-який заголовок
+                    contains("Test error") // Перевіряємо, що текст містить повідомлення про помилку
+            );
+        }
+    }
+}

@@ -71,7 +71,7 @@ public class CarFilterService {
      * @param searchQuery пошуковий запит
      * @return відфільтрований список автомобілів
      */
-    private List<Car> filterBySearchQuery(List<Car> cars, String searchQuery) {
+    List<Car> filterBySearchQuery(List<Car> cars, String searchQuery) {
         List<Car> filtered = new ArrayList<>();
         String query = searchQuery.toLowerCase();
 
@@ -96,7 +96,7 @@ public class CarFilterService {
      * @param fuelType тип палива для фільтрації
      * @return відфільтрований список автомобілів
      */
-    private List<Car> filterByFuelType(List<Car> cars, String fuelType) {
+    List<Car> filterByFuelType(List<Car> cars, String fuelType) {
         List<Car> filtered = new ArrayList<>();
         for (Car car : cars) {
             if (car.getFuelType().equals(fuelType)) {
@@ -113,7 +113,7 @@ public class CarFilterService {
      * @param minSpeed мінімальна швидкість
      * @return відфільтрований список автомобілів
      */
-    private List<Car> filterByMinSpeed(List<Car> cars, double minSpeed) {
+    List<Car> filterByMinSpeed(List<Car> cars, double minSpeed) {
         List<Car> filtered = new ArrayList<>();
         for (Car car : cars) {
             if (car.getMaxSpeed() >= minSpeed) {
@@ -130,7 +130,7 @@ public class CarFilterService {
      * @param maxSpeed максимальна швидкість
      * @return відфільтрований список автомобілів
      */
-    private List<Car> filterByMaxSpeed(List<Car> cars, double maxSpeed) {
+    List<Car> filterByMaxSpeed(List<Car> cars, double maxSpeed) {
         List<Car> filtered = new ArrayList<>();
         for (Car car : cars) {
             if (car.getMaxSpeed() <= maxSpeed) {

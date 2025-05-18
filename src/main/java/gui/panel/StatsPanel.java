@@ -28,8 +28,8 @@ public class StatsPanel extends JPanel {
 
     // Константи кольорів для UI елементів
     private static final Color HEADER_COLOR = new Color(52, 73, 94);
-    private static final Color ELECTRIC_COLOR = new Color(46, 204, 113);
-    private static final Color GAS_COLOR = new Color(231, 76, 60);
+    static final Color ELECTRIC_COLOR = new Color(46, 204, 113);
+    static final Color GAS_COLOR = new Color(231, 76, 60);
     private static final Color BACKGROUND_COLOR = new Color(245, 245, 245);
     private static final Color TEXT_COLOR = new Color(44, 62, 80);
 
@@ -95,7 +95,7 @@ public class StatsPanel extends JPanel {
      *
      * @return JPanel з текстовою інформацією
      */
-    private JPanel createTextInfoPanel() {
+    JPanel createTextInfoPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBackground(Color.WHITE);
@@ -278,7 +278,7 @@ public class StatsPanel extends JPanel {
     /**
      * Внутрішній клас для кругової діаграми, яка показує розподіл типів автомобілів.
      */
-    private class PieChartPanel extends JPanel {
+    class PieChartPanel extends JPanel {
         /**
          * Конструктор панелі кругової діаграми.
          */
@@ -343,7 +343,7 @@ public class StatsPanel extends JPanel {
     /**
      * Внутрішній клас для стовпчикової діаграми витрат палива.
      */
-    private class FuelConsumptionBarChart extends JPanel {
+    class FuelConsumptionBarChart extends JPanel {
         // Прапорець, що вказує тип діаграми: true - електромобілі, false - паливні авто
         private boolean isElectric;
 

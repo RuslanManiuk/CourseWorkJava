@@ -21,6 +21,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class CarListPanel extends JPanel {
     // Логер для відстеження подій у класі
@@ -29,22 +30,22 @@ public class CarListPanel extends JPanel {
     // Поля даних
     private TaxiFleet taxiFleet;
     private final CarFilterService carFilterService;
-    private JTable carTable;
+    JTable carTable;
     private DefaultTableModel model;
     private TableRowSorter<DefaultTableModel> sorter;
     private String currentSort = "За замовчуванням";
     private String currentFuelFilter = "Усі";
     private Double minSpeedFilter = null;
     private Double maxSpeedFilter = null;
-    private String searchQuery = "";
+    String searchQuery = "";
     private List<Car> filteredCars;
 
     // Компоненти інтерфейсу
-    private JComboBox<String> fuelTypeFilter;
-    private JComboBox<String> sortComboBox;
-    private JTextField minSpeedField;
-    private JTextField maxSpeedField;
-    private JTextField searchField;
+    JComboBox<String> fuelTypeFilter;
+    JComboBox<String> sortComboBox;
+    JTextField minSpeedField;
+    JTextField maxSpeedField;
+    JTextField searchField;
 
     // Константи для кольорів та шрифтів
     private static final Color PRIMARY_COLOR = new Color(60, 141, 188);
@@ -76,7 +77,7 @@ public class CarListPanel extends JPanel {
     /**
      * Ініціалізація компонентів інтерфейсу
      */
-    private void initComponents() {
+    void initComponents() {
         setLayout(new BorderLayout(0, 10));
 
         // Нова секція заголовка з назвою таксопарку та кнопками
@@ -478,7 +479,7 @@ public class CarListPanel extends JPanel {
     /**
      * Відкриття діалогового вікна для додавання нового автомобіля
      */
-    private void openAddCarDialog() {
+    void openAddCarDialog() {
         logger.info("Opening add car dialog");
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         CarFormDialog dialog = new CarFormDialog(mainFrame, taxiFleet, this);
@@ -488,7 +489,7 @@ public class CarListPanel extends JPanel {
     /**
      * Видалення вибраного автомобіля
      */
-    private void removeSelectedCar() {
+    void removeSelectedCar() {
         int selectedRow = carTable.getSelectedRow();
         if (selectedRow >= 0) {
             int viewRow = carTable.getSelectedRow();
@@ -535,7 +536,7 @@ public class CarListPanel extends JPanel {
     /**
      * Відображення деталей вибраного автомобіля
      */
-    private void showCarDetails() {
+    void showCarDetails() {
         int selectedRow = carTable.getSelectedRow();
         if (selectedRow >= 0) {
             int modelRow = carTable.convertRowIndexToModel(selectedRow);
@@ -630,8 +631,8 @@ public class CarListPanel extends JPanel {
      * @param maxSpeedField поле максимальної швидкості
      * @param searchField поле пошуку
      */
-    private void resetFilters(JComboBox<String> fuelTypeFilter, JComboBox<String> sortComboBox,
-                              JTextField minSpeedField, JTextField maxSpeedField, JTextField searchField) {
+    void resetFilters(JComboBox<String> fuelTypeFilter, JComboBox<String> sortComboBox,
+                      JTextField minSpeedField, JTextField maxSpeedField, JTextField searchField) {
         fuelTypeFilter.setSelectedItem("Усі");
         sortComboBox.setSelectedItem("За замовчуванням");
         minSpeedField.setText("");
@@ -653,7 +654,7 @@ public class CarListPanel extends JPanel {
      * @param title заголовок повідомлення
      * @param message текст повідомлення
      */
-    private void showErrorMessage(String title, String message) {
+    void showErrorMessage(String title, String message) {
         JOptionPane.showMessageDialog(this,
                 message,
                 title,
@@ -692,7 +693,7 @@ public class CarListPanel extends JPanel {
      * @see Car#getMaxSpeed() Метод отримання максимальної швидкості
      * @see Car#getFuelConsumption() Метод отримання витрати пального
      */
-    private void updateTable(List<Car> cars) {
+    void updateTable(List<Car> cars) {
         model.setRowCount(0);
 
         for (Car car : cars) {

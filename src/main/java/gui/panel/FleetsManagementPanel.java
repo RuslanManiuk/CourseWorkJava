@@ -25,7 +25,7 @@ public class FleetsManagementPanel extends JPanel {
 
     // Кольорова схема UI
     private static final Color PRIMARY_COLOR = new Color(52, 73, 94);
-    private static final Color SECONDARY_COLOR = new Color(52, 152, 219);
+    static final Color SECONDARY_COLOR = new Color(52, 152, 219);
     private static final Color ACCENT_COLOR = new Color(26, 188, 156);
     private static final Color BACKGROUND_COLOR = new Color(245, 245, 245);
     private static final Color TEXT_COLOR = new Color(44, 62, 80);
@@ -232,7 +232,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Створення стилізованої кнопки
      */
-    private JButton createStyledButton(String text, Color bgColor) {
+    JButton createStyledButton(String text, Color bgColor) {
         JButton button = new JButton(text);
         button.setFont(BUTTON_FONT);
         button.setBackground(bgColor);
@@ -260,7 +260,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Створення інформаційної панелі для вибраного таксопарку
      */
-    private JPanel createFleetInfoPanel(TaxiFleet fleet) {
+    JPanel createFleetInfoPanel(TaxiFleet fleet) {
         JPanel panel = new JPanel(new BorderLayout(0, 15));
         panel.setBackground(PANEL_COLOR);
 
@@ -307,7 +307,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Оновлення списку таксопарків
      */
-    private void updateFleetsList() {
+    void updateFleetsList() {
         fleetsListModel.clear();
         for (TaxiFleet fleet : fleetManager.getFleets()) {
             fleetsListModel.addElement(fleet);
@@ -317,7 +317,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Додавання нового таксопарку
      */
-    private void addNewFleet() {
+    void addNewFleet() {
         String fleetName = JOptionPane.showInputDialog(this,
                 "Введіть назву нового таксопарку:",
                 "Новий таксопарк",
@@ -351,7 +351,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Видалення вибраного таксопарку
      */
-    private void removeSelectedFleet() {
+    void removeSelectedFleet() {
         TaxiFleet selectedFleet = fleetsList.getSelectedValue();
         if (selectedFleet != null) {
             int option = JOptionPane.showConfirmDialog(this,
@@ -377,7 +377,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Редагування таксопарку
      */
-    private void editFleet(TaxiFleet fleet) {
+    void editFleet(TaxiFleet fleet) {
         String newName = JOptionPane.showInputDialog(this,
                 "Введіть нову назву для таксопарку:",
                 "Редагування таксопарку",
@@ -412,7 +412,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Перегляд автомобілів таксопарку
      */
-    private void viewCars(TaxiFleet fleet) {
+    void viewCars(TaxiFleet fleet) {
         logger.info("Opening car management for fleet: {}", fleet.getName());
         FleetManagementPanel fleetManagementPanel = new FleetManagementPanel(fleet);
         String tabName = fleet.getName();
@@ -423,7 +423,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Затемнення кольору для ефектів UI
      */
-    private Color darkenColor(Color color, float fraction) {
+    Color darkenColor(Color color, float fraction) {
         int red = Math.max(0, Math.round(color.getRed() * (1 - fraction)));
         int green = Math.max(0, Math.round(color.getGreen() * (1 - fraction)));
         int blue = Math.max(0, Math.round(color.getBlue() * (1 - fraction)));
@@ -453,7 +453,7 @@ public class FleetsManagementPanel extends JPanel {
     /**
      * Кастомний рендерер для списку таксопарків
      */
-    private static class FleetListCellRenderer extends DefaultListCellRenderer {
+    static class FleetListCellRenderer extends DefaultListCellRenderer {
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value,
                                                       int index, boolean isSelected, boolean cellHasFocus) {
