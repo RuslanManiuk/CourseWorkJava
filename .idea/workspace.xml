@@ -4,19 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="переніс логіку з файлів папки gui, надсилання листа на email працює, документація присутня до всіх файлів">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="написав пару тестів">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TaxiFleetApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TaxiFleetApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TaxiFleetAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TaxiFleetAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/database/DBManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/database/DBManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/TaxiFleetManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/TaxiFleetManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/TaxiFleetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/TaxiFleetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/cars/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/cars/CarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/cars/ElectricCarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/cars/ElectricCarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/cars/GasCarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/cars/GasCarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/GlobalExceptionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/GlobalExceptionHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,6 +66,10 @@
     "JUnit.GlobalExceptionHandlerTest.executor": "Run",
     "JUnit.GlobalExceptionHandlerTest.testStackTraceIncludedInEmail.executor": "Coverage",
     "JUnit.TaxiFleetAppTest.executor": "Run",
+    "JUnit.TaxiFleetManagerTest.executor": "Run",
+    "JUnit.TaxiFleetTest.testAddCar.executor": "Coverage",
+    "JUnit.TaxiFleetTest.testRemoveCar_RemovesFromListAndDatabase.executor": "Coverage",
+    "JUnit.TaxiFleetTest.testToString.executor": "Coverage",
     "JUnit.java in CourseWork.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -74,33 +87,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.TaxiFleetApp">
-    <configuration name="TaxiFleetApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TaxiFleetApp" />
-      <module name="CourseWork" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in CourseWork (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CourseWork" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in CourseWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CourseWork" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-Dnet.bytebuddy.experimental=true " />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.java in CourseWork">
     <configuration name="All in CourseWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -114,11 +101,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TaxiFleetAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TaxiFleetManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TaxiFleetAppTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models" />
+      <option name="MAIN_CLASS_NAME" value="models.TaxiFleetManagerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaxiFleetTest.testAddCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models" />
+      <option name="MAIN_CLASS_NAME" value="models.TaxiFleetTest" />
+      <option name="METHOD_NAME" value="testAddCar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaxiFleetTest.testRemoveCar_RemovesFromListAndDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models" />
+      <option name="MAIN_CLASS_NAME" value="models.TaxiFleetTest" />
+      <option name="METHOD_NAME" value="testRemoveCar_RemovesFromListAndDatabase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaxiFleetTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models" />
+      <option name="MAIN_CLASS_NAME" value="models.TaxiFleetTest" />
+      <option name="METHOD_NAME" value="testToString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,19 +173,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.TaxiFleetApp" />
-      <item itemvalue="JUnit.All in CourseWork (1)" />
-      <item itemvalue="JUnit.TaxiFleetAppTest" />
+      <item itemvalue="JUnit.TaxiFleetManagerTest" />
+      <item itemvalue="JUnit.TaxiFleetTest.testAddCar" />
+      <item itemvalue="JUnit.TaxiFleetTest.testRemoveCar_RemovesFromListAndDatabase" />
+      <item itemvalue="JUnit.TaxiFleetTest.testToString" />
       <item itemvalue="JUnit.java in CourseWork" />
-      <item itemvalue="JUnit.All in CourseWork" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TaxiFleetApp" />
         <item itemvalue="JUnit.java in CourseWork" />
-        <item itemvalue="JUnit.TaxiFleetAppTest" />
-        <item itemvalue="JUnit.All in CourseWork (1)" />
-        <item itemvalue="JUnit.All in CourseWork" />
+        <item itemvalue="JUnit.TaxiFleetManagerTest" />
+        <item itemvalue="JUnit.TaxiFleetTest.testRemoveCar_RemovesFromListAndDatabase" />
+        <item itemvalue="JUnit.TaxiFleetTest.testAddCar" />
+        <item itemvalue="JUnit.TaxiFleetTest.testToString" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +209,8 @@
       <workItem from="1747143280870" duration="19301000" />
       <workItem from="1747206829235" duration="9455000" />
       <workItem from="1747415069509" duration="7270000" />
-      <workItem from="1747479417321" duration="30878000" />
+      <workItem from="1747479417321" duration="30979000" />
+      <workItem from="1747575292107" duration="16233000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -242,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747504746795</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="написав пару тестів">
+      <option name="closed" value="true" />
+      <created>1747523124197</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747523124197</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,18 +330,31 @@
     <MESSAGE value="додано документації" />
     <MESSAGE value="документації додані до всіх файлів" />
     <MESSAGE value="переніс логіку з файлів папки gui, надсилання листа на email працює, документація присутня до всіх файлів" />
-    <option name="LAST_COMMIT_MESSAGE" value="переніс логіку з файлів папки gui, надсилання листа на email працює, документація присутня до всіх файлів" />
+    <MESSAGE value="написав пару тестів" />
+    <option name="LAST_COMMIT_MESSAGE" value="написав пару тестів" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CourseWork$All_in_CourseWork__1_.ic" NAME="All in CourseWork (1) Coverage Results" MODIFIED="1747517971456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$All_in_CourseWork.ic" NAME="All in CourseWork Coverage Results" MODIFIED="1747517945917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetTest_testToString.ic" NAME="TaxiFleetTest.testToString Coverage Results" MODIFIED="1747576901328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>models.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest.ic" NAME="GlobalExceptionHandlerTest Coverage Results" MODIFIED="1747513971781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest_testStackTraceIncludedInEmail.ic" NAME="GlobalExceptionHandlerTest.testStackTraceIncludedInEmail Coverage Results" MODIFIED="1747515521348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1747522158848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetTest_testAddCar.ic" NAME="TaxiFleetTest.testAddCar Coverage Results" MODIFIED="1747577249750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1747591559751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetTest_testRemoveCar_RemovesFromListAndDatabase.ic" NAME="TaxiFleetTest.testRemoveCar_RemovesFromListAndDatabase Coverage Results" MODIFIED="1747581028524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetManagerTest.ic" NAME="TaxiFleetManagerTest Coverage Results" MODIFIED="1747584015893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>models.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$EmailSenderTest.ic" NAME="EmailSenderTest Coverage Results" MODIFIED="1747513265556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>

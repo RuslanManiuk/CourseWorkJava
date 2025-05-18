@@ -18,15 +18,19 @@ import java.util.List;
 public class TaxiFleetManager {
     private static final Logger logger = LogManager.getLogger(TaxiFleetManager.class);
     private List<TaxiFleet> fleets = new ArrayList<>();
-    private DataBaseManager dbManager;
+    DataBaseManager dbManager;
 
     /**
      * Конструктор для створення нового менеджера таксопарків.
      * Автоматично завантажує дані про таксопарки з бази даних при створенні.
      */
-    public TaxiFleetManager() {
-        this.dbManager = new DataBaseManager();
+    public TaxiFleetManager(boolean isTestMode) {
+        this.dbManager = new DataBaseManager(isTestMode);
         loadFleetsFromDatabase(); // Завантажуємо дані при створенні
+    }
+
+    public TaxiFleetManager() {
+        this(false);
     }
 
     // ------------------ Основні методи доступу ------------------
@@ -40,20 +44,6 @@ public class TaxiFleetManager {
         return fleets;
     }
 
-//    /**
-//     * Отримує таксопарк за індексом у списку.
-//     *
-//     * @param index індекс таксопарку
-//     * @return об'єкт TaxiFleet
-//     * @throws IndexOutOfBoundsException якщо індекс недійсний
-//     */
-//    public TaxiFleet getFleet(int index) {
-//        if (index >= 0 && index < fleets.size()) {
-//            return fleets.get(index);
-//        }
-//        throw new IndexOutOfBoundsException("Invalid fleet index: " + index);
-//    }
-
     // ------------------ Управління таксопарками ------------------
 
     /**
@@ -66,18 +56,6 @@ public class TaxiFleetManager {
         fleets.add(fleet);
         saveFleetToDatabase(fleet);
     }
-
-//    /**
-//     * Створює новий таксопарк з вказаною назвою, додає його до менеджера
-//     * та зберігає в базі даних.
-//     *
-//     * @param name назва нового таксопарку
-//     */
-//    public void createFleet(String name) {
-//        TaxiFleet fleet = new TaxiFleet(name);
-//        fleets.add(fleet);
-//        saveFleetToDatabase(fleet);
-//    }
 
     /**
      * Видаляє таксопарк з менеджера та з бази даних.
@@ -100,7 +78,7 @@ public class TaxiFleetManager {
      * Завантажує всі таксопарки з бази даних.
      * Викликається автоматично при створенні менеджера.
      */
-    private void loadFleetsFromDatabase() {
+    void loadFleetsFromDatabase() {
         logger.info("Loading fleets from database");
         try {
             ResultSet rs = dbManager.executeQuery("SELECT * FROM fleets");
@@ -122,7 +100,7 @@ public class TaxiFleetManager {
      *
      * @param fleet таксопарк, для якого завантажуються автомобілі
      */
-    private void loadCarsForFleet(TaxiFleet fleet) {
+    void loadCarsForFleet(TaxiFleet fleet) {
         logger.debug("Loading cars for fleet {}", fleet.getName());
         try {
             ResultSet rs = dbManager.executeQuery(
@@ -145,7 +123,7 @@ public class TaxiFleetManager {
      *
      * @param fleet таксопарк для збереження
      */
-    private void saveFleetToDatabase(TaxiFleet fleet) {
+    void saveFleetToDatabase(TaxiFleet fleet) {
         try {
             if (fleet.getFleetId() == 0) {
                 logger.debug("Saving new fleet to database: {}", fleet.getName());
@@ -176,7 +154,7 @@ public class TaxiFleetManager {
      * @return створений об'єкт Car
      * @throws SQLException при проблемах з доступом до даних
      */
-    private Car createCarFromResultSet(ResultSet rs) throws SQLException {
+    Car createCarFromResultSet(ResultSet rs) throws SQLException {
         String make = rs.getString("make");
         String model = rs.getString("model");
         double price = rs.getDouble("price");

@@ -21,7 +21,7 @@ public class TaxiFleet {
     private List<Car> cars;
     private String name;
     private int fleetId;
-    private DataBaseManager databaseManager = new DataBaseManager();
+    DataBaseManager databaseManager = new DataBaseManager();
 
     /**
      * Конструктор для створення нового таксопарку з вказаною назвою.
@@ -43,15 +43,6 @@ public class TaxiFleet {
     public String getName() {
         return name;
     }
-
-//    /**
-//     * Альтернативний метод для отримання назви таксопарку.
-//     *
-//     * @return назва таксопарку
-//     */
-//    public String getFleetName() {
-//        return name;
-//    }
 
     /**
      * Встановлює нову назву для таксопарку та оновлює інформацію в базі даних.
@@ -192,19 +183,6 @@ public class TaxiFleet {
         return cars.stream().mapToDouble(Car::getPrice).sum();
     }
 
-//    /**
-//     * Обчислює середнє споживання палива для всіх автомобілів у таксопарку.
-//     *
-//     * @return середнє споживання палива
-//     */
-//    public double calculateAverageFuelConsumption() {
-//        if (cars.isEmpty()) return 0;
-//        return cars.stream()
-//                .mapToDouble(Car::getFuelConsumption)
-//                .average()
-//                .orElse(0);
-//    }
-
     /**
      * Повертає кількість електричних автомобілів у таксопарку.
      *
@@ -222,82 +200,6 @@ public class TaxiFleet {
     public int getGasCarCount() {
         return cars.size() - getElectricCarCount();
     }
-
-//    /**
-//     * Виводить статистику щодо видів палива автомобілів у таксопарку.
-//     */
-//    public void printFuelStatistics() {
-//        long electric = cars.stream().filter(c -> c.getFuelType().equals("Електричний")).count();
-//        long gas = cars.stream().filter(c -> !c.getFuelType().equals("Електричний")).count();
-//
-//        System.out.println("\nСтатистика таксопарку '" + name + "':");
-//        System.out.println("Електричні автомобілі: " + electric);
-//        System.out.println("Авто з ДВЗ: " + gas);
-//    }
-
-    // ------------------ Методи сортування та пошуку ------------------
-
-//    /**
-//     * Сортує список автомобілів таксопарку за споживанням палива (у зростаючому порядку).
-//     */
-//    public void sortByFuelConsumption() {
-//        Collections.sort(cars, Comparator.comparingDouble(Car::getFuelConsumption));
-//    }
-//
-//    /**
-//     * Повертає новий список автомобілів, відсортований за споживанням палива.
-//     *
-//     * @return відсортований список автомобілів
-//     */
-//    public List<Car> getSortedByFuelConsumption() {
-//        List<Car> sorted = new ArrayList<>(cars);
-//        sorted.sort(Comparator.comparingDouble(Car::getFuelConsumption));
-//        return sorted;
-//    }
-//
-//    /**
-//     * Знаходить автомобілі, максимальна швидкість яких знаходиться у вказаному діапазоні.
-//     *
-//     * @param minSpeed мінімальна швидкість
-//     * @param maxSpeed максимальна швидкість
-//     * @return список автомобілів у заданому діапазоні швидкостей
-//     */
-//    public List<Car> findCarsBySpeedRange(double minSpeed, double maxSpeed) {
-//        List<Car> result = new ArrayList<>();
-//        for (Car car : cars) {
-//            if (car.getMaxSpeed() >= minSpeed && car.getMaxSpeed() <= maxSpeed) {
-//                result.add(car);
-//            }
-//        }
-//        return result;
-//    }
-//
-//    /**
-//     * Сортує автомобілі за вказаним параметром у заданому порядку (зростання/спадання).
-//     *
-//     * @param parameter назва параметру для сортування (марка, модель, ціна, швидкість, витрата)
-//     * @param ascending true для сортування за зростанням, false для сортування за спаданням
-//     * @return відсортований список автомобілів
-//     */
-//    public List<Car> sortByParameter(String parameter, boolean ascending) {
-//        List<Car> sorted = new ArrayList<>(cars);
-//
-//        Comparator<Car> comparator = switch (parameter.toLowerCase()) {
-//            case "марка" -> Comparator.comparing(Car::getMake);
-//            case "модель" -> Comparator.comparing(Car::getModel);
-//            case "ціна" -> Comparator.comparingDouble(Car::getPrice);
-//            case "швидкість" -> Comparator.comparingDouble(Car::getMaxSpeed);
-//            case "витрата" -> Comparator.comparingDouble(Car::getFuelConsumption);
-//            default -> (c1, c2) -> 0;
-//        };
-//
-//        if (!ascending) {
-//            comparator = comparator.reversed();
-//        }
-//
-//        sorted.sort(comparator);
-//        return sorted;
-//    }
 
     // ------------------ Перевизначені методи ------------------
 

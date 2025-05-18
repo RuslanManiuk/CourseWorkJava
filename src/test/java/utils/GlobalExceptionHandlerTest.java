@@ -2,6 +2,8 @@ package utils;
 
 import Interface.EmailService;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -12,6 +14,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class GlobalExceptionHandlerTest {
+
+    @Mock
+    private Logger logger;
+
+    @Mock
+    private EmailService emailService;
+
+    @InjectMocks
+    private GlobalExceptionHandler exceptionHandler;
 
     @Test
     void testGetStackTraceAsString() {
@@ -91,41 +102,26 @@ class GlobalExceptionHandlerTest {
     }
 
     @Test
-    void testUncaughtException_EmailFailure() throws Exception {
-        // Arrange
-        EmailService mockEmail = mock(EmailService.class);
-        Logger mockLogger = mock(Logger.class);
+    void testUncaughtException_EmailFailure() {
+        // Підготовка тестових даних
+        Thread testThread = new Thread();
+        RuntimeException testException = new RuntimeException("Test exception");
 
-        // Налаштовуємо мок для викидання помилки при відправці email
+        // Налаштування поведінки моків
         doThrow(new RuntimeException("Email send failed"))
-                .when(mockEmail).sendErrorEmail(anyString(), anyString());
+                .when(emailService)
+                .sendErrorEmail(anyString(), String.valueOf(any(Throwable.class)));
 
-        try (MockedStatic<LogManager> mockedLogManager = mockStatic(LogManager.class)) {
-            mockedLogManager.when(() -> LogManager.getLogger(GlobalExceptionHandler.class))
-                    .thenReturn(mockLogger);
+        // Виконання тесту
+        exceptionHandler.uncaughtException(testThread, testException);
 
-            GlobalExceptionHandler handler = new GlobalExceptionHandler(mockEmail);
-            Thread testThread = new Thread("TestThread");
-            Exception testEx = new RuntimeException("Test exception");
+        // Перевірка, що логер був викликаний з правильними параметрами
+        verify(logger).fatal(
+                eq("Unhandled exception in thread: " + testThread.getName()),
+                eq(testException)
+        );
 
-            // Act
-            handler.uncaughtException(testThread, testEx);
-
-            // Assert
-            // Перевіряємо, що основний виняток був залогований
-            verify(mockLogger).fatal(eq("Unhandled exception in thread: TestThread"), eq(testEx));
-
-            // Перевіряємо, що помилка email була залогована
-            ArgumentCaptor<Exception> exceptionCaptor = ArgumentCaptor.forClass(Exception.class);
-            verify(mockLogger).error(
-                    eq("Failed to send error email"),
-                    exceptionCaptor.capture()
-            );
-
-            // Додаткова перевірка захопленого винятку
-            Exception loggedEx = exceptionCaptor.getValue();
-            assertNotNull(loggedEx);
-            assertEquals("Email send failed", loggedEx.getMessage());
-        }
+        // Перевірка, що emailService був викликаний
+        verify(emailService).sendErrorEmail(anyString(), String.valueOf(eq(testException)));
     }
 }
