@@ -12,14 +12,18 @@ import java.lang.Thread.UncaughtExceptionHandler;
  * Відповідає за логування, відправлення повідомлень про помилки та
  * відображення інформації користувачу при виникненні некоректно оброблених помилок.
  */
-public class GlobalExceptionHandler implements UncaughtExceptionHandler {
-    // Logger для запису помилок
-    private static final Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
-
+public class GlobalExceptionHandler implements Thread.UncaughtExceptionHandler {
     private final EmailService emailService;
+    private final Logger logger; // Додаємо поле для логера
 
     public GlobalExceptionHandler(EmailService emailService) {
+        this(emailService, LogManager.getLogger(GlobalExceptionHandler.class));
+    }
+
+    // Додатковий конструктор для тестування
+    public GlobalExceptionHandler(EmailService emailService, Logger logger) {
         this.emailService = emailService;
+        this.logger = logger;
     }
     /**
      * Обробляє некоректно оброблені винятки в потоках.

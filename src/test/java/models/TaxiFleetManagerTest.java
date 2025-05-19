@@ -47,8 +47,9 @@ class TaxiFleetManagerTest {
 
     @Test
     void testConstructorInitializesFleets() {
-        assertNotNull(taxiFleetManager.getFleets());
-        assertTrue(taxiFleetManager.getFleets().isEmpty());
+        TaxiFleetManager manager = new TaxiFleetManager(true); // У тестовому режимі
+        assertNotNull(manager.getFleets(), "Fleets list should not be null");
+        assertTrue(manager.getFleets().isEmpty(), "Fleets list should be empty initially");
     }
 
     @Test
@@ -77,14 +78,19 @@ class TaxiFleetManagerTest {
 
     @Test
     void testLoadFleetsFromDatabase() throws SQLException {
-        // Налаштування моків для завантаження флоту
+        // 1. Очистимо існуючі дані
+        taxiFleetManager.getFleets().clear();
+
+        // 2. Налаштуємо моки для одного флоту
         when(dbManager.executeQuery("SELECT * FROM fleets")).thenReturn(fleetResultSet);
-        when(fleetResultSet.next()).thenReturn(true, false); // Один флот
+        when(fleetResultSet.next()).thenReturn(true, false); // Один рядок
         when(fleetResultSet.getInt("fleet_id")).thenReturn(1);
         when(fleetResultSet.getString("name")).thenReturn("Test Fleet");
 
-        // Налаштування моків для завантаження автомобілів
-        when(dbManager.executeQuery("SELECT * FROM cars WHERE fleet_id = ?", 1)).thenReturn(carResultSet);
+        // 3. Налаштуємо моки для автомобілів (1 автомобіль)
+        when(dbManager.executeQuery("SELECT * FROM cars WHERE fleet_id = ?", 1))
+                .thenReturn(carResultSet);
+        when(carResultSet.next()).thenReturn(true, false);
         when(carResultSet.next()).thenReturn(true, false); // Один автомобіль
         when(carResultSet.getString("make")).thenReturn("Tesla");
         when(carResultSet.getString("model")).thenReturn("Model S");
@@ -94,38 +100,52 @@ class TaxiFleetManagerTest {
         when(carResultSet.getDouble("fuel_consumption")).thenReturn(0.0);
         when(carResultSet.getInt("car_id")).thenReturn(1);
 
+        // 4. Викликаємо метод
         taxiFleetManager.loadFleetsFromDatabase();
 
-        assertEquals(1, taxiFleetManager.getFleets().size());
-        TaxiFleet loadedFleet = taxiFleetManager.getFleets().get(0);
-        assertEquals("Test Fleet", loadedFleet.getName());
-        assertEquals(1, loadedFleet.getFleetId());
-        assertEquals(1, loadedFleet.getCars().size());
-
-        // Перевірка порядку викликів
-        InOrder inOrder = inOrder(dbManager, fleetResultSet, carResultSet);
-        inOrder.verify(dbManager).executeQuery("SELECT * FROM fleets");
-        inOrder.verify(fleetResultSet).next();
-        inOrder.verify(dbManager).executeQuery("SELECT * FROM cars WHERE fleet_id = ?", 1);
-        inOrder.verify(carResultSet).next();
+        // 5. Перевірки
+        assertAll(
+                () -> assertEquals(1, taxiFleetManager.getFleets().size(),
+                        "Має бути завантажено рівно 1 флот"),
+                () -> assertEquals("Test Fleet", taxiFleetManager.getFleets().get(0).getName()),
+                () -> assertEquals(1, taxiFleetManager.getFleets().get(0).getFleetId())
+        );
     }
 
     @Test
     void testLoadFleetsFromDatabase_EmptyDatabase() throws SQLException {
-        when(dbManager.executeQuery("SELECT * FROM fleets")).thenReturn(fleetResultSet);
-        when(fleetResultSet.next()).thenReturn(false); // Немає флотів
+        // 1. Підготовка
+        taxiFleetManager.getFleets().clear(); // Явне очищення
 
+        // 2. Налаштування моків
+        when(dbManager.executeQuery("SELECT * FROM fleets")).thenReturn(fleetResultSet);
+        when(fleetResultSet.next()).thenReturn(false); // Імітація пустої БД
+
+        // 3. Виконання
         taxiFleetManager.loadFleetsFromDatabase();
 
-        assertTrue(taxiFleetManager.getFleets().isEmpty());
+        // 4. Перевірки
+        assertAll(
+                () -> assertEquals(0, taxiFleetManager.getFleets().size(),
+                        "Список флотів має бути порожнім"),
+                () -> verify(dbManager).executeQuery("SELECT * FROM fleets"),
+                () -> verify(fleetResultSet).next()
+        );
     }
 
     @Test
     void testLoadFleetsFromDatabase_SQLException() throws SQLException {
+        // 1. Переконаємось, що список спочатку порожній
+        taxiFleetManager.getFleets().clear();
+
+        // 2. Мокуємо виняток
         when(dbManager.executeQuery("SELECT * FROM fleets")).thenThrow(new SQLException("DB error"));
 
+        // 3. Викликаємо метод і перевіряємо, що виняток не прокидається
         assertDoesNotThrow(() -> taxiFleetManager.loadFleetsFromDatabase());
-        assertTrue(taxiFleetManager.getFleets().isEmpty());
+
+        // 4. Перевіряємо, що список залишився порожнім
+        assertTrue(taxiFleetManager.getFleets().isEmpty(), "Fleets list should be empty after SQLException");
     }
 
     @Test

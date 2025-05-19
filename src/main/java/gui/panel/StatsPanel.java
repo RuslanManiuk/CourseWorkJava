@@ -222,7 +222,7 @@ public class StatsPanel extends JPanel {
      * Додає заголовок секції до панелі.
      *
      * @param panel Панель, до якої додається заголовок
-     * @param text Текст заголовка
+     * @param text  Текст заголовка
      */
     private void addSectionHeader(JPanel panel, String text) {
         JLabel header = new JLabel(text);
@@ -237,7 +237,7 @@ public class StatsPanel extends JPanel {
      * Додає рядок з парою ключ-значення до панелі.
      *
      * @param panel Панель, до якої додається рядок
-     * @param key Ключ (назва параметра)
+     * @param key   Ключ (назва параметра)
      * @param value Значення параметра
      */
     private void addKeyValueRow(JPanel panel, String key, String value) {
@@ -454,42 +454,4 @@ public class StatsPanel extends JPanel {
             }
         }
     }
-
-//    /**
-//     * Розраховує середню витрату електроенергії для електромобілів.
-//     *
-//     * @return Середня витрата електроенергії в кВт·год/100км
-//     */
-//    private double calculateAverageElectricConsumption() {
-//        logger.debug("Calculating average electric consumption for fleet: {}", taxiFleet.getName());
-//        List<Car> electricCars = taxiFleet.getCars().stream()
-//                .filter(c -> "Електричний".equals(c.getFuelType()))
-//                .collect(Collectors.toList());
-//
-//        if (electricCars.isEmpty()) return 0;
-//
-//        return electricCars.stream()
-//                .mapToDouble(Car::getFuelConsumption)
-//                .average()
-//                .orElse(0);
-//    }
-//
-//    /**
-//     * Розраховує середню витрату палива для бензинових/дизельних авто.
-//     *
-//     * @return Середня витрата палива в л/100км
-//     */
-//    private double calculateAverageGasConsumption() {
-//        logger.debug("Calculating average gas consumption for fleet: {}", taxiFleet.getName());
-//        List<Car> gasCars = taxiFleet.getCars().stream()
-//                .filter(c -> !"Електричний".equals(c.getFuelType()))
-//                .collect(Collectors.toList());
-//
-//        if (gasCars.isEmpty()) return 0;
-//
-//        return gasCars.stream()
-//                .mapToDouble(Car::getFuelConsumption)
-//                .average()
-//                .orElse(0);
-//    }
 }
