@@ -36,8 +36,7 @@ public class EmailSender implements EmailService {
      * @param subject заголовок листа
      * @param message текст повідомлення з описом помилки
      */
-5.2. Перевірки роботи графічного інтерфейсу (UI-тести)......................................26
-            5.3. Оптимізація продуктивності та анліз результатів............................................27
+
     public boolean sendErrorEmail(String subject, String message) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
