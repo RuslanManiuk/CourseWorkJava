@@ -1,0 +1,68 @@
+2025-05-14 21:28:20.614 [main] INFO  TaxiFleetApp - Starting Taxi Fleet Application
+2025-05-14 21:28:20.806 [AWT-EventQueue-0] INFO  gui.MainFrame - Creating MainFrame
+2025-05-14 21:28:20.886 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:21.681 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:21.751 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:21.789 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:21.796 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:21.831 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:21.841 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:21.842 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:21.872 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:21.878 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:21.879 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:21.927 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:21.931 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:21.932 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:21.968 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:21.972 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:21.973 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.001 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.005 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:22.006 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.034 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.040 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:22.040 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.067 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.071 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:22.071 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.102 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.105 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:22.106 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.138 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.142 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection closed successfully
+2025-05-14 21:28:22.142 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.166 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.168 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.200 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.203 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.228 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.230 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.265 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.269 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.299 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.302 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.329 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.330 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.359 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.361 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.388 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.390 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.418 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.419 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.439 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.442 [AWT-EventQueue-0] INFO  database.DataBaseManager - Initializing database connection
+2025-05-14 21:28:22.465 [AWT-EventQueue-0] INFO  database.DataBaseManager - Database connection established successfully
+2025-05-14 21:28:22.636 [AWT-EventQueue-0] INFO  gui.MainFrame - MainFrame initialized successfully
+2025-05-14 21:28:22.781 [AWT-EventQueue-0] INFO  TaxiFleetApp - Application started successfully
+2025-05-14 21:28:39.827 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
+2025-05-14 21:28:51.310 [AWT-EventQueue-0] INFO  gui.panel.FleetManagementPanel - Creating FleetManagementPanel for fleet: Київський таксопарк
+2025-05-14 21:28:51.463 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
+2025-05-14 21:28:51.463 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loading cars for fleetId: 1
+2025-05-14 21:28:51.465 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loaded 9 cars for fleetId: 1
+2025-05-14 21:28:51.467 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully
+2025-05-14 21:28:51.467 [AWT-EventQueue-0] INFO  gui.panel.StatsPanel - Creating StatsPanel for fleet: Київський таксопарк
+2025-05-14 21:29:26.950 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Loading and sorting cars
+2025-05-14 21:29:26.952 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loading cars for fleetId: 1
+2025-05-14 21:29:26.956 [AWT-EventQueue-0] INFO  database.DataBaseManager - Loaded 9 cars for fleetId: 1
+2025-05-14 21:29:26.957 [AWT-EventQueue-0] INFO  gui.panel.CarListPanel - Cars loaded and sorted successfully

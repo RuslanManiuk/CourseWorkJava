@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WAN">
+    <Appenders>
+        <!-- Консоль -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level: %msg%n%throwable" />
+        </Console>
+
+        <!-- Email -->
+        <SMTP name="Mail"
+              subject="Taxi Fleet Critical Error"
+              to="ruslanmanjuk@gmail.com"
+              from="o.123456789.n.123456789.e.123456789@gmail.com"
+              smtpHost="smtp.gmail.com"
+              smtpPort="587"
+              smtpUsername="o.123456789.n.123456789.e.123456789@gmail.com"
+              smtpPassword="mvixejyozarkrgdy"
+              bufferSize="1"
+              ignoreExceptions="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %c{1.} - %m%n%throwable" />
+            <Filters>
+                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </SMTP>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Email"/>
+        </Root>
+    </Loggers>
+</Configuration>
