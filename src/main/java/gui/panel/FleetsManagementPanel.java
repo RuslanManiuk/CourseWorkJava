@@ -20,7 +20,7 @@ public class FleetsManagementPanel extends JPanel {
     // Основні компоненти
     private TaxiFleetManager fleetManager;
     private JTabbedPane mainTabbedPane;
-    private JList<TaxiFleet> fleetsList;
+    JList<TaxiFleet> fleetsList;
     private DefaultListModel<TaxiFleet> fleetsListModel;
 
     // Кольорова схема UI
@@ -282,11 +282,13 @@ public class FleetsManagementPanel extends JPanel {
         actionsPanel.setBackground(PANEL_COLOR);
 
         JButton editButton = new JButton("Редагувати");
+
         editButton.setFont(new Font("Arial", Font.PLAIN, 12));
         editButton.addActionListener(e -> editFleet(fleet));
 
         JButton viewCarsButton = new JButton("Керувати");
         viewCarsButton.setFont(new Font("Arial", Font.PLAIN, 12));
+
         viewCarsButton.addActionListener(e -> viewCars(fleet));
 
         actionsPanel.add(editButton);

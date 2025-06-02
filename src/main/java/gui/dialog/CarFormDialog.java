@@ -28,6 +28,7 @@ public class CarFormDialog extends JDialog {
     JTextField consumptionField;
     JComboBox<String> typeComboBox;
     JComboBox<String> fuelTypeComboBox;
+    JLabel consumptionLabel; // Мітка для витрати, тепер поле класу
 
     // Константи для кольорів
     private final Color BACKGROUND_COLOR = new Color(240, 240, 245);
@@ -142,6 +143,7 @@ public class CarFormDialog extends JDialog {
         panel.add(makeLabel, labelConstraints);
 
         makeField = createFormTextField();
+        makeField.setName("makeField"); // Ім'я для тестування
         fieldConstraints.gridy = 0;
         panel.add(makeField, fieldConstraints);
 
@@ -151,6 +153,7 @@ public class CarFormDialog extends JDialog {
         panel.add(modelLabel, labelConstraints);
 
         modelField = createFormTextField();
+        modelField.setName("modelField"); // Ім'я для тестування
         fieldConstraints.gridy = 1;
         panel.add(modelField, fieldConstraints);
 
@@ -161,6 +164,7 @@ public class CarFormDialog extends JDialog {
 
         typeComboBox = new JComboBox<>(new String[]{"Бензин/Дизель", "Електричний"});
         typeComboBox.setFont(FIELD_FONT);
+        typeComboBox.setName("typeComboBox"); // Ім'я для тестування
         typeComboBox.addActionListener(this::updateFuelTypeVisibility);
         fieldConstraints.gridy = 2;
         panel.add(typeComboBox, fieldConstraints);
@@ -172,6 +176,7 @@ public class CarFormDialog extends JDialog {
 
         fuelTypeComboBox = new JComboBox<>(new String[]{"Бензин", "Дизель"});
         fuelTypeComboBox.setFont(FIELD_FONT);
+        fuelTypeComboBox.setName("fuelTypeComboBox"); // Ім'я для тестування
         fieldConstraints.gridy = 3;
         panel.add(fuelTypeComboBox, fieldConstraints);
 
@@ -181,6 +186,7 @@ public class CarFormDialog extends JDialog {
         panel.add(priceLabel, labelConstraints);
 
         priceField = createFormTextField();
+        priceField.setName("priceField"); // Ім'я для тестування
         fieldConstraints.gridy = 4;
         panel.add(priceField, fieldConstraints);
 
@@ -190,19 +196,23 @@ public class CarFormDialog extends JDialog {
         panel.add(speedLabel, labelConstraints);
 
         speedField = createFormTextField();
+        speedField.setName("speedField"); // Ім'я для тестування
         fieldConstraints.gridy = 5;
         panel.add(speedField, fieldConstraints);
 
         // Витрата
-        JLabel consumptionLabel = createFormLabel("Витрата:");
+        // Ініціалізуємо поле класу consumptionLabel
+        this.consumptionLabel = createFormLabel("Витрата (л/100км):"); // Початковий текст
+        this.consumptionLabel.setName("consumptionLabel"); // Ім'я для тестування
         labelConstraints.gridy = 6;
-        panel.add(consumptionLabel, labelConstraints);
+        panel.add(this.consumptionLabel, labelConstraints);
 
         consumptionField = createFormTextField();
+        consumptionField.setName("consumptionField"); // Ім'я для тестування
         fieldConstraints.gridy = 6;
         panel.add(consumptionField, fieldConstraints);
 
-        updateFuelTypeVisibility(null);
+        updateFuelTypeVisibility(null); // Викликаємо для встановлення коректного стану при запуску
         return panel;
     }
 
@@ -245,11 +255,13 @@ public class CarFormDialog extends JDialog {
         // Кнопка очищення
         JButton clearButton = new JButton("Очистити");
         clearButton.setFont(LABEL_FONT);
+        clearButton.setName("clearButton"); // Ім'я для тестування
         clearButton.addActionListener(e -> clearForm());
 
         // Кнопка скасування
         JButton cancelButton = new JButton("Скасувати");
         cancelButton.setFont(LABEL_FONT);
+        cancelButton.setName("cancelButton"); // Ім'я для тестування
         cancelButton.addActionListener(e -> dispose());
 
         // Кнопка додавання
@@ -257,6 +269,7 @@ public class CarFormDialog extends JDialog {
         addButton.setFont(LABEL_FONT);
         addButton.setBackground(BUTTON_COLOR);
         addButton.setForeground(Color.WHITE);
+        addButton.setName("addButton"); // Ім'я для тестування
         addButton.addActionListener(this::addCar);
 
         panel.add(clearButton);
@@ -267,43 +280,19 @@ public class CarFormDialog extends JDialog {
     }
 
     /**
-     * Оновлює видимість поля вибору типу палива в залежності від типу автомобіля
+     * Оновлює видимість поля вибору типу палива та текст мітки витрати
+     * в залежності від типу автомобіля.
      *
      * @param e подія дії (може бути null)
      */
     void updateFuelTypeVisibility(ActionEvent e) {
-        if (typeComboBox == null || fuelTypeComboBox == null) return;
+        if (typeComboBox == null || fuelTypeComboBox == null || consumptionLabel == null) {
+            return; // Компоненти ще не ініціалізовані
+        }
 
         boolean isElectric = typeComboBox.getSelectedIndex() == 1;
         fuelTypeComboBox.setVisible(!isElectric);
-
-        // Оновлюємо текст поля з витратою палива
-        Component[] components = getContentPane().getComponents();
-        for (Component component : components) {
-            if (component instanceof JPanel) {
-                updateConsumptionLabel((JPanel)component, isElectric);
-            }
-        }
-    }
-
-    /**
-     * Рекурсивно оновлює текст мітки споживання в залежності від типу автомобіля
-     *
-     * @param panel панель для пошуку
-     * @param isElectric чи є автомобіль електричним
-     */
-    void updateConsumptionLabel(JPanel panel, boolean isElectric) {
-        Component[] components = panel.getComponents();
-        for (Component component : components) {
-            if (component instanceof JLabel &&
-                    ((JLabel)component).getText().startsWith("Витрата")) {
-                ((JLabel)component).setText(isElectric ? "Витрата (кВт·год/100км):" : "Витрата (л/100км):");
-                break;
-            } else if (component instanceof JPanel) {
-                // Рекурсивно перевіряємо вкладені панелі
-                updateConsumptionLabel((JPanel)component, isElectric);
-            }
-        }
+        consumptionLabel.setText(isElectric ? "Витрата (кВт·год/100км):" : "Витрата (л/100км):");
     }
 
     /**
@@ -317,10 +306,6 @@ public class CarFormDialog extends JDialog {
             String model = modelField.getText();
             logger.debug("Attempting to add new car: {} {}", make, model);
 
-            double price = Double.parseDouble(priceField.getText());
-            double speed = Double.parseDouble(speedField.getText());
-            double consumption = Double.parseDouble(consumptionField.getText());
-
             // Перевірка на пусті поля
             if (make.trim().isEmpty() || model.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(this,
@@ -329,6 +314,11 @@ public class CarFormDialog extends JDialog {
                         JOptionPane.WARNING_MESSAGE);
                 return;
             }
+
+            double price = Double.parseDouble(priceField.getText());
+            double speed = Double.parseDouble(speedField.getText());
+            double consumption = Double.parseDouble(consumptionField.getText());
+
 
             if (typeComboBox.getSelectedIndex() == 1) { // Електричний
                 taxiFleet.addCar(new ElectricCar(make, model, price, speed, consumption));
@@ -339,13 +329,13 @@ public class CarFormDialog extends JDialog {
                 logger.info("Added new gas car: {} {}, fuel type: {}", make, model, fuelType);
             }
 
-            carListPanel.loadAndSortCars();
-            dispose();
+            carListPanel.loadAndSortCars(); // Оновлюємо список в головному вікні
+            dispose(); // Закриваємо діалог
 
             logger.info("Successfully added new car to fleet: {}", taxiFleet.getName());
 
             // Покращене повідомлення про успіх
-            JOptionPane.showMessageDialog(this.getParent(),
+            JOptionPane.showMessageDialog(this.getParent(), // Показуємо відносно батьківського фрейму
                     "Авто " + make + " " + model + " успішно додано до автопарку!",
                     "Успішне додавання",
                     JOptionPane.INFORMATION_MESSAGE);
@@ -369,6 +359,8 @@ public class CarFormDialog extends JDialog {
         priceField.setText("");
         speedField.setText("");
         consumptionField.setText("");
-        typeComboBox.setSelectedIndex(0);
+        typeComboBox.setSelectedIndex(0); // Скидаємо на "Бензин/Дизель"
+        // fuelTypeComboBox скинеться автоматично або його видимість/значення оновиться через updateFuelTypeVisibility
+        // updateFuelTypeVisibility(null); // Можна викликати явно, якщо є сумніви, але addActionListener на typeComboBox має це зробити
     }
 }

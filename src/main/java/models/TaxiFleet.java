@@ -143,7 +143,7 @@ public class TaxiFleet {
      *
      * @param car автомобіль для збереження
      */
-    private void saveCarToDatabase(Car car) {
+    public void saveCarToDatabase(Car car) {
         DataBaseManager dbManager = new DataBaseManager();
         try {
             if (car.getCarId() == 0) {

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/dialog/CarFormDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/dialog/CarFormDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gui/dialog/CarFormDialogTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gui/panel/FleetManagerPanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gui/panel/FleetManagerPanelTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +58,7 @@
     "JUnit.All in CourseWork.executor": "Coverage",
     "JUnit.CarCountServiceTest.executor": "Coverage",
     "JUnit.CarFilterServiceTest.executor": "Coverage",
+    "JUnit.CarFormDialogAutoTest.executor": "Coverage",
     "JUnit.CarFormDialogTest.executor": "Coverage",
     "JUnit.CarFormDialogTest.testInitialState.executor": "Coverage",
     "JUnit.CarFormDialogTest.testTypeComboBoxChanges.executor": "Coverage",
@@ -67,6 +76,7 @@
     "JUnit.EmailSenderTest.executor": "Coverage",
     "JUnit.EmailServiceTest.executor": "Coverage",
     "JUnit.FleetManagementPanelTest.executor": "Coverage",
+    "JUnit.FleetsManagementPanelAutoTest.executor": "Coverage",
     "JUnit.FleetsManagementPanelTest.executor": "Run",
     "JUnit.FleetsManagementPanelTest.testRemoveSelectedFleet.executor": "Run",
     "JUnit.GlobalExceptionHandlerTest.executor": "Coverage",
@@ -102,7 +112,7 @@
     "JUnit.java in CourseWork.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main__feachers",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -123,23 +133,8 @@
       <recent name="managers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CourseWork">
-    <configuration name="CarCountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CourseWork" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.CarCountServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CarFormDialogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FleetManagementPanelTest">
+    <configuration name="CarFormDialogAutoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
@@ -148,22 +143,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="gui.dialog" />
-      <option name="MAIN_CLASS_NAME" value="gui.dialog.CarFormDialogTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CarStatsServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CourseWork" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.CarStatsServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="gui.dialog.CarFormDialogAutoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,6 +165,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FleetManagementPanelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.panel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gui.panel" />
+      <option name="MAIN_CLASS_NAME" value="gui.panel.FleetManagementPanelTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FleetsManagementPanelAutoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.panel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gui.panel" />
+      <option name="MAIN_CLASS_NAME" value="gui.panel.FleetsManagementPanelAutoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in CourseWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <option name="TEST_OBJECT" value="directory" />
@@ -194,19 +204,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CarCountServiceTest" />
-      <item itemvalue="JUnit.CarStatsServiceTest" />
+      <item itemvalue="JUnit.CarFormDialogAutoTest" />
+      <item itemvalue="JUnit.FleetManagementPanelTest" />
+      <item itemvalue="JUnit.FleetsManagementPanelAutoTest" />
       <item itemvalue="JUnit.CarStatsServiceTest.testCalculateTotalCost" />
-      <item itemvalue="JUnit.CarFormDialogTest" />
       <item itemvalue="JUnit.java in CourseWork" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FleetManagementPanelTest" />
         <item itemvalue="JUnit.java in CourseWork" />
+        <item itemvalue="JUnit.CarFormDialogAutoTest" />
+        <item itemvalue="JUnit.FleetsManagementPanelAutoTest" />
         <item itemvalue="JUnit.CarStatsServiceTest.testCalculateTotalCost" />
-        <item itemvalue="JUnit.CarStatsServiceTest" />
-        <item itemvalue="JUnit.CarCountServiceTest" />
-        <item itemvalue="JUnit.CarFormDialogTest" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +246,8 @@
       <workItem from="1747669745958" duration="10203000" />
       <workItem from="1747692318600" duration="1345000" />
       <workItem from="1747764990184" duration="11646000" />
-      <workItem from="1748876972302" duration="6812000" />
+      <workItem from="1748876972302" duration="10033000" />
+      <workItem from="1748891666466" duration="6280000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -350,7 +361,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748883443582</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1">
+      <option name="closed" value="true" />
+      <created>1748884434301</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748884434301</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +386,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main_feachers" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -393,7 +412,8 @@
     <MESSAGE value="тести 2.1" />
     <MESSAGE value="тести 2.2" />
     <MESSAGE value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
-    <option name="LAST_COMMIT_MESSAGE" value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
+    <MESSAGE value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -410,10 +430,10 @@
       <FILTER>models.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetAppTest.ic" NAME="TaxiFleetAppTest Coverage Results" MODIFIED="1747612464570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/CourseWork$All_in_CourseWork__1_.ic" NAME="All in CourseWork (1) Coverage Results" MODIFIED="1747592132917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$CarFilterServiceTest.ic" NAME="CarFilterServiceTest Coverage Results" MODIFIED="1747592870538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>services.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$All_in_CourseWork__1_.ic" NAME="All in CourseWork (1) Coverage Results" MODIFIED="1747592132917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$All_in_CourseWork.ic" NAME="All in CourseWork Coverage Results" MODIFIED="1747517945917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetTest_testRemoveCar_RemovesFromListAndDatabase.ic" NAME="TaxiFleetTest.testRemoveCar_RemovesFromListAndDatabase Coverage Results" MODIFIED="1747581028524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>models.*</FILTER>
@@ -430,10 +450,10 @@
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetTest_testToString.ic" NAME="TaxiFleetTest.testToString Coverage Results" MODIFIED="1747576901328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>models.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$CarListPanelTest_testRemoveSelectedCar.ic" NAME="CarListPanelTest.testRemoveSelectedCar Coverage Results" MODIFIED="1747604542472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/CourseWork$CarListPanelTest_testUpdateTable.ic" NAME="CarListPanelTest.testUpdateTable Coverage Results" MODIFIED="1747607405096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$CarListPanelTest_testUpdateTable.ic" NAME="CarListPanelTest.testUpdateTable Coverage Results" MODIFIED="1747607405096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/CourseWork$CarListPanelTest_testRemoveSelectedCar.ic" NAME="CarListPanelTest.testRemoveSelectedCar Coverage Results" MODIFIED="1747604542472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetAppTest_testMainFrameInitialization.ic" NAME="TaxiFleetAppTest.testMainFrameInitialization Coverage Results" MODIFIED="1747611240998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
@@ -491,7 +511,7 @@
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetAppTest_testErrorHandlingWhenMainFrameFails.ic" NAME="TaxiFleetAppTest.testErrorHandlingWhenMainFrameFails Coverage Results" MODIFIED="1747611265424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1748883336389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1748897578996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetManagerTest_testLoadFleetsFromDatabase_SQLException.ic" NAME="TaxiFleetManagerTest.testLoadFleetsFromDatabase_SQLException Coverage Results" MODIFIED="1747673840074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>models.*</FILTER>
     </SUITE>
@@ -501,8 +521,14 @@
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest_testUncaughtException_EmailFailure.ic" NAME="GlobalExceptionHandlerTest.testUncaughtException_EmailFailure Coverage Results" MODIFIED="1747676722466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$FleetsManagementPanelAutoTest.ic" NAME="FleetsManagementPanelAutoTest Coverage Results" MODIFIED="1748896040718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>gui.panel.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$CarStatsServiceTest_testCalculateTotalCost.ic" NAME="CarStatsServiceTest.testCalculateTotalCost Coverage Results" MODIFIED="1748880317505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$CarFormDialogAutoTest.ic" NAME="CarFormDialogAutoTest Coverage Results" MODIFIED="1748897228260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>gui.dialog.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$CarFormDialogTest.ic" NAME="CarFormDialogTest Coverage Results" MODIFIED="1747774318129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.dialog.*</FILTER>
@@ -531,7 +557,7 @@
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest.ic" NAME="GlobalExceptionHandlerTest Coverage Results" MODIFIED="1747677708129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$FleetManagementPanelTest.ic" NAME="FleetManagementPanelTest Coverage Results" MODIFIED="1747602238795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/CourseWork$FleetManagementPanelTest.ic" NAME="FleetManagementPanelTest Coverage Results" MODIFIED="1748897550258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$StatsPanelTest_testFuelConsumptionBarChart_PaintComponent_RotatedText.ic" NAME="StatsPanelTest.testFuelConsumptionBarChart_PaintComponent_RotatedText Coverage Results" MODIFIED="1747602013277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
