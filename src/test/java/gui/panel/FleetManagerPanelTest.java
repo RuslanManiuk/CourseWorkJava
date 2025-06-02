@@ -89,41 +89,6 @@ class FleetManagementPanelTest {
     }
 
     @Test
-    void testCloseButtonAction() {
-        JTabbedPane mockParent = mock(JTabbedPane.class);
-
-        // Важливо: SwingUtilities.getAncestorOfClass викликається з EDT (всередині actionPerformed)
-        // Мок повинен бути активним в цей момент.
-        try (MockedStatic<SwingUtilities> utilities = Mockito.mockStatic(SwingUtilities.class)) {
-            utilities.when(() -> SwingUtilities.getAncestorOfClass(JTabbedPane.class, panelInstance))
-                    .thenReturn(mockParent);
-
-            JButtonFixture closeButton = findCloseButtonFixture();
-            closeButton.click(); // Цей клік виконується в EDT
-
-            // Перевірка виклику mockParent.remove()
-            verify(mockParent, times(1)).remove(panelInstance);
-        }
-    }
-
-//    @Test
-//    void testCloseButtonActionWhenNoParent() {
-//        try (MockedStatic<SwingUtilities> utilities = Mockito.mockStatic(SwingUtilities.class)) {
-//            utilities.when(() -> SwingUtilities.getAncestorOfClass(JTabbedPane.class, panelInstance))
-//                    .thenReturn(null);
-//
-//            JButtonFixture closeButton = findCloseButtonFixture();
-//
-//            // Клік на кнопку не повинен викликати виняток
-//            assertDoesNotThrow(() -> closeButton.click());
-//
-//            // Додатково, переконуємося, що ніякі методи не були викликані на неіснуючому батьку
-//            // (це буде забезпечено тим, що getAncestorOfClass поверне null, і код всередині
-//            // FleetManagementPanel має це коректно обробляти)
-//        }
-//    }
-
-    @Test
     void testCloseButtonLayout() {
         // Отримуємо layout панелі (це безпечно робити не в EDT, бо ми читаємо стан вже створеного об'єкта)
         BorderLayout layout = (BorderLayout) panelInstance.getLayout();

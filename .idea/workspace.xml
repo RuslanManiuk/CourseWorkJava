@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/dialog/CarFormDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/dialog/CarFormDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gui/dialog/CarFormDialogTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gui/panel/FleetManagerPanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gui/panel/FleetManagerPanelTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="Додано Automation Test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +28,17 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/RuslanManiuk/CourseWorkJava.git",
+    "accountId": "cf502e07-e753-42b0-800a-ce3cca319d7c"
+  }
+}]]></component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="FleetManagementPanelTest" />
+    </enabled-run-configurations>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -133,7 +136,7 @@
       <recent name="managers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FleetManagementPanelTest">
+  <component name="RunManager" selected="JUnit.java in CourseWork">
     <configuration name="CarFormDialogAutoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <extension name="coverage">
@@ -212,8 +215,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FleetManagementPanelTest" />
         <item itemvalue="JUnit.java in CourseWork" />
+        <item itemvalue="JUnit.FleetManagementPanelTest" />
         <item itemvalue="JUnit.CarFormDialogAutoTest" />
         <item itemvalue="JUnit.FleetsManagementPanelAutoTest" />
         <item itemvalue="JUnit.CarStatsServiceTest.testCalculateTotalCost" />
@@ -247,7 +250,7 @@
       <workItem from="1747692318600" duration="1345000" />
       <workItem from="1747764990184" duration="11646000" />
       <workItem from="1748876972302" duration="10033000" />
-      <workItem from="1748891666466" duration="6280000" />
+      <workItem from="1748891666466" duration="6792000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -369,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748884434301</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Додано Automation Test">
+      <option name="closed" value="true" />
+      <created>1748898405873</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748898405873</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +424,8 @@
     <MESSAGE value="тести 2.2" />
     <MESSAGE value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
     <MESSAGE value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі 2.1" />
+    <MESSAGE value="Додано Automation Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Додано Automation Test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -557,7 +569,7 @@
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest.ic" NAME="GlobalExceptionHandlerTest Coverage Results" MODIFIED="1747677708129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$FleetManagementPanelTest.ic" NAME="FleetManagementPanelTest Coverage Results" MODIFIED="1748897550258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/CourseWork$FleetManagementPanelTest.ic" NAME="FleetManagementPanelTest Coverage Results" MODIFIED="1748898230165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$StatsPanelTest_testFuelConsumptionBarChart_PaintComponent_RotatedText.ic" NAME="StatsPanelTest.testFuelConsumptionBarChart_PaintComponent_RotatedText Coverage Results" MODIFIED="1747602013277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
