@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="тести 2.2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/managers/TaxiFleetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CarStatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CarStatsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gui/panel/FleetsManagerPanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gui/panel/FleetsManagerPanelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/TaxiFleetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/TaxiFleetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/services/CarStatsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/CarStatsServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +118,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="managers" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.java in CourseWork">
     <configuration name="CarCountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
@@ -242,7 +236,7 @@
       <workItem from="1747669745958" duration="10203000" />
       <workItem from="1747692318600" duration="1345000" />
       <workItem from="1747764990184" duration="11646000" />
-      <workItem from="1748876972302" duration="6163000" />
+      <workItem from="1748876972302" duration="6812000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -348,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747692240475</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі">
+      <option name="closed" value="true" />
+      <created>1748883443582</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748883443582</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +392,8 @@
     <MESSAGE value="тести 2.0" />
     <MESSAGE value="тести 2.1" />
     <MESSAGE value="тести 2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="тести 2.2" />
+    <MESSAGE value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
+    <option name="LAST_COMMIT_MESSAGE" value="Виправлені правки, винесені методи в сервіси а також TaxiFleetManager винесено з папки моделі" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -488,7 +491,7 @@
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetAppTest_testErrorHandlingWhenMainFrameFails.ic" NAME="TaxiFleetAppTest.testErrorHandlingWhenMainFrameFails Coverage Results" MODIFIED="1747611265424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1748880484899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1748883336389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetManagerTest_testLoadFleetsFromDatabase_SQLException.ic" NAME="TaxiFleetManagerTest.testLoadFleetsFromDatabase_SQLException Coverage Results" MODIFIED="1747673840074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>models.*</FILTER>
     </SUITE>
