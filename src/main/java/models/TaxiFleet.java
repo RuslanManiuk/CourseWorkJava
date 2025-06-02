@@ -172,35 +172,6 @@ public class TaxiFleet {
         }
     }
 
-    // ------------------ Аналітичні методи ------------------
-
-    /**
-     * Обчислює загальну вартість усіх автомобілів у таксопарку.
-     *
-     * @return загальна вартість автопарку
-     */
-    public double calculateTotalCost() {
-        return cars.stream().mapToDouble(Car::getPrice).sum();
-    }
-
-    /**
-     * Повертає кількість електричних автомобілів у таксопарку.
-     *
-     * @return кількість електричних автомобілів
-     */
-    public int getElectricCarCount() {
-        return (int) cars.stream().filter(c -> c.getFuelType().equals("Електричний")).count();
-    }
-
-    /**
-     * Повертає кількість автомобілів з двигуном внутрішнього згоряння у таксопарку.
-     *
-     * @return кількість автомобілів з ДВЗ
-     */
-    public int getGasCarCount() {
-        return cars.size() - getElectricCarCount();
-    }
-
     // ------------------ Перевизначені методи ------------------
 
     /**

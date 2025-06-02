@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="тести 2.1">
+    <list default="true" id="5bd7848c-3f06-4368-bb17-e3cc71a71e00" name="Changes" comment="тести 2.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/FleetsManagementPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/panel/StatsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/TaxiFleetManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/TaxiFleetManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/GlobalExceptionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/GlobalExceptionHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TaxiFleet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/TaxiFleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/managers/TaxiFleetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CarStatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CarStatsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gui/panel/FleetsManagerPanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gui/panel/FleetsManagerPanelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/TaxiFleetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/TaxiFleetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/CarStatsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/CarStatsServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
     "Application.TaxiFleetApp.executor": "Run",
     "JUnit.All in CourseWork (1).executor": "Run",
     "JUnit.All in CourseWork.executor": "Coverage",
+    "JUnit.CarCountServiceTest.executor": "Coverage",
     "JUnit.CarFilterServiceTest.executor": "Coverage",
     "JUnit.CarFormDialogTest.executor": "Coverage",
     "JUnit.CarFormDialogTest.testInitialState.executor": "Coverage",
@@ -68,7 +73,8 @@
     "JUnit.CarListPanelTest.testRemoveSelectedCarLogic.executor": "Coverage",
     "JUnit.CarListPanelTest.testShowCarDetails.executor": "Coverage",
     "JUnit.CarListPanelTest.testUpdateTable.executor": "Coverage",
-    "JUnit.CarStatsServiceTest.executor": "Coverage",
+    "JUnit.CarStatsServiceTest.executor": "Run",
+    "JUnit.CarStatsServiceTest.testCalculateTotalCost.executor": "Coverage",
     "JUnit.EmailSenderTest.executor": "Coverage",
     "JUnit.EmailServiceTest.executor": "Coverage",
     "JUnit.FleetManagementPanelTest.executor": "Coverage",
@@ -110,76 +116,76 @@
     "git-widget-placeholder": "main__feachers",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="GlobalExceptionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.java in CourseWork">
+    <configuration name="CarCountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.GlobalExceptionHandlerTest" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.CarCountServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlobalExceptionHandlerTest.testUncaughtException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarFormDialogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="gui.dialog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.GlobalExceptionHandlerTest" />
-      <option name="METHOD_NAME" value="testUncaughtException" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="gui.dialog" />
+      <option name="MAIN_CLASS_NAME" value="gui.dialog.CarFormDialogTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlobalExceptionHandlerTest.testUncaughtException_EmailFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarStatsServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.GlobalExceptionHandlerTest" />
-      <option name="METHOD_NAME" value="testUncaughtException_EmailFailure" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.CarStatsServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlobalExceptionHandlerTest.testUncaughtException_LoggingFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarStatsServiceTest.testCalculateTotalCost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utils.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.GlobalExceptionHandlerTest" />
-      <option name="METHOD_NAME" value="testUncaughtException_LoggingFailure" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.CarStatsServiceTest" />
+      <option name="METHOD_NAME" value="testCalculateTotalCost" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,19 +200,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.GlobalExceptionHandlerTest" />
-      <item itemvalue="JUnit.GlobalExceptionHandlerTest.testUncaughtException" />
-      <item itemvalue="JUnit.GlobalExceptionHandlerTest.testUncaughtException_EmailFailure" />
-      <item itemvalue="JUnit.GlobalExceptionHandlerTest.testUncaughtException_LoggingFailure" />
+      <item itemvalue="JUnit.CarCountServiceTest" />
+      <item itemvalue="JUnit.CarStatsServiceTest" />
+      <item itemvalue="JUnit.CarStatsServiceTest.testCalculateTotalCost" />
+      <item itemvalue="JUnit.CarFormDialogTest" />
       <item itemvalue="JUnit.java in CourseWork" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in CourseWork" />
-        <item itemvalue="JUnit.GlobalExceptionHandlerTest" />
-        <item itemvalue="JUnit.GlobalExceptionHandlerTest.testUncaughtException" />
-        <item itemvalue="JUnit.GlobalExceptionHandlerTest.testUncaughtException_EmailFailure" />
-        <item itemvalue="JUnit.GlobalExceptionHandlerTest.testUncaughtException_LoggingFailure" />
+        <item itemvalue="JUnit.CarStatsServiceTest.testCalculateTotalCost" />
+        <item itemvalue="JUnit.CarStatsServiceTest" />
+        <item itemvalue="JUnit.CarCountServiceTest" />
+        <item itemvalue="JUnit.CarFormDialogTest" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +239,10 @@
       <workItem from="1747479417321" duration="30979000" />
       <workItem from="1747575292107" duration="16673000" />
       <workItem from="1747592095765" duration="20379000" />
-      <workItem from="1747669745958" duration="9992000" />
+      <workItem from="1747669745958" duration="10203000" />
+      <workItem from="1747692318600" duration="1345000" />
+      <workItem from="1747764990184" duration="11646000" />
+      <workItem from="1748876972302" duration="6163000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -331,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747612570547</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="тести 2.2">
+      <option name="closed" value="true" />
+      <created>1747692240475</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747692240475</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,9 +389,17 @@
     <MESSAGE value="написав пару тестів" />
     <MESSAGE value="тести 2.0" />
     <MESSAGE value="тести 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="тести 2.1" />
+    <MESSAGE value="тести 2.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="тести 2.2" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CourseWork$CarCountServiceTest.ic" NAME="CarCountServiceTest Coverage Results" MODIFIED="1748879261514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>services.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$CarListPanelTest_testRemoveSelectedCarLogic.ic" NAME="CarListPanelTest.testRemoveSelectedCarLogic Coverage Results" MODIFIED="1747604323755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
@@ -463,7 +488,7 @@
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetAppTest_testErrorHandlingWhenMainFrameFails.ic" NAME="TaxiFleetAppTest.testErrorHandlingWhenMainFrameFails Coverage Results" MODIFIED="1747611265424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1747677721204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CourseWork$java_in_CourseWork.ic" NAME="java in CourseWork Coverage Results" MODIFIED="1748880484899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CourseWork$TaxiFleetManagerTest_testLoadFleetsFromDatabase_SQLException.ic" NAME="TaxiFleetManagerTest.testLoadFleetsFromDatabase_SQLException Coverage Results" MODIFIED="1747673840074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>models.*</FILTER>
     </SUITE>
@@ -473,7 +498,10 @@
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest_testUncaughtException_EmailFailure.ic" NAME="GlobalExceptionHandlerTest.testUncaughtException_EmailFailure Coverage Results" MODIFIED="1747676722466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$CarFormDialogTest.ic" NAME="CarFormDialogTest Coverage Results" MODIFIED="1747607996597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/CourseWork$CarStatsServiceTest_testCalculateTotalCost.ic" NAME="CarStatsServiceTest.testCalculateTotalCost Coverage Results" MODIFIED="1748880317505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$CarFormDialogTest.ic" NAME="CarFormDialogTest Coverage Results" MODIFIED="1747774318129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.dialog.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$StatsPanelTest_testFuelConsumptionBarChart_PaintComponent_Electric.ic" NAME="StatsPanelTest.testFuelConsumptionBarChart_PaintComponent_Electric Coverage Results" MODIFIED="1747601959580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -491,11 +519,11 @@
     <SUITE FILE_PATH="coverage/CourseWork$CarListPanelTest_testMouseClicked.ic" NAME="CarListPanelTest.testMouseClicked Coverage Results" MODIFIED="1747603390917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.panel.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CourseWork$CarStatsServiceTest.ic" NAME="CarStatsServiceTest Coverage Results" MODIFIED="1747593184741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>services.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$MainFrameTest.ic" NAME="MainFrameTest Coverage Results" MODIFIED="1747598852273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CourseWork$CarStatsServiceTest.ic" NAME="CarStatsServiceTest Coverage Results" MODIFIED="1748879565571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>services.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CourseWork$GlobalExceptionHandlerTest.ic" NAME="GlobalExceptionHandlerTest Coverage Results" MODIFIED="1747677708129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>utils.*</FILTER>

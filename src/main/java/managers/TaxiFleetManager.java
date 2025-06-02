@@ -1,6 +1,7 @@
-package models;
+package managers;
 
 import database.DataBaseManager;
+import models.TaxiFleet;
 import models.cars.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

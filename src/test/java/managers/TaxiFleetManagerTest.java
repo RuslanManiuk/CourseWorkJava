@@ -1,18 +1,16 @@
-package models;
+package managers;
 
 import database.DataBaseManager;
+import models.TaxiFleet;
 import models.cars.Car;
 import models.cars.ElectricCar;
-import models.cars.GasCar;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

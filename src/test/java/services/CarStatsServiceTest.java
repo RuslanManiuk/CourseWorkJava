@@ -2,6 +2,8 @@ package services;
 
 import models.TaxiFleet;
 import models.cars.Car;
+import models.cars.ElectricCar;
+import models.cars.GasCar;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -107,6 +109,28 @@ class CarStatsServiceTest {
 
         // Assert
         assertEquals(0.0, result, 0.001);
+    }
+
+    @Test
+    void testCalculateTotalCost() {
+        // Arrange
+        Car car1 = createMockCar("Електричний", 0.15, 45000);
+        Car car2 = createMockCar("Бензин", 8.5, 25000);
+        when(taxiFleet.getCars()).thenReturn(Arrays.asList(car1, car2));
+
+        // Act
+        double totalCost = carStatsService.calculateTotalCost();
+
+        // Assert
+        assertEquals(70000, totalCost, 0.001);
+    }
+
+    private Car createMockCar(String fuelType, double fuelConsumption, double price) {
+        Car car = mock(Car.class);
+        when(car.getFuelType()).thenReturn(fuelType);
+        when(car.getFuelConsumption()).thenReturn(fuelConsumption);
+        when(car.getPrice()).thenReturn(price);
+        return car;
     }
 
     private Car createMockCar(String fuelType, double fuelConsumption) {

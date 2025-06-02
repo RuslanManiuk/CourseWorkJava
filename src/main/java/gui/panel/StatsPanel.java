@@ -4,6 +4,7 @@ import models.TaxiFleet;
 import models.cars.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import services.CarCountService;
 import services.CarStatsService;
 
 import javax.swing.*;
@@ -25,6 +26,7 @@ public class StatsPanel extends JPanel {
     private TaxiFleet taxiFleet;
 
     private final CarStatsService carStatsService;
+    private final CarCountService carCountService;
 
     // Константи кольорів для UI елементів
     private static final Color HEADER_COLOR = new Color(52, 73, 94);
@@ -47,6 +49,8 @@ public class StatsPanel extends JPanel {
         logger.info("Creating StatsPanel for fleet: {}", taxiFleet.getName());
         this.taxiFleet = taxiFleet;
         this.carStatsService = new CarStatsService(taxiFleet);
+        this.carCountService = new CarCountService(taxiFleet);
+
         setLayout(new BorderLayout(10, 10));
         setBackground(BACKGROUND_COLOR);
         setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -106,9 +110,9 @@ public class StatsPanel extends JPanel {
 
         // Обчислення статистики
         int totalCars = taxiFleet.getCars().size();
-        int electricCount = taxiFleet.getElectricCarCount();
-        int gasCount = taxiFleet.getGasCarCount();
-        double totalCost = taxiFleet.calculateTotalCost();
+        int electricCount = carCountService.getElectricCarCount();
+        int gasCount = carCountService.getGasCarCount();
+        double totalCost = carStatsService.calculateTotalCost();
 
         // Розрахунок середньої витрати окремо для електро та паливних авто
         double avgElectricConsumption = carStatsService.calculateAverageElectricConsumption();
@@ -300,8 +304,8 @@ public class StatsPanel extends JPanel {
             int y = (height - pieSize) / 2;
 
             // Обчислення даних
-            int electricCount = taxiFleet.getElectricCarCount();
-            int gasCount = taxiFleet.getGasCarCount();
+            int electricCount = carCountService.getElectricCarCount();
+            int gasCount = carCountService.getGasCarCount();
             int total = electricCount + gasCount;
 
             if (total > 0) {

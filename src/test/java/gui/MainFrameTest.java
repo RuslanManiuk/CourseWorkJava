@@ -1,6 +1,6 @@
 package gui;
 
-import models.TaxiFleetManager;
+import managers.TaxiFleetManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

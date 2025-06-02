@@ -86,24 +86,24 @@ class TaxiFleetTest {
         assertEquals("Toyota", cars.get(1).getMake());
     }
 
-    @Test
-    void testCalculateTotalCost() {
-        taxiFleet.addCar(new ElectricCar("Tesla", "Model 3", 45000, 250, 15));
-        taxiFleet.addCar(new GasCar("Toyota", "Corolla", 25000, 200, 7, "Бензин"));
-
-        double totalCost = taxiFleet.calculateTotalCost();
-        assertEquals(70000, totalCost, 0.001);
-    }
-
-    @Test
-    void testGetElectricAndGasCarCount() {
-        taxiFleet.addCar(new ElectricCar("Tesla", "Model 3", 45000, 250, 15));
-        taxiFleet.addCar(new ElectricCar("Nissan", "Leaf", 30000, 180, 12));
-        taxiFleet.addCar(new GasCar("Toyota", "Corolla", 25000, 200, 7, "Бензин"));
-
-        assertEquals(2, taxiFleet.getElectricCarCount());
-        assertEquals(1, taxiFleet.getGasCarCount());
-    }
+//    @Test
+//    void testCalculateTotalCost() {
+//        taxiFleet.addCar(new ElectricCar("Tesla", "Model 3", 45000, 250, 15));
+//        taxiFleet.addCar(new GasCar("Toyota", "Corolla", 25000, 200, 7, "Бензин"));
+//
+//        double totalCost = taxiFleet.calculateTotalCost();
+//        assertEquals(70000, totalCost, 0.001);
+//    }
+//
+//    @Test
+//    void testGetElectricAndGasCarCount() {
+//        taxiFleet.addCar(new ElectricCar("Tesla", "Model 3", 45000, 250, 15));
+//        taxiFleet.addCar(new ElectricCar("Nissan", "Leaf", 30000, 180, 12));
+//        taxiFleet.addCar(new GasCar("Toyota", "Corolla", 25000, 200, 7, "Бензин"));
+//
+//        assertEquals(2, taxiFleet.getElectricCarCount());
+//        assertEquals(1, taxiFleet.getGasCarCount());
+//    }
 
     @Test
     void testSetName() throws SQLException {

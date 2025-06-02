@@ -1,7 +1,7 @@
 package gui.panel;
 
 import models.TaxiFleet;
-import models.TaxiFleetManager;
+import managers.TaxiFleetManager;
 import gui.panel.StatsPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

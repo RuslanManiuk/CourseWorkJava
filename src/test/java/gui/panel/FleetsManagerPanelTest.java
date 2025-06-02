@@ -1,7 +1,7 @@
 package gui.panel;
 
 import models.TaxiFleet;
-import models.TaxiFleetManager;
+import managers.TaxiFleetManager;
 import models.cars.GasCar;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

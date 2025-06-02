@@ -23,6 +23,17 @@ public class CarStatsService {
     }
 
     /**
+     * Обчислює загальну вартість усіх автомобілів у таксопарку.
+     *
+     * @return загальна вартість автопарку
+     */
+    public double calculateTotalCost() {
+        return taxiFleet.getCars().stream()
+                .mapToDouble(Car::getPrice)
+                .sum();
+    }
+
+    /**
      * Обчислює середнє споживання електроенергії для електромобілів.
      *
      * @return середнє споживання електроенергії (кВт·год/100 км) або 0, якщо електромобілів немає
