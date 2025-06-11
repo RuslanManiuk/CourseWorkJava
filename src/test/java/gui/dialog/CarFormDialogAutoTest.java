@@ -107,7 +107,9 @@ public class CarFormDialogAutoTest { // Ваша назва класу
         assertThat(addedCar).isInstanceOf(GasCar.class);
         assertThat(addedCar.getMake()).isEqualTo("Toyota");
         assertThat(addedCar.getModel()).isEqualTo("Camry");
-        // ... інші перевірки властивостей машини
+        assertThat(addedCar.getPrice()).isEqualTo(25000.0);
+        assertThat(addedCar.getMaxSpeed()).isEqualTo(220);
+        assertThat(addedCar.getFuelConsumption()).isEqualTo(8.5);
 
         // Перевіряємо, що CarListPanel був оновлений
         verify(mockCarListPanel).loadAndSortCars();
@@ -139,7 +141,10 @@ public class CarFormDialogAutoTest { // Ваша назва класу
         Car addedCar = cars.get(0);
         assertThat(addedCar).isInstanceOf(ElectricCar.class);
         assertThat(addedCar.getMake()).isEqualTo("Tesla");
-        // ... інші перевірки
+        assertThat(addedCar.getModel()).isEqualTo("Model S");
+        assertThat(addedCar.getPrice()).isEqualTo(80000.0);
+        assertThat(addedCar.getMaxSpeed()).isEqualTo(250);
+        assertThat(addedCar.getFuelConsumption()).isEqualTo(15.0);
 
         verify(mockCarListPanel).loadAndSortCars();
 
